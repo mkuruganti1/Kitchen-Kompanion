@@ -1,0 +1,75 @@
+.allcontent {
+  background-color: #f6f0e9;
+  width: 316px;
+  height: 550px;
+  margin: auto;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: thin;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+}
+
+h2 {
+  color: #583101;
+  font-size: 15;
+  font: bold;
+  font-family: Arial;
+}
+
+.welcome_page {
+  max-height: 85%;
+  max-width: 85%;
+  display: grid;
+  grid-template-columns: 42% 16% 42%;
+  grid-template-rows: 60% 10% 30%;
+  grid-template-areas:
+    "title title title"
+    ". . ."
+    "full . restricted";
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#welcome {
+  grid-area: title;
+}
+
+#full_user {
+  grid-area: full;
+  background-color: #5e503f;
+  color: #fcf4f0;
+  width: 110px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#restricted_user {
+  grid-area: restricted;
+  background-color: #5e503f;
+  color: #fcf4f0;
+  width: 110px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.tabs {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  overflow: auto;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 310px;
+}
