@@ -17,7 +17,7 @@
 
 h2 {
   color: #583101;
-  /* font-size: 15px; */
+  font-size: 28px;
   font: bold;
   font-family: Arial;
 }
@@ -26,8 +26,9 @@ h2 {
   position: relative;
   top: 0;
   overflow: auto;
-  transform: translate(0%, 50%);
+  transform: translate(13%, 50%);
   text-align: center;
+  width: 80%;
 
   /* outline-color: black;
   outline-style: solid;
@@ -59,6 +60,10 @@ h2 {
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
+  width: 125px;
+  border-style: double;
+  font-size: 16px;
+  padding: 3px;
 }
 
 .fridgeitems {
@@ -69,29 +74,33 @@ h2 {
   transform: translate(-15%, 0%);
   /* padding-top: 20px; */
   text-align: left;
-  height: 275px;
+  height: 255px;
   overflow-y: auto;
-  /* white-space: nowrap; */
-  /* width: 20em; */
-  /* overflow: auto; */
-  /* overflow: hidden; */
-  /* margin: auto; */
 }
 
 .fridgeitems label {
   width: 12em;
   float: right;
+  font-size: 18px;
 }
 
 .fridgeitems label input {
   margin-right: 25px;
 }
 
+input[type="checkbox"] {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  transform: translateY(5px);
+  border-color: #583101;
+}
+
 .findrecipes {
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
-  padding-top: 10px;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -101,6 +110,17 @@ h2 {
   width: 150px;
   height: 30px;
   border-radius: 5px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+button {
+  padding: 3px;
+}
+
+button:active {
+  background-color: #f6f0e9;
+  color: black;
 }
 
 .tabs {
