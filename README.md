@@ -1,2 +1,2 @@
 # Kitchen-Kompanion
-CMSC434 Kitchen Kompanion Porject
+CMSC434 Kitchen Kompanion Project
