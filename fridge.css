@@ -1,0 +1,127 @@
+.allcontent {
+  background-color: #f6f0e9;
+  width: 316px;
+  height: 550px;
+  margin: auto;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: thin;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+  display: block;
+}
+
+h2 {
+  color: #583101;
+  /* font-size: 15px; */
+  font: bold;
+  font-family: Arial;
+}
+
+.topbanner {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  transform: translate(0%, 50%);
+  text-align: center;
+
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+}
+
+.fridgecontents {
+  position: relative;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  padding-top: 30px;
+  /* transform: translate(0%, 0%); */
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.dropdowns {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  padding-bottom: 20px;
+}
+
+#fridgecat {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+}
+
+.fridgeitems {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  display: inline-block;
+  transform: translate(-15%, 0%);
+  /* padding-top: 20px; */
+  text-align: left;
+  height: 275px;
+  overflow-y: auto;
+  /* white-space: nowrap; */
+  /* width: 20em; */
+  /* overflow: auto; */
+  /* overflow: hidden; */
+  /* margin: auto; */
+}
+
+.fridgeitems label {
+  width: 12em;
+  float: right;
+}
+
+.fridgeitems label input {
+  margin-right: 25px;
+}
+
+.findrecipes {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  padding-top: 10px;
+  text-align: center;
+}
+
+.findrecipes button {
+  background-color: #5e503f;
+  color: #fcf4f0;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.tabs {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  overflow: auto;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 310px;
+}
+
+/* .grid {
+  max-height: 85%;
+  max-width: 85%;
+  display: grid;
+  grid-template-columns: 16% 68% 16%;
+  grid-template-rows: 20% 5% 7% 5% 7% 5% 30% 10%;
+  grid-template-areas:
+    "title title title"
+    ". . ."
+    "full . restricted";
+  position: absolute;
+} */ ;
