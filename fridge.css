@@ -49,7 +49,7 @@ h2 {
 .grid-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 15% 40% 10% 10% 3% 10% 15%;
+  grid-template-columns: 14% 40% 10% 10% 4% 10% 15%;
   grid-template-areas: ". dropdown . add-item . delete-item .";
 }
 
@@ -91,8 +91,8 @@ h2 {
 }
 
 .additems img {
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   outline: none;
   border: none;
   float: left;
@@ -102,8 +102,8 @@ h2 {
 }
 
 .delitems img {
-  width: 28px;
-  height: 28px;
+  width: 31px;
+  height: 31px;
   outline: none;
   border: none;
   float: left;
@@ -117,7 +117,7 @@ h2 {
   outline-style: solid;
   outline-width: thin; */
   display: inline-block;
-  transform: translate(-17%, 0%);
+  transform: translate(-18.5%, 0%);
   /* padding-top: 20px; */
   text-align: left;
   height: 255px;
@@ -178,16 +178,3 @@ button:active {
   transform: translate(-50%, 0%);
   width: 310px;
 }
-
-/* .grid {
-  max-height: 85%;
-  max-width: 85%;
-  display: grid;
-  grid-template-columns: 16% 68% 16%;
-  grid-template-rows: 20% 5% 7% 5% 7% 5% 30% 10%;
-  grid-template-areas:
-    "title title title"
-    ". . ."
-    "full . restricted";
-  position: absolute;
-} */ ;
