@@ -1,0 +1,137 @@
+
+.allcontent {
+  width: 316px;
+  height: 550px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+  position: absolute;
+  display:block;
+}
+.tags {
+  top: 10px;
+  margin: auto;
+  font-family: Arial;
+  position: relative;
+  padding: 20px;
+}
+.listcontents{
+  width: 316px;
+  height: 355px;
+  margin: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position:relative;
+}
+.tagLabels {
+  position:relative;
+}
+h1 {
+  color: #583101;
+  font-size: 15;
+  font: tag;
+  font-family: Arial;
+}
+
+h3 {
+  color: #000000;
+  font-size: 13;
+  font-style: normal;
+  font-family: Arial;
+  line-height: 80%;
+  transform:translate(5%, 50%);
+}
+
+input[type="checkbox"] {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  border-color: #583101;
+  transform: translateY(5px);
+  font-family: Arial;
+}
+
+
+
+#dairy ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 10px;
+    font-family: Arial;
+}
+
+.dairy label {
+  width: 12em;
+  float: right;
+  font-size: 18px;
+}
+
+.dairy {
+  display: inline-block;
+  transform: translate(-15%, 0%);
+  text-align: left;
+  height: 255px;
+  overflow-y: auto;
+}
+
+#produce ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 10px;
+  font-family: Arial;
+}
+
+.produce label {
+width: 12em;
+float: right;
+font-size: 18px;
+}
+
+.produce {
+display: inline-block;
+transform: translate(-15%, 0%);
+text-align: left;
+height: 255px;
+overflow-y: auto;
+}
+
+#frozen ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 10px;
+  font-family: Arial;
+}
+
+.frozen label {
+width: 12em;
+float: right;
+font-size: 18px;
+}
+
+.frozen {
+display: inline-block;
+transform: translate(-15%, 0%);
+text-align: left;
+height: 255px;
+overflow-y: auto;
+}
+
+.title {
+  position: relative;
+  top: 15px;
+  text-align: center;
+}
+
+
+.tabs {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  overflow: auto;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 310px;
+}
