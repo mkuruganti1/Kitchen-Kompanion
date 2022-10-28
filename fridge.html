@@ -12,20 +12,31 @@
 </head>
 <body>
     <div class = "allcontent">
-        <!-- <div class="grid"> -->
             <div class="topbanner">
                 <h2>Wu Family Fridge</h2>
             </div>
 
             <div class="fridgecontents">
-                <div class="dropdowns">
-                    <select name="category" id="fridgecat">
-                        <option value="all-contents">All</option>
-                        <option value="dairy">Dairy</option>
-                        <option value="produce">Produce</option>
-                        <option value="meat">Meat</option>
-                        <option value="beverages">Beverages</option>
-                    </select>
+                <div class = grid-container>
+                    <div class="dropdowns">
+                        <select name="category" id="fridgecat">
+                            <option value="all-contents">All</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="produce">Produce</option>
+                            <option value="meat">Meat</option>
+                            <option value="beverages">Beverages</option>
+                        </select>
+                    </div>
+
+                    <div class="additems">
+                        <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
+                        <img src=./assets/plus_sign_circle.png alt="Brown plus button to add item">
+                    </div>
+
+                    <div class="delitems">
+                        <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
+                        <img src=./assets/trash-can-delete.png alt="Brown trash can to delete item">
+                    </div>
                 </div>
             
 
@@ -41,7 +52,7 @@
                     <label><input type="checkbox">Orange Juice</label>
                     <label><input type="checkbox">Grapes</label>
                     <label><input type="checkbox">Eggplant</label>
-                    <label><input type="checkbox">Pesto Sauce</label>
+                    <label><input type="checkbox">Pesto</label>
                     <label><input type="checkbox">Soy Milk</label>
                     <label><input type="checkbox">Salsa</label>
                 </div>

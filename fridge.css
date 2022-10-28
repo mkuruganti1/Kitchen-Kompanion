@@ -26,7 +26,7 @@ h2 {
   position: relative;
   top: 0;
   overflow: auto;
-  transform: translate(13%, 50%);
+  transform: translate(13%, 30%);
   text-align: center;
   width: 80%;
 
@@ -40,10 +40,17 @@ h2 {
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
-  padding-top: 30px;
+  padding-top: 20px;
   /* transform: translate(0%, 0%); */
   font-size: 16px;
   font-family: Arial;
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15% 40% 10% 10% 3% 10% 15%;
+  grid-template-areas: ". dropdown . add-item . delete-item .";
 }
 
 .dropdowns {
@@ -51,19 +58,58 @@ h2 {
   outline-style: solid;
   outline-width: thin; */
   padding-bottom: 20px;
+  grid-area: dropdown;
 }
 
 #fridgecat {
   text-align: center;
   display: block;
-  margin: 0 auto;
+  /* margin-left: 45px; */
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
+  /* transform: translate(13%, 0%); */
   width: 125px;
   border-style: double;
   font-size: 16px;
   padding: 3px;
+}
+
+/* #add-item button {
+  width: 25px;
+  height: 25px;
+  outline: none;
+  border: none;
+} */
+
+.additems {
+  grid-area: add-item;
+}
+
+.delitems {
+  grid-area: delete-item;
+}
+
+.additems img {
+  width: 27px;
+  height: 27px;
+  outline: none;
+  border: none;
+  float: left;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+}
+
+.delitems img {
+  width: 28px;
+  height: 28px;
+  outline: none;
+  border: none;
+  float: left;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
 }
 
 .fridgeitems {
@@ -71,7 +117,7 @@ h2 {
   outline-style: solid;
   outline-width: thin; */
   display: inline-block;
-  transform: translate(-15%, 0%);
+  transform: translate(-17%, 0%);
   /* padding-top: 20px; */
   text-align: left;
   height: 255px;
