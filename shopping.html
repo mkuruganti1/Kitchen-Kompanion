@@ -8,10 +8,55 @@
 	<title></title>
 	
 	<link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./shopping_styles.css">
 	
 </head>
 <body>
-    <div class = "allcontent" style="overflow-y:scroll;">
+    <div class = "allcontent">
+      <div class = "title">
+        <h2>Shopping List</h2>
+      </div>  
+      
+      <h3>Tags </h3>
+      <div id = "tags">
+        <div id = "tagLabels">
+          <label for="giant"><input type="checkbox" id="giant"/>Giant</label>
+          <label for="safeway"><input type="checkbox" id="safeway"/>Safeway</label>
+          <label for="paula"><input type="checkbox" id="paula"/>Paula</label>
+          <label for="gen"><input type="checkbox" id="gen"/>Gen</label>
+        </div>
+      </div>
+
+       <div class = "listcontents">
+        <div id="dairy">
+          <h3>Dairy</h3>
+          <ul>
+            <li><input type="checkbox">Milk</li>
+            <li><input type="checkbox">Eggs</li>
+            <li><input type="checkbox">Mozzarella Cheese</li>
+            <li><input type="checkbox">Plain Cream Cheese</li>
+          </ul>
+        </div>
+
+        <div id="produce">
+          <h3>Produce</h3>
+          <ul>
+            <li><input type="checkbox">Cucumbers</li>
+            <li><input type="checkbox">Grape Tomatoes</li>
+            <li><input type="checkbox">Orange Bell Peppers</li>
+            <li><input type="checkbox">Beets</li>
+          </ul>
+        </div>
+
+        <div id="frozen">
+          <h3>Frozen</h3>
+          <ul>
+            <li><input type="checkbox">Ice Cream</li>
+        </div>
+  
+
+      </div> 
+
         <nav class="tabs">
             <a class="links selected" href="#">Fridge Contents</a>
             <a class="links" href="#">Requests</a>
