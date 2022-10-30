@@ -9,6 +9,7 @@
     border-radius: 30px;
     position: absolute;
     display:block;
+    font-family:Arial;
   }
   .title {
     position: relative;
@@ -26,15 +27,28 @@
     left:15px;
   }
 
-  .button{
+  .close-button{
     background-color: #5e503f;
     color: #fcf4f0;
     border:none;
-    padding: 10px;
+    padding: 2px;
     text-align:center;
     display:inline-block;
     justify-content: center;
-    left: 40%;
+    left: 82%;
+    margin:15px;
+    position: absolute;
+  }
+
+  .submit-button{
+    background-color: #5e503f;
+    color: #fcf4f0;
+    border:none;
+    padding: 5px;
+    text-align:center;
+    display:inline-block;
+    justify-content: center;
+    left: 35%;
     margin:0;
     position: absolute;
   }
@@ -61,7 +75,7 @@
   }
 
   #checkboxes {
-    display: block;
+    display: none;
     border: 1px #dadada solid;
   }
 
@@ -74,8 +88,5 @@
   }
 
   .close {
-    font-size: 45px;
-    font-weight: 500;
-    float:right;
-    top:0;
+    font-size: 40px;
   }

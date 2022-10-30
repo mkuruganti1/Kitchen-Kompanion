@@ -13,16 +13,16 @@
     <script src="./add_item.js"></script>
 </head>
 <body>
+    <!-- <script>expanded=false;</script> -->
     <div class="allcontent">
+        <button class= "close-button" type="button" data-close>
+            <span class="close">&times;</span>
+        </button>
+
         <div class="title">
             <h2>Add Item</h2>
         </div>
-        <div class="form-popup" id="myForm">
-            <button class= "close-button" type="button" data-close>
-                <span class="close">&times;</span>
-            </button>
-            <br>
-            <br>
+        <div class="form-popup" id="myForm">    
             <br>
             <label for="title">Title:</label>
             <input type="text" id="title" name="title">
@@ -42,49 +42,54 @@
             <br>
             <br>
             <form>
-            
-            <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes()">
-                    <label for="tags">Tags:</label>
-                    <select id="tags" name="tags">
-                        <option>Select tags</option>
-                    </select>
-                  <div class="overSelect"></div>
-                </div>
-                <div id="checkboxes">
-                    <ul>
-                        <li>
-                            <label for="people">
-                            <input type="checkbox" id="people"/>People</label>
+                <div class="multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                        <label for="tags">Tags:</label>
+                        <select id="tags" name="tags">
+                            <!-- <option>Select tags</option> -->
+                        </select>
+                        <div class="overSelect"></div>
+                    </div>
                         
-                            <ul>
-                            <label for="paula">
-                            <input type="checkbox" id="paula"/>Paula</label>
+                    <div id="checkboxes">    
+                        <ul>    
+                            <li>
+                                <label for="people">
+                                    <input type="checkbox" id="people"/>People
+                                </label>
+                                <ul>
+                                    <label for="paula">
+                                        <input type="checkbox" id="paula"/>Paula
+                                    </label>
                             
-                            <label for="matt">
-                            <input type="checkbox" id="matt"/>Matt</label>
-                            </ul>  
-                        </li>
-                        <li>
-                            <label for="stores">
-                            <input type="checkbox" id="stores"/>Stores</label>
+                                    <label for="matt">
+                                        <input type="checkbox" id="matt"/>Matt
+                                    </label>
+                                </ul>  
+                            </li>
                             
-                            <ul>
-                                <label for="giant">
-                                <input type="checkbox" id="giant"/>Giant</label>
+                            <li>
+                                <label for="stores">
+                                    <input type="checkbox" id="stores"/>Stores
+                                </label>
+                            
+                                <ul>
+                                    <label for="giant">
+                                        <input type="checkbox" id="giant"/>Giant
+                                    </label>
                                 
-                                <label for="tj">
-                                <input type="checkbox" id="tj"/>Trader Joe's</label>
-                            </ul>  
-                        </li>
-                    </ul>
+                                    <label for="tj">
+                                        <input type="checkbox" id="tj"/>Trader Joe's
+                                    </label>
+                                </ul>  
+                            </li>
+                        </ul>        
+                    </div>                  
                 </div>
-              </div>
-              </form>
-
-              <br>
-              <button type="button" class="button">Submit</button>
-        </div>
+            </form>
+            <br>  
+            <button type="button" class="submit-button">Submit</button>  
+        </div>     
     </div>
 </body>
 </html>
