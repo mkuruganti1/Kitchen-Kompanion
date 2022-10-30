@@ -272,3 +272,8 @@ select {
 .form-popup {
   display: none;
 }
+
+/* #add-btn button {
+  all: unset;
+  cursor: pointer;
+} */

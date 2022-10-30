@@ -42,10 +42,6 @@ function addItemToFridge() {
 }
 
 function modalPopup() {
-  // Get the button that opens the form
-  const btn = document.getElementById("add-button");
-  btn.addEventListener('click', function() {
-
     // Get the form
     var form = document.getElementById("myForm");
 
@@ -56,17 +52,14 @@ function modalPopup() {
     var fridge = document.getElementById("fridgedisplay");
     
     // When the user clicks on the button, open the form
-    btn.onclick = function() {
-      form.style.display = "block";
-      fridge.style.display = "none";
-    }
+    form.style.display = "block";
+    fridge.style.display = "none";
     
     // When the user clicks on <span> (x), close the form
     span.onclick = function() {
       form.style.display = "none";
       fridge.style.display = "block";
     }
-  });
 }
 
 
