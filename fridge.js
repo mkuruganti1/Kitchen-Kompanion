@@ -6,7 +6,6 @@ function removeCheckedCheckboxes() {
 }
 
 function addItemToFridge() {
-  console.log("hello");
   var item = document.getElementById("itemName").value;
   // alert(item);
   var category = document.getElementById("category").options[document.getElementById("category").selectedIndex].text;
@@ -38,7 +37,8 @@ function addItemToFridge() {
 
   form.style.display = "none";
   fridge.style.display = "block";
-
+  
+  document.getElementById("myForm").reset();
 }
 
 function modalPopup() {
