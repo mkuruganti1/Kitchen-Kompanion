@@ -13,89 +13,126 @@
 <body>
     <div class = "allcontent">
 
-        <!-- <div id="modal">
-            <div id="modal-add">
-                <span onclick="document.getElementById('modal-add').style.display='none'" class="close">&times;</span>
-                <h3>Add an Item</h3>
-                <form class="form">
-                    <label for="item-name">Item:</label><br>
-                    <input type="text" id="item-name" name="item-name">
-                    <br><br>
-                    <label for="category">Category:</label><br>
-                    <select name="category-modal">
-                        <option value="all-contents">All</option>
-                        <option value="dairy">Dairy</option>
-                        <option value="produce">Produce</option>
-                        <option value="meat">Meat</option>
-                        <option value="beverages">Beverages</option>
+         <!-- form to add item -->
+             
+        <form class="form-popup" action="javascript:void(0);" id="myForm" display.style="none">
+            <span class="close">&times;</span> 
+            <br>
+            <br>
+            <br>
+            <label for="Item Name">Item Name:</label>
+            <input type="text" id="itemName" name="Item Name">
+            <br>
+            <br>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="dairy">Dairy</option>
+                <option value="frozen">Frozen</option>
+                <option value="produce">Produce</option>
+                <option value="proteins">Proteins</option>
+            </select>
+            <br>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity">
+            <br>
+            <br>
+            
+            <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <label for="tags">Tags:</label>
+                    <select id="tags" name="tags">
+                        <option>Select tags</option>
                     </select>
-                    <br><br>
-                    <label for="item-amount">Amount:</label><br>
-                    <input type="text" id="item-amount" name="item-amount">
-                    <br><br>
-                    <label for="item-exp">Expiration Date:</label><br>
-                    <input type="text" id="item-exp" name="item-exp">
-                    <br><br>
-                    <div class="add-item-form-button">
-                        <button type="button" onclick="addItemToFridge()">Add Item</button></a>
+                    <div class="overSelect"></div>
+                </div>
+                <div id="checkboxes">
+                    <ul>
+                        <li>
+                            <label for="people">
+                            <input type="checkbox" id="people"/>People</label>
+                        
+                            <ul>
+                                <label for="paula">
+                                <input type="checkbox" id="paula"/>Paula</label>
+                                
+                                <label for="matt">
+                                <input type="checkbox" id="matt"/>Matt</label>
+                            </ul>  
+                        </li>
+                        <li>
+                            <label for="stores">
+                            <input type="checkbox" id="stores"/>Stores</label>
+                            
+                            <ul>
+                                <label for="giant">
+                                <input type="checkbox" id="giant"/>Giant</label>
+                                
+                                <label for="tj">
+                                <input type="checkbox" id="tj"/>Trader Joe's</label>
+                            </ul>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="submit" onclick="addItemToFridge()">Submit</button>
+        </form>
+
+        <div id="fridgedisplay" style.display="block">
+
+            <div class="topbanner">
+                <h2>Wu Family Fridge</h2>
+            </div>
+
+            <div class="fridgecontents">
+                <div class = grid-container>
+                    <div class="dropdowns">
+                        <select name="category" id="fridgecat">
+                            <option value="all-contents">All</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="produce">Produce</option>
+                            <option value="meat">Meat</option>
+                            <option value="beverages">Beverages</option>
+                        </select>
                     </div>
 
-                </form>
-            </div>
-        </div> -->
+                    <div class="additems">
+                        <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
+                        <!-- <img src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="document.getElementById('modal-add')"> -->
+                        <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">
+                    </div>
 
-        <div class="topbanner">
-            <h2>Wu Family Fridge</h2>
-        </div>
+                    <div class="delitems">
+                        <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
+                        <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()">
+                    </div>
+                </div>
+            
 
-        <div class="fridgecontents">
-            <div class = grid-container>
-                <div class="dropdowns">
-                    <select name="category" id="fridgecat">
-                        <option value="all-contents">All</option>
-                        <option value="dairy">Dairy</option>
-                        <option value="produce">Produce</option>
-                        <option value="meat">Meat</option>
-                        <option value="beverages">Beverages</option>
-                    </select>
+                <div class="fridgeitems">
+                    <form id="fridge-items-form">
+                        <!-- <label><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
+                        <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
+                        <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
+                        <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label> -->
+                    </form>
                 </div>
 
-                <div class="additems">
-                    <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
-                    <!-- <img src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="document.getElementById('modal-add')"> -->
-                    <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()" style.display="block">
-                </div>
-
-                <div class="delitems">
-                    <!-- <button id="add-item"><img src=./assets/plus_sign_circle.png alt="Brown plus button to add item"</button> -->
-                    <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()">
+                <div class="findrecipes">
+                    <a href="recipes.html"><button type="button"> Find Recipes</button></a>
                 </div>
             </div>
-        
 
-            <div class="fridgeitems">
-                <form>
-                    <label><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
-                    <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                    <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
-                    <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label>
-                </form>
-            </div>
-
-            <div class="findrecipes">
-                <a href="recipes.html"><button type="button"> Find Recipes</button></a>
-            </div>
-        </div>
-
-        <nav class="tabs">
-            <a class="links selected" href="#">Fridge Contents</a>
-            <a class="links" href="#">Requests</a>
-            <a class="links" href="#">Shopping List</a>
-            <a class="links" href="#">Profile</a>
-        </nav>
+            <nav class="tabs">
+                <a class="links selected" href="#">Fridge Contents</a>
+                <a class="links" href="#">Requests</a>
+                <a class="links" href="#">Shopping List</a>
+                <a class="links" href="#">Profile</a>
+            </nav>
 
 
-    </div> 
+        </div> 
+    </div>
     <script src="./fridge.js"></script>
 </body>
 </html>

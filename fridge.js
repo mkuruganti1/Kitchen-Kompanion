@@ -6,38 +6,68 @@ function removeCheckedCheckboxes() {
 }
 
 function addItemToFridge() {
-  var node = document.createElement()
+  console.log("hello");
+  var item = document.getElementById("itemName").value;
+  // alert(item);
+  var category = document.getElementById("category").options[document.getElementById("category").selectedIndex].text;
+  // alert(category);
+  var quantity = document.getElementById("quantity").value;
+  // alert(quantity);
+
+  var label = document.createElement("label");
+  var input = document.createElement("input");
+  input.setAttribute("type", "checkbox");
+  input.setAttribute("name", "item");
+  input.setAttribute("value", item);
+  input.setAttribute("class", "delete-checkbox");
+  input.setAttribute("id", category);
+  
+  label.appendChild(input);
+  label.append(item + " (" + quantity + ")");
+  // alert("1");
+
+  var element = document.getElementById("fridge-items-form");
+  // alert("2");
+  element.appendChild(label);
+  // alert("3");
+
+  // Get the form
+  var form = document.getElementById("myForm");
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+
+  form.style.display = "none";
+  fridge.style.display = "block";
+
 }
 
-// function modalPopup() {
-//   // Get the button that opens the modal
-//   const btn = document.getElementById("add-button");
-//   btn.addEventListener('click', function() {
-//     // Get the modal
-//     var modal = document.getElementById("modal");
+function modalPopup() {
+  // Get the button that opens the form
+  const btn = document.getElementById("add-button");
+  btn.addEventListener('click', function() {
+
+    // Get the form
+    var form = document.getElementById("myForm");
+
+    // Get the <span> element that closes the form
+    var span = document.getElementsByClassName("close")[0];
+
+    // Get the rest of the fridge content
+    var fridge = document.getElementById("fridgedisplay");
     
-
-//     // Get the <span> element that closes the modal
-//     var span = document.getElementsByClassName("close")[0];
-
-//     // When the user clicks on the button, open the modal
-//     btn.onclick = function() {
-//       modal.style.display = "block";
-//     }
-
-//     // When the user clicks on <span> (x), close the modal
-//     span.onclick = function() {
-//       modal.style.display = "none";
-//     }
-
-//     // When the user clicks anywhere outside of the modal, close it
-//     window.onclick = function(event) {
-//       if (event.target == modal) {
-//         modal.style.display = "none";
-//       }
-//     }
-//   });
-// }
+    // When the user clicks on the button, open the form
+    btn.onclick = function() {
+      form.style.display = "block";
+      fridge.style.display = "none";
+    }
+    
+    // When the user clicks on <span> (x), close the form
+    span.onclick = function() {
+      form.style.display = "none";
+      fridge.style.display = "block";
+    }
+  });
+}
 
 
 

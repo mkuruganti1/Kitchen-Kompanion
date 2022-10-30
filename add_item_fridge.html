@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+	
+	<title></title>
+	
+	<link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./add_item_fridge.css">
+  <script src="./fridge.js"></script>
+</head>
+<body>
+    <div class="allcontent">
+        <a href="fridge.html"><span class="close">&times;</span></a>
+        <form class="form-popup" id="myForm">
+            <br>
+            <br>
+            <br>
+            <label for="Item Name">Item Name:</label>
+            <input type="text" id="itemName" name="Item Name">
+            <br>
+            <br>
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="dairy">Dairy</option>
+                <option value="frozen">Frozen</option>
+                <option value="produce">Produce</option>
+                <option value="proteins">Proteins</option>
+            </select>
+            <br>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity">
+            <br>
+            <br>
+            
+            
+            <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <label for="tags">Tags:</label>
+                    <select id="tags" name="tags">
+                        <option>Select tags</option>
+                    </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div id="checkboxes">
+                    <ul>
+                        <li>
+                            <label for="people">
+                            <input type="checkbox" id="people"/>People</label>
+                        
+                            <ul>
+                            <label for="paula">
+                            <input type="checkbox" id="paula"/>Paula</label>
+                            
+                            <label for="matt">
+                            <input type="checkbox" id="matt"/>Matt</label>
+                            </ul>  
+                        </li>
+                        <li>
+                            <label for="stores">
+                            <input type="checkbox" id="stores"/>Stores</label>
+                            
+                            <ul>
+                                <label for="giant">
+                                <input type="checkbox" id="giant"/>Giant</label>
+                                
+                                <label for="tj">
+                                <input type="checkbox" id="tj"/>Trader Joe's</label>
+                            </ul>  
+                        </li>
+                    </ul>
+                </div>
+                <button class="submit" onclick="addItemToFridge()">Submit</button>
+              </form>
+        </div>
+    </div>
+</body>
+</html>
