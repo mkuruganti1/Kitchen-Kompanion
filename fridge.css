@@ -272,7 +272,7 @@ select {
 .recipe {
   display: none;
   height: 90%;
-  width: 90%;
+  width: 85%;
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
@@ -322,6 +322,7 @@ ul {
   font-size: 17px;
   margin-bottom: 3px;
   font: Arial;
+  margin-left: -5px;
 }
 
 /* #add-btn button {

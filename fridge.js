@@ -79,6 +79,11 @@ function displayRecipe() {
   span.onclick = function() {
     recipe.style.display = "none";
     fridge.style.display = "block";
+
+    var checked = document.querySelectorAll(".delete-checkbox:checked");
+    checked.forEach((elem) => {
+      elem.checked = false;
+  })
   }
 }
 
