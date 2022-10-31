@@ -1,0 +1,92 @@
+  .allcontent {
+    width: 316px;
+    height: 550px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 30px;
+    position: absolute;
+    display:block;
+    font-family:Arial;
+  }
+  .title {
+    position: relative;
+    top: 15px;
+    text-align: center;
+  }
+
+  .form-popup {
+    width:314px;
+    height:255px;
+    position: relative;
+    top:0;
+    border: 0;
+    margin: auto;
+    left:15px;
+  }
+
+  .close-button{
+    background-color: #5e503f;
+    color: #fcf4f0;
+    border:none;
+    padding: 2px;
+    text-align:center;
+    display:inline-block;
+    justify-content: center;
+    left: 82%;
+    margin:15px;
+    position: absolute;
+  }
+
+  .submit-button{
+    background-color: #5e503f;
+    color: #fcf4f0;
+    border:none;
+    padding: 5px;
+    text-align:center;
+    display:inline-block;
+    justify-content: center;
+    left: 35%;
+    margin:0;
+    position: absolute;
+  }
+
+  .multiselect {
+    width: 200px;
+  }
+
+  .selectBox {
+    position: relative;
+  }
+
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+
+  #checkboxes label {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .close {
+    font-size: 40px;
+  }

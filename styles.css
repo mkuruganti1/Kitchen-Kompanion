@@ -16,7 +16,7 @@
 
 h2 {
   color: #583101;
-  font-size: 15;
+  font-size: 28px;
   font: bold;
   font-family: Arial;
 }
@@ -52,6 +52,7 @@ h2 {
   height: 50px;
   text-align: center;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 #restricted_user {
@@ -62,6 +63,7 @@ h2 {
   height: 50px;
   text-align: center;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 .tabs {

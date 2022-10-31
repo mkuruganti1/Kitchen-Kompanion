@@ -11,6 +11,7 @@
   position: absolute;
   display:block;
 }
+
 .tags {
   top: 10px;
   margin: auto;
@@ -18,17 +19,21 @@
   position: relative;
   padding: 20px;
 }
+
 .listcontents{
-  width: 316px;
+  width: 310px;
   height: 355px;
   margin: auto;
+  left: 0px;
   overflow-y: auto;
   overflow-x: hidden;
   position:relative;
 }
+
 .tagLabels {
   position:relative;
 }
+
 h1 {
   color: #583101;
   font-size: 15;
@@ -53,8 +58,6 @@ input[type="checkbox"] {
   transform: translateY(5px);
   font-family: Arial;
 }
-
-
 
 #dairy ul {
     margin: 0;
@@ -134,4 +137,9 @@ overflow-y: auto;
   left: 50%;
   transform: translate(-50%, 0%);
   width: 310px;
+}
+
+table tr.checked {
+  text-decoration: line-through;
+  background-color: #ebebeb;
 }

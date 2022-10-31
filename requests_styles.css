@@ -81,6 +81,7 @@ h2 {
   box-sizing: border-box;
   border: 3px solid #5e503f;
   border-radius: 4px;
+  background-color: #f8f8f8;
   font-size: 16px;
   resize: none;
   font-family: Arial, Helvetica, sans-serif;

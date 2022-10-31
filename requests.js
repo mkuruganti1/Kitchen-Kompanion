@@ -15,7 +15,7 @@ function addTodo(e) {
   todoDiv.appendChild(newTodo);
   todoInput.value = "";
   const completedButton = document.createElement("button");
-  completedButton.innerHTML = `<img src="https://www.kindpng.com/picc/m/136-1364020_transparent-checkmark-png-transparent-background-linkedin-icon-white.png">`;
+  completedButton.innerHTML = `✔️`;
   completedButton.classList.add("complete-btn");
   todoDiv.appendChild(completedButton);
   const trashButton = document.createElement("button");
@@ -45,7 +45,7 @@ function deleteTodo(e) {
 }
 
 function getTodos() {
-  let todos = ['Goldfish', 'Oreos', 'Cheese'];
+  let todos = ['Goldfish', 'Oreos', 'Cheese Sticks'];
 
   todos.forEach(function (todo) {
     const todoDiv = document.createElement("div");
@@ -55,11 +55,11 @@ function getTodos() {
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
     const completedButton = document.createElement("button");
-    completedButton.innerHTML = `<img src="icons/ok.ico">`;
+    completedButton.innerHTML = `✔️`;
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
     const trashButton = document.createElement("button");
-    trashButton.innerHTML = `<img src="icons/x-mark.ico">`;
+    trashButton.innerHTML = `✖️`;
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
     todoList.appendChild(todoDiv);
