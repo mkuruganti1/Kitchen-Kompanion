@@ -1,126 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
-	<title></title>
-	
-	<link rel="stylesheet" href="./fridge.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-	
-</head>
-<body>
-    <div class = "allcontent">
+    <title></title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./fridge.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="allcontent">
+      <!-- form to add item -->
 
-         <!-- form to add item -->
-             
-        <form class="form-popup" action="javascript:void(0);" id="myForm" style.display="none">
-            <span class="close" id="close-form">&times;</span> 
-            <!-- <span class="back" style="font-size: 50px;">&#8678;</span>  -->
-            <br>
-            <br>
-            <br>
-            <label for="Item Name">Item Name:</label>
-            <input type="text" id="itemName" name="Item Name">
-            <br>
-            <br>
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-                <option value="dairy">Dairy</option>
-                <option value="frozen">Frozen</option>
-                <option value="produce">Produce</option>
-                <option value="proteins">Proteins</option>
+      <form
+        class="form-popup"
+        action="javascript:void(0);"
+        id="myForm"
+        style.display="none"
+      >
+        <span class="close" id="close-form">&times;</span>
+        <!-- <span class="back" style="font-size: 50px;">&#8678;</span>  -->
+        <br />
+        <br />
+        <br />
+        <label for="Item Name">Item Name:</label>
+        <input type="text" id="itemName" name="Item Name" />
+        <br />
+        <br />
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="dairy">Dairy</option>
+          <option value="frozen">Frozen</option>
+          <option value="produce">Produce</option>
+          <option value="proteins">Proteins</option>
+        </select>
+        <br />
+        <br />
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity" />
+        <br />
+        <br />
+
+        <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes()">
+            <label for="tags">Tags:</label>
+            <select id="tags" name="tags">
+              <option>Select tags</option>
             </select>
-            <br>
-            <br>
-            <label for="quantity">Quantity:</label>
-            <input type="text" id="quantity" name="quantity">
-            <br>
-            <br>
-            
-            <!-- <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes()">
-                    <label for="tags">Tags:</label>
-                    <select id="tags" name="tags">
-                        <option>Select tags</option>
-                    </select>
-                    <div class="overSelect"></div>
-                </div>
-                <div id="checkboxes">
-                    <ul>
-                        <li>
-                            <label for="people">
-                            <input type="checkbox" id="people"/>People</label>
-                        
-                            <ul>
-                                <label for="paula">
-                                <input type="checkbox" id="paula"/>Paula</label>
-                                
-                                <label for="matt">
-                                <input type="checkbox" id="matt"/>Matt</label>
-                            </ul>  
-                        </li>
-                        <li>
-                            <label for="stores">
-                            <input type="checkbox" id="stores"/>Stores</label>
-                            
-                            <ul>
-                                <label for="giant">
-                                <input type="checkbox" id="giant"/>Giant</label>
-                                
-                                <label for="tj">
-                                <input type="checkbox" id="tj"/>Trader Joe's</label>
-                            </ul>  
-                        </li>
-                    </ul>
-                </div>
-            </div> -->
-            <button class="submit" onclick="addItemToFridge()">Submit</button>
-        </form>
-
-
-        <div class="recipe" id="viewrecipe" style.display="none">
-            <span class="close" id="close-recipe">&times;</span>
-            <h3>Caprese Salad</h3>
-            <hr>
-            <p>Prep Time: 10 mins</p>
-            <p>Total Time: 10 mins</p>
-            <p>Serves 2 to 3</p>
-            <h4>Ingredients</h4>
+            <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes">
             <ul>
-                <li>1 to 2 tomatoes, sliced</li>
-                <li>1 ball of fresh mozzarella, sliced</li>
-                <li>Fresh basil leaves</li>
-                <li>Extra-virgin olive oil, for drizzling</li>
-                <li>Salt and black pepper, to taste</li>
+              <li>
+                <label for="people">
+                  <input type="checkbox" id="people" />People</label
+                >
+
+                <ul>
+                  <label for="paula">
+                    <input type="checkbox" id="paula" />Paula</label
+                  >
+
+                  <label for="matt">
+                    <input type="checkbox" id="matt" />Matt</label
+                  >
+                </ul>
+              </li>
+              <li>
+                <label for="stores">
+                  <input type="checkbox" id="stores" />Stores</label
+                >
+
+                <ul>
+                  <label for="giant">
+                    <input type="checkbox" id="giant" />Giant</label
+                  >
+
+                  <label for="tj">
+                    <input type="checkbox" id="tj" />Trader Joe's</label
+                  >
+                </ul>
+              </li>
             </ul>
-            <h4>Instructions</h4>
-            <ol>
-                <li>Arrange the sliced tomatoes, mozzarella, and basil leaves on a plate.</li>
-                <li> Drizzle with olive oil, and sprinkle with salt and black paper to taste.</li>
-            </ol>
+          </div>
+        </div>
+        <button class="submit" onclick="addItemToFridge()">Submit</button>
+      </form>
+
+      <div class="recipe" id="viewrecipe" style.display="none">
+        <span class="close" id="close-recipe">&times;</span>
+        <h3>Caprese Salad</h3>
+        <hr />
+        <p>Prep Time: 10 mins</p>
+        <p>Total Time: 10 mins</p>
+        <p>Serves 2 to 3</p>
+        <h4>Ingredients</h4>
+        <ul>
+          <li>1 to 2 tomatoes, sliced</li>
+          <li>1 ball of fresh mozzarella, sliced</li>
+          <li>Fresh basil leaves</li>
+          <li>Extra-virgin olive oil, for drizzling</li>
+          <li>Salt and black pepper, to taste</li>
+        </ul>
+        <h4>Instructions</h4>
+        <ol>
+          <li>
+            Arrange the sliced tomatoes, mozzarella, and basil leaves on a
+            plate.
+          </li>
+          <li>
+            Drizzle with olive oil, and sprinkle with salt and black paper to
+            taste.
+          </li>
+        </ol>
+      </div>
+
+      <div id="fridgedisplay" style.display="block">
+        <div class="topbanner">
+          <h2>Wu Family Fridge</h2>
         </div>
 
-        <div id="fridgedisplay" style.display="block">
-
-            <div class="topbanner">
-                <h2>Wu Family Fridge</h2>
+        <div class="fridgecontents">
+          <div class="grid-container">
+            <div class="dropdowns">
+              <select name="category" id="fridgecat">
+                <option value="all-contents">All</option>
+                <option value="dairy">Dairy</option>
+                <option value="produce">Produce</option>
+                <option value="meat">Meat</option>
+                <option value="beverages">Beverages</option>
+              </select>
             </div>
-
-            <div class="fridgecontents">
-                <div class = grid-container>
-                    <div class="dropdowns">
-                        <select name="category" id="fridgecat">
-                            <option value="all-contents">All</option>
-                            <option value="dairy">Dairy</option>
-                            <option value="produce">Produce</option>
-                            <option value="meat">Meat</option>
-                            <option value="beverages">Beverages</option>
-                        </select>
-                    </div>
 
                     <div class="additems">
                         <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
@@ -164,25 +178,23 @@
                         
                         <!-- <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
                         <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label> -->
-                    </form>
-                </div>
+            </form>
+          </div>
 
-                <div class="findrecipes">
-                    <!-- <a href="recipes.html"><button type="button">Find Recipe</button></a> -->
-                    <button type="button" onclick="displayRecipe()">Find Recipe</button>
-
-                </div>
-            </div>
-
-            <nav class="tabs">
-                <a class="links selected" href="fridge.html">Fridge Contents</a>
-                <a class="links" href="submit_request.html">Requests</a>
-                <a class="links" href="shopping.html">Shopping List</a>
-                <a class="links" href="#">Profile</a>
-            </nav>
-
-        </div> 
+          <div class="findrecipes">
+            <!-- <a href="recipes.html"><button type="button">Find Recipe</button></a> -->
+            <button type="button" onclick="displayRecipe()">Find Recipe</button>
+          </div>
+        </div>
+      </div>
+      <div id="nav-placeholder"></div>
     </div>
     <script src="./fridge.js"></script>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+  </body>
 </html>
