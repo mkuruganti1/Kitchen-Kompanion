@@ -42,24 +42,44 @@ function addItemToFridge() {
 }
 
 function modalPopup() {
-    // Get the form
-    var form = document.getElementById("myForm");
+  // Get the form
+  var form = document.getElementById("myForm");
 
-    // Get the <span> element that closes the form
-    var span = document.getElementsByClassName("close")[0];
+  // Get the <span> element that closes the form
+  var span = document.getElementById("close-form")
 
-    // Get the rest of the fridge content
-    var fridge = document.getElementById("fridgedisplay");
-    
-    // When the user clicks on the button, open the form
-    form.style.display = "block";
-    fridge.style.display = "none";
-    
-    // When the user clicks on <span> (x), close the form
-    span.onclick = function() {
-      form.style.display = "none";
-      fridge.style.display = "block";
-    }
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+  
+  // When the user clicks on the button, open the form
+  form.style.display = "block";
+  fridge.style.display = "none";
+  
+  // When the user clicks on <span> (x), close the form
+  span.onclick = function() {
+    form.style.display = "none";
+    fridge.style.display = "block";
+  }
+}
+
+function displayRecipe() {
+  var recipe = document.getElementById("viewrecipe");
+
+  // Get the <span> element that closes the recipe page
+  var span = document.getElementById("close-recipe");
+
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+  
+  // When the user clicks on the button, show the recipe
+  recipe.style.display = "block";
+  fridge.style.display = "none";
+  
+  // When the user clicks on <span> (x), close the recipe
+  span.onclick = function() {
+    recipe.style.display = "none";
+    fridge.style.display = "block";
+  }
 }
 
 

@@ -137,7 +137,7 @@ select {
   outline-style: solid;
   outline-width: thin; */
   /* display: inline-block; */
-  transform: translate(-18.5%, 0%);
+  transform: translate(-23%, 0%);
   /* padding-top: 20px; */
   /* text-align: left; */
   height: 255px;
@@ -147,7 +147,7 @@ select {
 .fridgeitems label {
   width: 12em;
   float: right;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .fridgeitems label input {
@@ -156,8 +156,8 @@ select {
 
 input[type="checkbox"] {
   background-color: #fff;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   transform: translateY(5px);
   border-color: #583101;
 }
@@ -176,7 +176,7 @@ input[type="checkbox"] {
   width: 150px;
   height: 30px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 15px;
   transition-duration: 0.4s;
 }
 
@@ -189,9 +189,8 @@ button:active {
   color: black;
 }
 
-#modal {
+/* #modal {
   display: none;
-  /* position: fixed; */
   z-index: 1;
   background-color: #f6f0e9;
   width: 316px;
@@ -206,20 +205,17 @@ button:active {
   left: 0;
   right: 0;
   border-radius: 30px;
-  /* display: block; */
 }
 
 #modal-add {
   background-color: #f6f0e9;
   padding: 20px;
-  /* border: 2px solid #5e503f; */
-  /* transform: translate(0%, 5%); */
   color: #583101;
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
   border-radius: 30px;
-}
+} */
 
 .close {
   color: #aaa;
@@ -271,6 +267,61 @@ select {
 
 .form-popup {
   display: none;
+}
+
+.recipe {
+  display: none;
+  height: 90%;
+  width: 90%;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.recipe h3 {
+  padding-top: 40px;
+  margin: 2px;
+  color: #583101;
+  font-size: 24px;
+  font: Arial;
+  /* padding-bottom: 0px; */
+}
+
+.recipe hr {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe p {
+  padding: 2px;
+  margin: 0px;
+  font-size: 17px;
+  font: Arial;
+}
+
+.recipe h4 {
+  padding: 2px;
+  margin-bottom: 0px;
+  font-size: 17px;
+  margin-top: 5px;
+  font: Arial;
+  /* color: #583101; */
+  /* margin: 0px; */
+}
+
+.recipe ol,
+ul {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.recipe li {
+  font-size: 17px;
+  margin-bottom: 3px;
+  font: Arial;
 }
 
 /* #add-btn button {
