@@ -28,15 +28,15 @@ function addTodo(e) {
 function deleteTodo(e) {
   const item = e.target;
 
-  if (item.classList[0] === "trash-btn") {
-    const todo = item.parentElement;
+  if (item.innerText === "check_circle") {
+    const todo = item.parentElement.parentElement;
     todo.classList.add("fall");
     todo.addEventListener("transitionend", (e) => {
       todo.remove();
     });
   }
-  if (item.classList[0] === "complete-btn") {
-    const todo = item.parentElement;
+  if (item.innerText === "cancel") {
+    const todo = item.parentElement.parentElement;
     todo.classList.add("fall_left");
     todo.addEventListener("transitionend", (e) => {
       todo.remove();
@@ -45,23 +45,26 @@ function deleteTodo(e) {
 }
 
 function getTodos() {
-  let todos = ['Goldfish', 'Oreos', 'Cheese Sticks'];
+  let todos = ['Goldfish', 'Oreos', 'Green Apples'];
+  let reasons = ['Snack for after school', 'Dessert', 'Tommy said they are yummy'];
+  let i = 0;
 
   todos.forEach(function (todo) {
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
     const newTodo = document.createElement("li");
-    newTodo.innerText = todo;
+    newTodo.innerHTML = `<div><strong>Food: </strong>${todo}</div><div><strong>Reason: </strong>${reasons[i]}</div><div><strong>Requester: </strong>Matt</div>`;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
     const completedButton = document.createElement("button");
-    completedButton.innerHTML = `✔️`;
+    completedButton.innerHTML = `<span class="material-icons md-32">check_circle</span>`;
     completedButton.classList.add("complete-btn");
     todoDiv.appendChild(completedButton);
     const trashButton = document.createElement("button");
-    trashButton.innerHTML = `✖️`;
+    trashButton.innerHTML = `<span class="material-icons md-32">cancel</span>`;
     trashButton.classList.add("trash-btn");
     todoDiv.appendChild(trashButton);
     todoList.appendChild(todoDiv);
+    i+=1;
   });
 }

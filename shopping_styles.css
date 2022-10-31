@@ -128,17 +128,6 @@ overflow-y: auto;
   text-align: center;
 }
 
-
-.tabs {
-  height: 50px;
-  position: absolute;
-  bottom: 0;
-  overflow: auto;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  width: 310px;
-}
-
 table tr.checked {
   text-decoration: line-through;
   background-color: #ebebeb;

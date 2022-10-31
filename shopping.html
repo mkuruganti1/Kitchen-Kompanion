@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
-	<title></title>
-	
-	<link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./shopping_styles.css">
-  <script src="./shopping.js"></script>
-	
-</head>
-<body>  
-  <div class = "allcontent">
-    <div class = "title">
-      <h2>Shopping List</h2>
-    </div>  
-        
-    <div class="panel panel-default col-md-12">
-      <div class="panel-body">    
-        <div class="row form-inline">
-          <div class="form-group">
-            <label for="itemname">Item Name</label>
-            <input type=text class="form-control" name="itemname" id=itemname />
-          </div>
-                
-          <div class="form-group">
-            <label for="qty">Quantity</label>
-            <input type=text class="form-control" name="qty" id=qty />  
-          </div>     
-        </div>
-  
-        <div class="form-inline" style="float: right;">
-          <!--<button onclick="clickedon()" class="btn btn-primary" id=gobutt>Add Item</button> -->
-          <button onclick="window.location.href='./add_item.html'">Add Item</button>
-        </div>    
+    <title></title>
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./shopping_styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="./shopping.js"></script>
+  </head>
+  <body>
+    <div class="allcontent">
+      <div class="title">
+        <h2>Shopping List</h2>
       </div>
-    </div>
-    
-    <div class="col-md-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th></th><th>Item</th><th>Quantity</th>
-          </tr>
-        </thead>
-      
-        <tbody id="shoppinglist"></tbody>
-      </table>
-    </div>
-  </div>
-      
-  <nav class="tabs">
-    <a class="links selected" href="fridge.html">Fridge Contents</a>
-    <a class="links" href="submit_request.html">Requests</a>
-    <a class="links" href="shopping.html">Shopping List</a>
-    <a class="links" href="#">Profile</a>
-  </nav>   
 
-</body>
+      <div class="panel panel-default col-md-12">
+        <div class="panel-body">
+          <div class="row form-inline">
+            <div class="form-group">
+              <label for="itemname">Item Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="itemname"
+                id="itemname"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="qty">Quantity</label>
+              <input type="text" class="form-control" name="qty" id="qty" />
+            </div>
+          </div>
+
+          <div class="form-inline" style="float: right">
+            <!--<button onclick="clickedon()" class="btn btn-primary" id=gobutt>Add Item</button> -->
+            <button onclick="window.location.href='./add_item.html'">
+              Add Item
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Item</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+
+          <tbody id="shoppinglist"></tbody>
+        </table>
+      </div>
+      <div id="nav-placeholder"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+  </body>
 </html>
