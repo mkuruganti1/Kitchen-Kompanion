@@ -1,0 +1,37 @@
+h2 {
+  color: #583101;
+  font-size: 28px;
+  font: bold;
+  font-family: Arial;
+}
+
+h3 {
+  color: #000000;
+  font-size: 13;
+  font-style: normal;
+  font-family: Arial;
+  line-height: 80%;
+}
+
+.topbanner {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  transform: translate(13%, 30%);
+  text-align: center;
+  width: 80%;
+
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+}
+
+.subbanner {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  transform: translate(13%, 30%);
+  text-align: center;
+  width: 80%;
+  text-indent: 10%
+}
