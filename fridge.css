@@ -334,9 +334,9 @@ ul {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-#expand {
-  padding-left: 9px;
-  transform: translate(0%, 41%);
+.expand {
+  padding-left: 7px;
+  transform: translate(0%, 30%);
   font-size: 21px;
   /* outline-color: black;
   outline-style: solid;

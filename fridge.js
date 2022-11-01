@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", getFridgeItems);
 
-var fridge_items = [[]];
-
-var fridge_items = [[]];
+// var fridge_items = [[]];
 
 function removeCheckedCheckboxes() {
   var checked = document.querySelectorAll(".delete-checkbox:checked");
@@ -32,29 +30,22 @@ function addItemToFridge() {
   fridgeItems.push([item, category, quantity, expirationdate]);
   localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
-  var item_data = [item, category, quantity, expirationdate];
-  fridge_items.push(item_data);
-
-  var item_data = [item, category, quantity, expirationdate];
-  fridge_items.push(item_data);
-
   // create the input and label elements, and append the input to label
   var label = document.createElement("label");
   var input = document.createElement("input");
   input.setAttribute("type", "checkbox");
   input.setAttribute("name", "item");
   input.setAttribute("value", item);
-  input.setAttribute("class", "delete-checkbox");
-  input.setAttribute("id", category);
+  input.setAttribute("class", "delete-checkbox " + category);
   
   label.appendChild(input);
   label.append(item);
   
   // create the span class for the expand img
   var span = document.createElement("span");
-  span.setAttribute("class", "material-icons material-symbols-outlined")
-  span.setAttribute("id", "expand");
-  span.setAttribute("onclick", "showItemInfo()")
+  span.setAttribute("class", "material-icons material-symbols-outlined expand " + item);
+  span.setAttribute("id", Math.floor(Math.random()*100));
+  span.setAttribute("onclick", "showItemInfo(this)")
   span.append("open_in_new");
 
   // create the new div that holds the label/input and span, and add abel/input and span to new div
@@ -90,17 +81,17 @@ function populateSingleFridgeItem(item){
       input.setAttribute("type", "checkbox");
       input.setAttribute("name", "item");
       input.setAttribute("value", item[0]);
-      input.setAttribute("class", "delete-checkbox");
-      input.setAttribute("id", item[1]);
+      input.setAttribute("class", "delete-checkbox " + item[1]);
+      // input.setAttribute("id", item[1]);
       
       label.appendChild(input);
       label.append(item[0]);
       
       // create the span class for the expand img
       var span = document.createElement("span");
-      span.setAttribute("class", "material-icons material-symbols-outlined")
-      span.setAttribute("id", "expand");
-      span.setAttribute("onclick", "showItemInfo()")
+      span.setAttribute("class", "material-icons material-symbols-outlined expand " + item[0]);
+      span.setAttribute("id", Math.floor(Math.random()*100));
+      span.setAttribute("onclick", "showItemInfo(this)")
       span.append("open_in_new");
     
       // create the new div that holds the label/input and span, and add label/input and span to new div
@@ -164,17 +155,30 @@ function showItemInfo(e) {
   var modal = document.getElementById("modal");
 
   // Get the <span> element that closes the form
-  var span = document.getElementById("close-modal")
+  var span = document.getElementById("close-modal");
+ 
+  var itemkey = e.className.split(" ")[3];
+  var vals = JSON.parse(localStorage.fridgeItems);
+  for (let i = 0; i < vals.length; i++) {
+    if (vals[i][0] == itemkey) {
+      document.getElementById("it-na").innerHTML += vals[i][0];
+      document.getElementById("cat").innerHTML += vals[i][1];
+      document.getElementById("qty").innerHTML += vals[i][2];
+      document.getElementById("ed").innerHTML += vals[i][3];
+      break;
+    }
+  }
 
-  // Get the rest of the fridge content
-  var fridge = document.getElementById("fridgedisplay");
-  
   // When the user clicks on the button, open the form
   modal.style.display = "block";
-  // fridge.style.display = "none";
+  
   
   // When the user clicks on <span> (x), close the form
   span.onclick = function() {
+    document.getElementById("it-na").innerHTML = "Item Name: ";
+    document.getElementById("cat").innerHTML = "Category: ";
+    document.getElementById("qty").innerHTML = "Quantity: ";
+    document.getElementById("ed").innerHTML = "Expiration Date: ";
     modal.style.display = "none";
   }
 }
