@@ -75,7 +75,7 @@ button{
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
-  transition: all .35s;
+  transition: all 1.0s;
 }
 
 button .success{

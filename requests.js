@@ -7,27 +7,32 @@ todoList.addEventListener("click", deleteTodo);
 
 function addTodo(e) {
   e.preventDefault();
-  const todoDiv = document.createElement("div");
-  todoDiv.classList.add("todo");
-  const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
-  newTodo.classList.add("todo-item");
-  todoDiv.appendChild(newTodo);
+  const foodDiv = document.createElement("div");
+  foodDiv.classList.add("todo");
+  const newFood = document.createElement("li");
+  newFood.innerText = todoInput.value;
+  newFood.classList.add("todo-item");
+  foodDiv.appendChild(newFood);
   todoInput.value = "";
   const completedButton = document.createElement("button");
   completedButton.innerHTML = `✔️`;
   completedButton.classList.add("complete-btn");
-  todoDiv.appendChild(completedButton);
+  foodDiv.appendChild(completedButton);
   const trashButton = document.createElement("button");
   trashButton.innerHTML = `✖️`;
   trashButton.classList.add("trash-btn");
-  todoDiv.appendChild(trashButton);
-  todoList.appendChild(todoDiv);
+  foodDiv.appendChild(trashButton);
+  todoList.appendChild(foodDiv);
 }
 
 function deleteTodo(e) {
+  var foods = JSON.parse(localStorage.getItem("foods") || "[]");
+  foods.shift(1);
+  var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
+  reasons.shift(1);
+  localStorage.setItem("foods", JSON.stringify(foods));
+  localStorage.setItem("reasons", JSON.stringify(reasons));
   const item = e.target;
-
   if (item.innerText === "check_circle") {
     const todo = item.parentElement.parentElement;
     todo.classList.add("fall");
@@ -45,26 +50,28 @@ function deleteTodo(e) {
 }
 
 function getTodos() {
-  let todos = ['Goldfish', 'Oreos', 'Green Apples'];
-  let reasons = ['Snack for after school', 'Dessert', 'Tommy said they are yummy'];
+  var foods = JSON.parse(localStorage.getItem("foods") || "[]");
+  foods.push("Goldfish");
+  var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
+  reasons.push("School snack");
   let i = 0;
 
-  todos.forEach(function (todo) {
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    const newTodo = document.createElement("li");
-    newTodo.innerHTML = `<div><strong>Food: </strong>${todo}</div><div><strong>Reason: </strong>${reasons[i]}</div><div><strong>Requester: </strong>Matt</div>`;
-    newTodo.classList.add("todo-item");
-    todoDiv.appendChild(newTodo);
+  foods.forEach(function (food) {
+    const foodDiv = document.createElement("div");
+    foodDiv.classList.add("todo");
+    const newFood = document.createElement("li");
+    newFood.innerHTML = `<div><strong>Food: </strong>${food}</div><div><strong>Reason: </strong>${reasons[i]}</div><div><strong>Requester: </strong>Matt</div>`;
+    newFood.classList.add("todo-item");
+    foodDiv.appendChild(newFood);
     const completedButton = document.createElement("button");
     completedButton.innerHTML = `<span class="material-icons md-32">check_circle</span>`;
     completedButton.classList.add("complete-btn");
-    todoDiv.appendChild(completedButton);
+    foodDiv.appendChild(completedButton);
     const trashButton = document.createElement("button");
     trashButton.innerHTML = `<span class="material-icons md-32">cancel</span>`;
     trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton);
-    todoList.appendChild(todoDiv);
+    foodDiv.appendChild(trashButton);
+    todoList.appendChild(foodDiv);
     i+=1;
   });
 }

@@ -18,14 +18,15 @@
         <div id="welcome">
           <h2>New Request</h2>
         </div>
-        <div id="form">
-          <input type="text" placeholder="Food" class="text_box" />
+        <form onsubmit="submitRequest(this)" id="form">
+          <input type="text" name="name" placeholder="Food" class="text_box" />
           <br />
           <textarea
             placeholder="Reason..."
             rows="4"
             cols="10"
             class="text_area"
+            name="reason"
           ></textarea>
           <br />
           <br />
@@ -35,7 +36,7 @@
               <span class="material-icons md-32">autorenew</span>
             </div>
           </button>
-        </div>
+        </form>
       </div>
       <div id="nav-placeholder"></div>
     </div>
@@ -45,11 +46,19 @@
         $("#nav-placeholder").load("nav.html");
       });
       let btn = document.querySelector("button");
-
       btn.addEventListener("click", active);
-
       function active() {
         btn.classList.toggle("is_active");
+      }
+
+      function submitRequest(that) {
+        var foods = JSON.parse(localStorage.getItem("foods") || "[]");
+        var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
+        foods.push(that.name.value);
+        reasons.push(that.reason.value);
+        localStorage.setItem("foods", JSON.stringify(foods));
+        localStorage.setItem("reasons", JSON.stringify(reasons));
+        return true;
       }
     </script>
   </body>
