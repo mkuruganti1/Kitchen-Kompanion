@@ -14,6 +14,9 @@
   </head>
   <body>
     <div class="allcontent">
+      <div class="pending_container">
+        <span class="material-icons md-32 pending" onclick="load_requests()">pending_actions</span>
+      </div>
       <div class="submit_page">
         <div id="welcome">
           <h2>New Request</h2>
@@ -59,6 +62,10 @@
         localStorage.setItem("foods", JSON.stringify(foods));
         localStorage.setItem("reasons", JSON.stringify(reasons));
         return true;
+      }
+
+      function load_requests(){
+        window.location="approve_request.html";
       }
     </script>
   </body>

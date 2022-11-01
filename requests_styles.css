@@ -1,6 +1,6 @@
 .submit_page {
   width: inherit;
-  height: 80%;
+  height: 75%;
   display: grid;
   grid-template-columns: 5% 90% 5%;
   grid-template-rows: 25% 75%;
@@ -9,14 +9,15 @@
     ". s .";
   position: absolute;
   text-align: center;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -15%);
   justify-items: center;
+  padding-top: 10px;
 }
 
 .form-container {
-  padding-top: 40%;
+  padding-top: 50%;
 }
 
 #welcome {
@@ -24,6 +25,7 @@
 }
 
 #form {
+  margin-top: -10px;
   grid-area: s;
 }
 
@@ -64,14 +66,14 @@ button{
   top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 150px;
+  width: 130px;
   height: 40px;
   line-height: 1;
   font-size: 16px;
   letter-spacing: 1px;
   border: 3px solid #896B60;
   background:  #896B60;
-  color: #fff;
+  color: #F5F2EA;
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
@@ -108,4 +110,22 @@ button.is_active .unsuccess{
 button.is_active .success{
   opacity: 1;
   visibility: visible;
+}
+
+.pending{
+  position: relative;
+  top: 4px;
+
+}
+
+.pending_container{
+  margin-left: 255px;
+  margin-top: 425px;
+  color: #F5F2EA;
+  font-size: 12px;
+  text-align: center;
+  background-color: #896B60;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }

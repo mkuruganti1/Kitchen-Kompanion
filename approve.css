@@ -55,5 +55,10 @@
 
 .title {
   text-align: center;
-  margin-top: 50px;
+}
+
+.close {
+  margin-left: 270px;
+  margin-top: 10px;
+  color: #896B60;
 }
