@@ -136,22 +136,47 @@
               </select>
             </div>
 
-            <div class="additems">
-              <img id="add-button" src=./assets/images/plus_sign_circle.png
-              alt="Brown plus button to add item" onclick="modalPopup()">
-            </div>
+                    <div class="additems">
+                        <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
+                        <span class="material-icons material-symbols-outlined" id="add-button" onclick="formPopup()">
+                            add_circle
+                        </span>
+                    </div>
 
-            <div class="delitems">
-              <img src=./assets/images/trash-can-delete.png alt="Brown trash can
-              to delete item" onclick="removeCheckedCheckboxes()">
-            </div>
-          </div>
+                    <div class="delitems">
+                        <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
+                        <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                            do_not_disturb_on
+                        </span> -->
+                        <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                            delete
+                        </span>
+                    </div>
+                </div>
+            
 
-          <div class="fridgeitems">
-            <form id="fridge-items-form">
-              <!-- <label><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
-                        <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                        <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
+                <div class="fridgeitems">
+                    <form id="fridge-items-form">
+                        <div class="items-in-fridge">
+                            <label id="fridgelabel"><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
+                            <span class="material-icons material-symbols-rounded" id="expand" onclick="showItemInfo()">
+                                open_in_full
+                            </span>
+                        </div>
+                        <div class="items-in-fridge">
+                            <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
+                            <span class="material-icons material-symbols-rounded" id="expand">
+                                open_in_full
+                            </span> 
+                        </div>
+                        <div class="items-in-fridge">
+                            <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
+                            <span class="material-icons material-symbols-rounded" id="expand">
+                                open_in_full
+                            </span>
+                        </div>
+                        
+                        <!-- <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
                         <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label> -->
             </form>
           </div>

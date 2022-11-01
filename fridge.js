@@ -1,18 +1,17 @@
 function removeCheckedCheckboxes() {
   var checked = document.querySelectorAll(".delete-checkbox:checked");
   checked.forEach((elem) => {
-    elem.parentElement.style.display = "none";
+    elem.parentElement.parentElement.remove();
   })
 }
 
 function addItemToFridge() {
+  // get items from form
   var item = document.getElementById("itemName").value;
-  // alert(item);
   var category = document.getElementById("category").options[document.getElementById("category").selectedIndex].text;
-  // alert(category);
   var quantity = document.getElementById("quantity").value;
-  // alert(quantity);
 
+  // create the input and label elements, and append the input to label
   var label = document.createElement("label");
   var input = document.createElement("input");
   input.setAttribute("type", "checkbox");
@@ -22,13 +21,23 @@ function addItemToFridge() {
   input.setAttribute("id", category);
   
   label.appendChild(input);
-  label.append(item + " (" + quantity + ")");
-  // alert("1");
+  label.append(item);
+  
+  // create the span class for the expand img
+  var span = document.createElement("span");
+  span.setAttribute("class", "material-icons material-symbols-rounded")
+  span.setAttribute("id", "expand");
+  span.append("open_in_full");
 
+  // create the new div that holds the label/input and span, and add abel/input and span to new div
+  var newdiv = document.createElement("div")
+  newdiv.className = "items-in-fridge";
+  newdiv.appendChild(label);
+  newdiv.appendChild(span);
+  
+  // add all new elements to the list of items in fridge
   var element = document.getElementById("fridge-items-form");
-  // alert("2");
-  element.appendChild(label);
-  // alert("3");
+  element.appendChild(newdiv);
 
   // Get the form
   var form = document.getElementById("myForm");
@@ -41,7 +50,7 @@ function addItemToFridge() {
   document.getElementById("myForm").reset();
 }
 
-function modalPopup() {
+function formPopup() {
   // Get the form
   var form = document.getElementById("myForm");
 
@@ -86,6 +95,10 @@ function displayRecipe() {
   })
   }
 }
+
+// function showItemInfo() {
+
+// }
 
 
 
