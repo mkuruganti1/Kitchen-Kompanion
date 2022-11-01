@@ -175,10 +175,10 @@ button:active {
   color: black;
 }
 
-/* #modal {
+#modal {
   display: none;
   z-index: 1;
-  background-color: #f6f0e9;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 316px;
   height: 550px;
   margin: auto;
@@ -193,7 +193,7 @@ button:active {
   border-radius: 30px;
 }
 
-#modal-add {
+.item-info {
   background-color: #f6f0e9;
   padding: 20px;
   color: #583101;
@@ -201,7 +201,10 @@ button:active {
   font-weight: bold;
   font-family: Arial;
   border-radius: 30px;
-} */
+  margin: 15% auto;
+  border: 1px solid #888;
+  width: 70%;
+}
 
 .close {
   color: #aaa;

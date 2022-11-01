@@ -44,50 +44,11 @@
         <input type="text" id="quantity" name="quantity" />
         <br />
         <br />
-
-        <div class="multiselect">
-          <div class="selectBox" onclick="showCheckboxes()">
-            <label for="tags">Tags:</label>
-            <select id="tags" name="tags">
-              <option>Select tags</option>
-            </select>
-            <div class="overSelect"></div>
-          </div>
-          <div id="checkboxes">
-            <ul>
-              <li>
-                <label for="people">
-                  <input type="checkbox" id="people" />People</label
-                >
-
-                <ul>
-                  <label for="paula">
-                    <input type="checkbox" id="paula" />Paula</label
-                  >
-
-                  <label for="matt">
-                    <input type="checkbox" id="matt" />Matt</label
-                  >
-                </ul>
-              </li>
-              <li>
-                <label for="stores">
-                  <input type="checkbox" id="stores" />Stores</label
-                >
-
-                <ul>
-                  <label for="giant">
-                    <input type="checkbox" id="giant" />Giant</label
-                  >
-
-                  <label for="tj">
-                    <input type="checkbox" id="tj" />Trader Joe's</label
-                  >
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <label for="expdate">Expiration Date:</label>
+        <input type="text" id="expdate" name="expdate" />
+        <br />
+        <br />
+        
         <button class="submit" onclick="addItemToFridge()">Submit</button>
       </form>
 
@@ -117,6 +78,16 @@
             taste.
           </li>
         </ol>
+      </div>
+
+      <div id="modal">
+        <div class="item-info">
+            <span class="close" id="close-modal">&times;</span>
+            <p>Item Name: </p>
+            <p>Category: </p>
+            <p>Quantity: </p>
+            <p>Expiration Date: </p>
+        </div>
       </div>
 
       <div id="fridgedisplay" style.display="block">
@@ -159,20 +130,20 @@
                     <form id="fridge-items-form">
                         <div class="items-in-fridge">
                             <label id="fridgelabel"><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
-                            <span class="material-icons material-symbols-rounded" id="expand" onclick="showItemInfo()">
-                                open_in_full
+                            <span class="material-icons material-symbols-outlined" id="expand" onclick="showItemInfo()">
+                                open_in_new
                             </span>
                         </div>
                         <div class="items-in-fridge">
                             <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                            <span class="material-icons material-symbols-rounded" id="expand">
-                                open_in_full
+                            <span class="material-icons material-symbols-outlined" id="expand">
+                                open_in_new
                             </span> 
                         </div>
                         <div class="items-in-fridge">
                             <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                            <span class="material-icons material-symbols-rounded" id="expand">
-                                open_in_full
+                            <span class="material-icons material-symbols-outlined" id="expand">
+                                open_in_new
                             </span>
                         </div>
                         

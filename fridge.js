@@ -10,6 +10,7 @@ function addItemToFridge() {
   var item = document.getElementById("itemName").value;
   var category = document.getElementById("category").options[document.getElementById("category").selectedIndex].text;
   var quantity = document.getElementById("quantity").value;
+  var expirationdate = document.getElementById("expdate").value;
 
   // create the input and label elements, and append the input to label
   var label = document.createElement("label");
@@ -25,9 +26,10 @@ function addItemToFridge() {
   
   // create the span class for the expand img
   var span = document.createElement("span");
-  span.setAttribute("class", "material-icons material-symbols-rounded")
+  span.setAttribute("class", "material-icons material-symbols-outlined")
   span.setAttribute("id", "expand");
-  span.append("open_in_full");
+  span.setAttribute("onclick", "showItemInfo()")
+  span.append("open_in_new");
 
   // create the new div that holds the label/input and span, and add abel/input and span to new div
   var newdiv = document.createElement("div")
@@ -96,9 +98,24 @@ function displayRecipe() {
   }
 }
 
-// function showItemInfo() {
+function showItemInfo() {
+  var modal = document.getElementById("modal");
 
-// }
+  // Get the <span> element that closes the form
+  var span = document.getElementById("close-modal")
+
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+  
+  // When the user clicks on the button, open the form
+  modal.style.display = "block";
+  // fridge.style.display = "none";
+  
+  // When the user clicks on <span> (x), close the form
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+}
 
 
 
