@@ -127,7 +127,7 @@ select {
   overflow-y: auto;
   overflow-x: hidden;
   margin-right: 35px;
-  margin-left: 35px;
+  margin-left: 40px;
 }
 
 .fridgeitems label {
@@ -330,14 +330,14 @@ ul {
   cursor: pointer;
 }
 
-.material-symbols-rounded {
+.material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 #expand {
-  padding-right: 4px;
-  transform: translate(0%, 55%);
-  font-size: 18px;
+  padding-left: 9px;
+  transform: translate(0%, 41%);
+  font-size: 21px;
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */

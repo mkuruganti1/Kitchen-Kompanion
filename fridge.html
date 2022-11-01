@@ -27,6 +27,7 @@
         <br />
         <br />
         <br />
+        <h3>Add a New Item</h3>
         <label for="Item Name">Item Name:</label>
         <input type="text" id="itemName" name="Item Name" />
         <br />
@@ -83,10 +84,10 @@
       <div id="modal">
         <div class="item-info">
             <span class="close" id="close-modal">&times;</span>
-            <p>Item Name: </p>
-            <p>Category: </p>
-            <p>Quantity: </p>
-            <p>Expiration Date: </p>
+            <p id="it-na">Item Name: </p>
+            <p id="cat">Category: </p>
+            <p id="qty">Quantity: </p>
+            <p id="ed">Expiration Date: </p>
         </div>
       </div>
 
@@ -109,7 +110,7 @@
 
                     <div class="additems">
                         <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
-                        <span class="material-icons material-symbols-outlined" id="add-button" onclick="formPopup()">
+                        <span class="material-icons md-32 material-symbols-outlined" id="add-button" onclick="formPopup()">
                             add_circle
                         </span>
                     </div>
@@ -119,7 +120,7 @@
                         <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
                             do_not_disturb_on
                         </span> -->
-                        <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                        <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
                             delete
                         </span>
                     </div>
@@ -128,9 +129,9 @@
 
                 <div class="fridgeitems">
                     <form id="fridge-items-form">
-                        <div class="items-in-fridge">
+                        <!-- <div class="items-in-fridge">
                             <label id="fridgelabel"><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
-                            <span class="material-icons material-symbols-outlined" id="expand" onclick="showItemInfo()">
+                            <span class="material-icons md-32 material-symbols-outlined" id="expand" onclick="showItemInfo()">
                                 open_in_new
                             </span>
                         </div>
@@ -145,7 +146,7 @@
                             <span class="material-icons material-symbols-outlined" id="expand">
                                 open_in_new
                             </span>
-                        </div>
+                        </div> -->
                         
                         <!-- <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
                         <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label> -->
