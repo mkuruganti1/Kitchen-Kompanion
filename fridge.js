@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", getFridgeItems);
 
+var fridge_items = [[]];
+
+var fridge_items = [[]];
+
 function removeCheckedCheckboxes() {
   var checked = document.querySelectorAll(".delete-checkbox:checked");
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
@@ -27,6 +31,12 @@ function addItemToFridge() {
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
   fridgeItems.push([item, category, quantity, expirationdate]);
   localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
+
+  var item_data = [item, category, quantity, expirationdate];
+  fridge_items.push(item_data);
+
+  var item_data = [item, category, quantity, expirationdate];
+  fridge_items.push(item_data);
 
   // create the input and label elements, and append the input to label
   var label = document.createElement("label");
@@ -150,7 +160,7 @@ function displayRecipe() {
   }
 }
 
-function showItemInfo() {
+function showItemInfo(e) {
   var modal = document.getElementById("modal");
 
   // Get the <span> element that closes the form
@@ -168,9 +178,3 @@ function showItemInfo() {
     modal.style.display = "none";
   }
 }
-
-
-
-
-
-
