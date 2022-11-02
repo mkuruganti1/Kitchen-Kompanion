@@ -35,9 +35,9 @@
         <label for="category">Category:</label>
         <select id="category" name="category">
           <option value="dairy">Dairy</option>
-          <option value="frozen">Frozen</option>
+          <option value="protein">Protein</option>
           <option value="produce">Produce</option>
-          <option value="proteins">Proteins</option>
+          <option value="other">Other</option>
         </select>
         <br />
         <br />
@@ -49,7 +49,7 @@
         <input type="text" id="expdate" name="expdate" />
         <br />
         <br />
-        
+
         <button class="submit" onclick="addItemToFridge()">Submit</button>
       </form>
 
@@ -83,11 +83,11 @@
 
       <div id="modal">
         <div class="item-info">
-            <span class="close" id="close-modal">&times;</span>
-            <p id="it-na">Item Name: </p>
-            <p id="cat">Category: </p>
-            <p id="qty">Quantity: </p>
-            <p id="ed">Expiration Date: </p>
+          <span class="close" id="close-modal">&times;</span>
+          <p id="it-na">Item Name:</p>
+          <p id="cat">Category:</p>
+          <p id="qty">Quantity:</p>
+          <p id="ed">Expiration Date:</p>
         </div>
       </div>
 
@@ -99,37 +99,46 @@
         <div class="fridgecontents">
           <div class="grid-container">
             <div class="dropdowns">
-              <select name="category" id="fridgecat">
-                <option value="all-contents">All</option>
-                <option value="dairy">Dairy</option>
-                <option value="produce">Produce</option>
-                <option value="meat">Meat</option>
-                <option value="beverages">Beverages</option>
+              <select
+                name="category"
+                id="fridgecat"
+                onchange="getFridgeItems()"
+              >
+                <option value="All">All</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Produce">Produce</option>
+                <option value="Protein">Protein</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
             <div class="additems">
-                <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
-                <span class="material-icons md-32 material-symbols-outlined" id="add-button" onclick="formPopup()">
-                    add_circle
-                </span>
+              <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
+              <span
+                class="material-icons md-32 material-symbols-outlined"
+                id="add-button"
+                onclick="formPopup()"
+              >
+                add_circle
+              </span>
             </div>
 
             <div class="delitems">
-                <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
-                <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+              <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
+              <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
                     do_not_disturb_on
                 </span> -->
-                <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
-                    delete
-                </span>
+              <span
+                class="material-icons md-32 material-symbols-rounded"
+                onclick="removeCheckedCheckboxes()"
+              >
+                delete
+              </span>
             </div>
-        </div>
-            
+          </div>
 
-        <div class="fridgeitems">
-            <form id="fridge-items-form">       
-            </form>
+          <div class="fridgeitems">
+            <form id="fridge-items-form"></form>
           </div>
 
           <div class="findrecipes">
