@@ -30,18 +30,13 @@
   position:relative;
 }
 
-.tagLabels {
-  position:relative;
-}
+
 
 .list-title{
   position: relative;
   top: 25px;
   text-align: center;
 }
-
-
-
 
 
 #checkboxes {
@@ -70,20 +65,40 @@ input[type="checkbox"] {
   font-family: Arial;
 }
 
+.addButton {
+  margin:0;
+  right: 30px;
+  position:absolute;
+  grid-area: add-item;
+}
 
+
+/* ------------------------------------
+/  Table Styling
+/  ----------------------------------*/
+.list-table{
+  position: relative;
+  top: 20px;
+}
 
 table tr.checked {
   text-decoration: line-through;
   background-color: #ebebeb;
 }
 
-.addButton {
-    margin:0;
-    right: 30px;
-    position:absolute;
-    grid-area: add-item;
+.table{
+  margin:10px;
+  text-align: left;
 }
 
+.giant-tbl{
+  position:relative;
+
+}
+
+.added-checkbox{
+  position:relative;
+}
 
 /* ------------------------------------
 /  Form Styling
@@ -119,42 +134,6 @@ table tr.checked {
   padding-left: 12px;
   color:#8e8e8e;
 }
-
-/*.multiselect {
-  width: 83%; 
-}
-
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
-  width: 100%;
-}
-.innerSelectBox {
-  position: relative;
-  border: 3px solid #896B60;
-  border-radius: 5px;
-  height: 50px;
-  line-height: normal;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  user-select: auto;
-  font-size: 16px;
-  padding: 0 0px;
-  padding-left: 12px;
-  color:#8e8e8e;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-*/
 
 .add-item-submit-button{
   width: 130px;

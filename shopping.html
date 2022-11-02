@@ -57,7 +57,8 @@
             <option value="tj">Trader Joe's</option>
           </select>
           
-          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
+         <!--<button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  --> 
+         <button type="button" class="add-item-submit-button" onclick="addItemToShoppingListTbl()">Submit</button>  
         </div>   
       </form>
       
@@ -65,28 +66,74 @@
         <div class="list-title">
           <h2>Shopping List</h2>
         </div>
-        <div class="list-body">
+        
           <div class="addButton" >
             <span class="material-icons md-32" id="add-button" onclick="formPopup()">
               add_circle
             </span>
           </div>
-        </div>
       
-        <div class="list-table">
-          <table class="table">
+
+        <div class="list-table" role="grid" >
+          <table class= "giant-tbl" id="giant-tbl">
             <thead>
               <tr>
-                <th></th>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Tags</th>
+                <td />
+                  <th scope="col">
+                    Item
+                  </th>
+                  <th scope="col">
+                    Quantity
+                  </th>
               </tr>
             </thead>
+            <tbody class="body">
+              <tr>
+                <td class="added-checkbox">
+                  <input type="checkbox" name="sugar" aria-labelledby="item-1-sugar" />
+                </td>
+                <th data-label="Item">
+                  <div id="item-1-sugar">Sugar</div>
+                </th>
+                <td data-label="Quantity">
+                  1 cup
+                </td>
+              </tr>
+              <tr>
+                <td class="added-checkbox">
+                  <input type="checkbox" name="butter" aria-labelledby="item-2-butter" />
+                </td>
+                <th data-label="Item">
+                  <div id="item-2-butter">Butter</div>
+                </th>
+                <td data-label="Quantity">
+                  ½ cup
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <tbody id="shoppinglist"></tbody>
-        </table>
-      </div>
+          <table id="tj-tbl" >
+            <thead>
+              <tr>
+                <td />
+                  <th scope="col">
+                    Item
+                  </th>
+                  <th scope="col">
+                    Quantity
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+          </table>
+        </div>
+          
+      
+
+
       <div id="nav-placeholder">
         <nav>
           <ul>
