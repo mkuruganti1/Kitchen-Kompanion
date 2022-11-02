@@ -36,7 +36,7 @@
           <br>
           <br>
           
-          <select class="input_box" id="category" name="category">
+          <select class="input_box" id="category" name="category" >
               <option value="default">Select category</option>
               <option value="dairy">Dairy</option>
               <option value="produce">Produce</option>
@@ -51,30 +51,13 @@
           <br>
           <br>
           
-          <form>
-            <div class="multiselect">
-                <div class="selectBox" onclick="showCheckboxes()">
-                    <select class="innerSelectBox" id="tags" name="tags">
-                        <option>Select tag(s)</option>
-                    </select>
-                    <div class="overSelect">
-                    </div>
-                </div>
-                
-                <div id="checkboxes">    
-                  <ul>
-                      <label for="giant">
-                          <input type="checkbox" id="giant"/>Giant
-                      </label>
-                    
-                      <label for="tj">
-                          <input type="checkbox" id="tj"/>Trader Joe's
-                      </label>
-                  </ul>  
-                </div>                  
-            </div>
-            <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
-          </form>  
+          <select class="input_box" id="tags" name="tags">
+            <option value="default">Select tag</option>
+            <option value="giant">Giant</option>
+            <option value="tj">Trader Joe's</option>
+          </select>
+          
+          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
         </div>   
       </form>
       
@@ -83,25 +66,8 @@
           <h2>Shopping List</h2>
         </div>
         <div class="list-body">
-          <!--<div class="row form-inline">
-             <div class="form-group">
-              <label for="itemname">Item Name</label>
-              <input
-                type="text"
-                class="form-control"
-                name="itemname"
-                id="itemname"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="qty">Quantity</label>
-              <input type="text" class="form-control" name="qty" id="qty" />
-            </div>
-          </div>
-        -->
           <div class="addButton" >
-            <span class="material-icons material-symbols-outlined" id="add-button" onclick="formPopup()">
+            <span class="material-icons md-32" id="add-button" onclick="formPopup()">
               add_circle
             </span>
           </div>
@@ -114,6 +80,7 @@
                 <th></th>
                 <th>Item</th>
                 <th>Quantity</th>
+                <th>Tags</th>
               </tr>
             </thead>
 

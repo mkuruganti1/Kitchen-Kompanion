@@ -120,7 +120,7 @@ table tr.checked {
   color:#8e8e8e;
 }
 
-.multiselect {
+/*.multiselect {
   width: 83%; 
 }
 
@@ -154,6 +154,7 @@ table tr.checked {
   top: 0;
   bottom: 0;
 }
+*/
 
 .add-item-submit-button{
   width: 130px;
