@@ -16,14 +16,73 @@
   </head>
   <body>
     <div class="allcontent">
-      <div class="title">
-        <h2>Shopping List</h2>
-      </div>
+      
+      <form
+        class="form-popup"
+        action="javascript:void(0);"
+        id="shoppingForm"
+        style.display="none"
+      >
+        <button  class="close-button" type="button" > <!--onclick="formClose()"> </button>onclick="window.location.href='./shopping.html'"> -->
+          <span id= "close-form" class="close">&times;</span>
+        </button>
+        <div class="title">
+          <h2>Add Item</h2>
+        </div>
+        <div class="formContents">
+        <br>
+        <!--<label for="title">Title:</label> -->
+        <input type="text" id="title" name="title" placeholder="Title:">
+        <br>
+        <br>
+        <!--<label for="category">Category:</label> -->
+        <select id="category" name="category">
+            <option value="default">Select Category</option>
+            <option value="dairy">Dairy</option>
+            <option value="produce">Produce</option>
+            <option value="protein">Protein</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <br>
+        <!-- <label for="quantity">Quantity:</label> -->
+        <input type="text" id="quantity" name="quantity" placeholder="Quantity">
+        <br>
+        <br>
+        <form>
+          <div class="multiselect">
+              <div class="selectBox" onclick="showCheckboxes()">
+                  <!--<label for="tags">Tags:</label>-->
+                  <select id="tags" name="tags">
+                      <option>Select tags</option>
+                  </select>
+                  <div class="overSelect"></div>
+              </div>
 
-      <div class="panel panel-default col-md-12">
-        <div class="panel-body">
-          <div class="row form-inline">
-            <div class="form-group">
+              <div id="checkboxes">    
+                <ul>
+                    <label for="giant">
+                        <input type="checkbox" id="giant"/>Giant
+                    </label>
+                  
+                    <label for="tj">
+                        <input type="checkbox" id="tj"/>Trader Joe's
+                    </label>
+                </ul>  
+              </div>                  
+          </div>
+          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
+        </form>  
+      </div>   
+      </form>
+      
+      <div id="shoppingList" class="shoppingList" style.display="block">
+        <div class="title">
+          <h2>Shopping List</h2>
+        </div>
+        <div class="list-body">
+          <!--<div class="row form-inline">
+             <div class="form-group">
               <label for="itemname">Item Name</label>
               <input
                 type="text"
@@ -38,25 +97,23 @@
               <input type="text" class="form-control" name="qty" id="qty" />
             </div>
           </div>
-
-          <div class="form-inline" style="float: right">
-            <!--<button onclick="clickedon()" class="btn btn-primary" id=gobutt>Add Item</button> -->
-            <button onclick="window.location.href='./add_item.html'">
-              Add Item
-            </button>
+        -->
+          <div class="addButton" >
+            <span class="material-icons material-symbols-outlined" id="add-button" onclick="formPopup()">
+              add_circle
+            </span>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Item</th>
-              <th>Quantity</th>
-            </tr>
-          </thead>
+      
+        <div class="list-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
 
           <tbody id="shoppinglist"></tbody>
         </table>
