@@ -34,21 +34,32 @@
   position:relative;
 }
 
-h1 {
-  color: #583101;
-  font-size: 15;
-  font: tag;
-  font-family: Arial;
+.list-title{
+  position: relative;
+  top: 25px;
+  text-align: center;
 }
 
-h3 {
-  color: #000000;
-  font-size: 13;
-  font-style: normal;
-  font-family: Arial;
-  line-height: 80%;
-  transform:translate(5%, 50%);
+
+
+
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
 }
+
+#checkboxes label {
+  display: block;
+  left:0px;
+}
+
+.close {
+  margin-left: 270px;
+  margin-top: 10px;
+  color: #896B60;
+}
+
 
 input[type="checkbox"] {
   background-color: #fff;
@@ -59,76 +70,115 @@ input[type="checkbox"] {
   font-family: Arial;
 }
 
-#dairy ul {
-    margin: 0;
-    list-style: none;
-    padding-left: 10px;
-    font-family: Arial;
-}
 
-.dairy label {
-  width: 12em;
-  float: right;
-  font-size: 18px;
-}
-
-.dairy {
-  display: inline-block;
-  transform: translate(-15%, 0%);
-  text-align: left;
-  height: 255px;
-  overflow-y: auto;
-}
-
-#produce ul {
-  margin: 0;
-  list-style: none;
-  padding-left: 10px;
-  font-family: Arial;
-}
-
-.produce label {
-width: 12em;
-float: right;
-font-size: 18px;
-}
-
-.produce {
-display: inline-block;
-transform: translate(-15%, 0%);
-text-align: left;
-height: 255px;
-overflow-y: auto;
-}
-
-#frozen ul {
-  margin: 0;
-  list-style: none;
-  padding-left: 10px;
-  font-family: Arial;
-}
-
-.frozen label {
-width: 12em;
-float: right;
-font-size: 18px;
-}
-
-.frozen {
-display: inline-block;
-transform: translate(-15%, 0%);
-text-align: left;
-height: 255px;
-overflow-y: auto;
-}
-
-.title {
-  position: relative;
-  top: 15px;
-  text-align: center;
-}
 
 table tr.checked {
   text-decoration: line-through;
   background-color: #ebebeb;
 }
+
+.addButton {
+    margin:0;
+    right: 30px;
+    position:absolute;
+    grid-area: add-item;
+}
+
+
+/* ------------------------------------
+/  Form Styling
+/  ----------------------------------*/
+.form-popup {
+  display: none;
+}
+
+.form-title {
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  left:30%;
+}
+
+.formContents{
+  position:relative;
+  left:20px;
+  top:30px;
+}
+
+.input_box {
+  border: 3px solid #896B60;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  display: block;
+  width: 83%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+  color:#8e8e8e;
+}
+
+/*.multiselect {
+  width: 83%; 
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+.innerSelectBox {
+  position: relative;
+  border: 3px solid #896B60;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 0px;
+  padding-left: 12px;
+  color:#8e8e8e;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+*/
+
+.add-item-submit-button{
+  width: 130px;
+  height: 40px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 3px solid #896B60;
+  background: #896B60;
+  color: #F5F2EA;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 1.0s;
+  left: 20%;
+  position: relative;
+  top: 20px;
+}
+
+ul {
+  list-style: none;
+  left:0px;
+}
+
+
+
+

@@ -16,47 +16,73 @@
   </head>
   <body>
     <div class="allcontent">
-      <div class="title">
-        <h2>Shopping List</h2>
-      </div>
-
-      <div class="panel panel-default col-md-12">
-        <div class="panel-body">
-          <div class="row form-inline">
-            <div class="form-group">
-              <label for="itemname">Item Name</label>
-              <input
-                type="text"
-                class="form-control"
-                name="itemname"
-                id="itemname"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="qty">Quantity</label>
-              <input type="text" class="form-control" name="qty" id="qty" />
-            </div>
-          </div>
-
-          <div class="form-inline" style="float: right">
-            <!--<button onclick="clickedon()" class="btn btn-primary" id=gobutt>Add Item</button> -->
-            <button onclick="window.location.href='./add_item.html'">
-              Add Item
-            </button>
+      
+      <form
+        class="form-popup"
+        action="javascript:void(0);"
+        id="shoppingForm"
+        style.display="none"
+      >
+        <span id="close-form" class="material-icons md-32 close">close</span>
+        
+        <div class="form-title">
+          <h2>Add Item</h2>
+        </div>
+        
+        <div class="formContents">
+          <br>
+          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+          
+          <br>
+          <br>
+          
+          <select class="input_box" id="category" name="category" >
+              <option value="default">Select category</option>
+              <option value="dairy">Dairy</option>
+              <option value="produce">Produce</option>
+              <option value="protein">Protein</option>
+              <option value="other">Other</option>
+          </select>
+          
+          <br>
+          <br>
+          
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <br>
+          <br>
+          
+          <select class="input_box" id="tags" name="tags">
+            <option value="default">Select tag</option>
+            <option value="giant">Giant</option>
+            <option value="tj">Trader Joe's</option>
+          </select>
+          
+          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
+        </div>   
+      </form>
+      
+      <div id="shoppingList" class="shoppingList" style.display="block">
+        <div class="list-title">
+          <h2>Shopping List</h2>
+        </div>
+        <div class="list-body">
+          <div class="addButton" >
+            <span class="material-icons md-32" id="add-button" onclick="formPopup()">
+              add_circle
+            </span>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Item</th>
-              <th>Quantity</th>
-            </tr>
-          </thead>
+      
+        <div class="list-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Tags</th>
+              </tr>
+            </thead>
 
           <tbody id="shoppinglist"></tbody>
         </table>

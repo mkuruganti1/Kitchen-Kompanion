@@ -385,11 +385,10 @@ ul {
   font-weight: bold;
 }
 
-.edit-buttons {
+/* .edit-buttons {
   /* float: left; */
 
-  /* width: 75px; */
-}
+/* width: 75px; */
 
 .edit-buttons button {
   width: 90px;

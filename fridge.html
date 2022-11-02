@@ -119,12 +119,16 @@
         <div class="fridgecontents">
           <div class="grid-container">
             <div class="dropdowns">
-              <select name="category" id="fridgecat">
-                <option value="all-contents">All</option>
-                <option value="dairy">Dairy</option>
-                <option value="produce">Produce</option>
-                <option value="meat">Meat</option>
-                <option value="beverages">Beverages</option>
+              <select
+                name="category"
+                id="fridgecat"
+                onchange="getFridgeItems()"
+              >
+                <option value="All">All</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Produce">Produce</option>
+                <option value="Protein">Protein</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
@@ -139,12 +143,10 @@
                     delete
                 </span>
             </div>
-        </div>
-            
+          </div>
 
-        <div class="fridgeitems">
-            <form id="fridge-items-form">       
-            </form>
+          <div class="fridgeitems">
+            <form id="fridge-items-form"></form>
           </div>
 
 
