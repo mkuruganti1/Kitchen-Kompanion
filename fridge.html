@@ -16,17 +16,14 @@
     <div class="allcontent">
       <!-- form to add item -->
 
-      <form
+      <!-- <form
         class="form-popup"
         action="javascript:void(0);"
         id="myForm"
         style.display="none"
       >
         <span class="close" id="close-form">&times;</span>
-        <!-- <span class="back" style="font-size: 50px;">&#8678;</span>  -->
-        <!-- <br />
-        <br />
-        <br /> -->
+       
         <div class="formContent">
             <h3>Add a New Item</h3>
             <label for="Item Name">Item Name:</label>
@@ -52,6 +49,47 @@
             <br />
             
             <button class="submit" onclick="addItemToFridge()">Submit</button>
+        </div>
+      </form> -->
+
+      <form class="form-popup" action="javascript:void(0);" id="myForm" >
+        <span id="close-form" class="material-icons md-32 close">close</span>
+      
+        <div class="form-title">
+          <h2>Add Item</h2>
+        </div>
+      
+        <div class="formContents">
+          <br>
+          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+      
+          <br>
+          <br>
+      
+          <select class="input_box" id="category" name="category">
+            <option value="default">Select category</option>
+            <option value="dairy">Dairy</option>
+            <option value="produce">Produce</option>
+            <option value="protein">Protein</option>
+            <option value="other">Other</option>
+          </select>
+      
+          <br>
+          <br>
+      
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <br>
+          <br>
+
+          <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date">
+      
+          <!-- <select class="input_box" id="tags" name="tags">
+            <option value="default">Select tag</option>
+            <option value="giant">Giant</option>
+            <option value="tj">Trader Joe's</option>
+          </select> -->
+      
+          <button type="button" class="add-item-submit-button" onclick="addItemToFridge()">Submit</button>
         </div>
       </form>
     

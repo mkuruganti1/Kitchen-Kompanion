@@ -19,7 +19,7 @@ function removeCheckedCheckboxes() {
 
 function addItemToFridge() {
   // get items from form
-  var item = document.getElementById("itemName").value;
+  var item = document.getElementById("title").value;
   var category =
     document.getElementById("category").options[
       document.getElementById("category").selectedIndex
