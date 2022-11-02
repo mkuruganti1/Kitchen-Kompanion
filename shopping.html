@@ -23,61 +23,63 @@
         id="shoppingForm"
         style.display="none"
       >
-        <button  class="close-button" type="button" > <!--onclick="formClose()"> </button>onclick="window.location.href='./shopping.html'"> -->
-          <span id= "close-form" class="close">&times;</span>
-        </button>
-        <div class="title">
+        <span id="close-form" class="material-icons md-32 close">close</span>
+        
+        <div class="form-title">
           <h2>Add Item</h2>
         </div>
+        
         <div class="formContents">
-        <br>
-        <!--<label for="title">Title:</label> -->
-        <input type="text" id="title" name="title" placeholder="Title:">
-        <br>
-        <br>
-        <!--<label for="category">Category:</label> -->
-        <select id="category" name="category">
-            <option value="default">Select Category</option>
-            <option value="dairy">Dairy</option>
-            <option value="produce">Produce</option>
-            <option value="protein">Protein</option>
-            <option value="other">Other</option>
-        </select>
-        <br>
-        <br>
-        <!-- <label for="quantity">Quantity:</label> -->
-        <input type="text" id="quantity" name="quantity" placeholder="Quantity">
-        <br>
-        <br>
-        <form>
-          <div class="multiselect">
-              <div class="selectBox" onclick="showCheckboxes()">
-                  <!--<label for="tags">Tags:</label>-->
-                  <select id="tags" name="tags">
-                      <option>Select tags</option>
-                  </select>
-                  <div class="overSelect"></div>
-              </div>
-
-              <div id="checkboxes">    
-                <ul>
-                    <label for="giant">
-                        <input type="checkbox" id="giant"/>Giant
-                    </label>
-                  
-                    <label for="tj">
-                        <input type="checkbox" id="tj"/>Trader Joe's
-                    </label>
-                </ul>  
-              </div>                  
-          </div>
-          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
-        </form>  
-      </div>   
+          <br>
+          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+          
+          <br>
+          <br>
+          
+          <select class="input_box" id="category" name="category">
+              <option value="default">Select category</option>
+              <option value="dairy">Dairy</option>
+              <option value="produce">Produce</option>
+              <option value="protein">Protein</option>
+              <option value="other">Other</option>
+          </select>
+          
+          <br>
+          <br>
+          
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <br>
+          <br>
+          
+          <form>
+            <div class="multiselect">
+                <div class="selectBox" onclick="showCheckboxes()">
+                    <select class="innerSelectBox" id="tags" name="tags">
+                        <option>Select tag(s)</option>
+                    </select>
+                    <div class="overSelect">
+                    </div>
+                </div>
+                
+                <div id="checkboxes">    
+                  <ul>
+                      <label for="giant">
+                          <input type="checkbox" id="giant"/>Giant
+                      </label>
+                    
+                      <label for="tj">
+                          <input type="checkbox" id="tj"/>Trader Joe's
+                      </label>
+                  </ul>  
+                </div>                  
+            </div>
+            <button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  
+          </form>  
+        </div>   
       </form>
       
       <div id="shoppingList" class="shoppingList" style.display="block">
-        <div class="title">
+        <div class="list-title">
           <h2>Shopping List</h2>
         </div>
         <div class="list-body">
