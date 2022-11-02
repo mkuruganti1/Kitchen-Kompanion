@@ -134,10 +134,23 @@ function displayRecipe() {
 
   // Get the rest of the fridge content
   var fridge = document.getElementById("fridgedisplay");
-  
-  // When the user clicks on the button, show the recipe
-  recipe.style.display = "block";
-  fridge.style.display = "none";
+
+  var checked = document.querySelectorAll(".delete-checkbox:checked");
+  var elem = [];
+  for (let i = 0; i < checked.length; i++) {
+    elem.push(String(checked[i].value.toLowerCase()));
+  }
+
+  const items = ["tomato", "mozzarella", "basil"];
+  const allExist = items.every(items => {
+    return elem.includes(items);
+  });
+
+  if (allExist) {
+    // When the user clicks on the button, show the recipe
+    recipe.style.display = "block";
+    fridge.style.display = "none";
+  }
   
   // When the user clicks on <span> (x), close the recipe
   span.onclick = function() {
@@ -172,7 +185,6 @@ function showItemInfo(e) {
   // When the user clicks on the button, open the form
   modal.style.display = "block";
   
-  
   // When the user clicks on <span> (x), close the form
   span.onclick = function() {
     document.getElementById("it-na").innerHTML = "Item Name: ";
@@ -181,4 +193,8 @@ function showItemInfo(e) {
     document.getElementById("ed").innerHTML = "Expiration Date: ";
     modal.style.display = "none";
   }
+}
+
+function filterItems() {
+
 }
