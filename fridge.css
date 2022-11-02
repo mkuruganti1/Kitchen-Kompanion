@@ -222,6 +222,12 @@ button {
 }
 
 .close {
+  margin-left: 270px;
+  margin-top: 10px;
+  color: #896b60;
+}
+
+/* .close {
   color: #aaa;
   float: right;
   font-size: 30px;
@@ -233,7 +239,7 @@ button {
   color: black;
   text-decoration: none;
   cursor: pointer;
-}
+} */
 
 input {
   font: Arial;
@@ -329,29 +335,39 @@ select {
   outline-width: thin; */
 }
 
-.form-popup .close {
+/* .form-popup .close {
   padding-right: 20px;
-}
+} */
 
 .recipe {
   display: none;
   height: 490px;
   /* height: 90%; */
-  /* width: 95%; */
+  width: 93%;
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
   margin-left: 20px;
-  /* margin-right: 5px; */
+  /* margin-right: px; */
   /* overflow-y: auto; */
 }
 
 .recipecontent {
   /* margin-top: 20px; */
-  transform: translateY(45px);
+  transform: translateY(13px);
   overflow-y: auto;
   height: 87%;
+  width: 99%;
   /* padding-top: 30px; */
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+}
+
+.recipe .close {
+  color: #896b60;
+  margin-left: 250px;
+  margin-top: 10px;
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
@@ -419,8 +435,8 @@ ul {
 
 .expand {
   padding-left: 7px;
-  transform: translate(0%, 30%);
-  font-size: 21px;
+  transform: translate(35%, 30%);
+  font-size: 16px;
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
@@ -469,7 +485,13 @@ ul {
   display: block;
 }
 
-/* #add-btn button {
-  all: unset;
-  cursor: pointer;
-} */
+.item-info .close {
+  margin-left: 200px;
+  transform: translateY(-20px);
+  /* margin-top: 50px; */
+  color: #896b60;
+}
+
+.item-info h2 {
+  transform: translateY(-30px);
+}

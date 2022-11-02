@@ -16,42 +16,6 @@
     <div class="allcontent">
       <!-- form to add item -->
 
-      <!-- <form
-        class="form-popup"
-        action="javascript:void(0);"
-        id="myForm"
-        style.display="none"
-      >
-        <span class="close" id="close-form">&times;</span>
-       
-        <div class="formContent">
-            <h3>Add a New Item</h3>
-            <label for="Item Name">Item Name:</label>
-            <input type="text" id="itemName" name="Item Name" />
-            <br />
-            <br />
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-                <option value="dairy">Dairy</option>
-                <option value="frozen">Frozen</option>
-                <option value="produce">Produce</option>
-                <option value="proteins">Proteins</option>
-            </select>
-            <br />
-            <br />
-            <label for="quantity">Quantity:</label>
-            <input type="text" id="quantity" name="quantity" />
-            <br />
-            <br />
-            <label for="expdate">Expiration Date:</label>
-            <input type="text" id="expdate" name="expdate" />
-            <br />
-            <br />
-            
-            <button class="submit" onclick="addItemToFridge()">Submit</button>
-        </div>
-      </form> -->
-
       <form class="form-popup" action="javascript:void(0);" id="myForm" >
         <span id="close-form" class="material-icons md-32 close">close</span>
       
@@ -95,7 +59,7 @@
     
 
       <div class="recipe" id="viewrecipe" style.display="none">
-        <span class="close" id="close-recipe">&times;</span>
+        <span class="material-icons md-32 close" id="close-recipe">close</span>
         <div class="recipecontent">
             <h2>Caprese Salad</h2>
             <!-- <hr /> -->
@@ -127,7 +91,8 @@
 
       <div id="modal">
         <div class="item-info">
-            <span class="close" id="close-modal">&times;</span>
+            <span class="material-icons md-32 close" id="close-modal">close</span>
+            <h2>Item Information</h2>
             
             <p class="iteminfo" id="it-na" style.display="block">Item Name: </p>
             <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/>
