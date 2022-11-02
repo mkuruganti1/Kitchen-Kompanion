@@ -215,10 +215,30 @@ button {
   font-weight: bold;
   font-family: Arial;
   border-radius: 30px;
-  margin: 15% auto;
+  margin: 35% auto;
   border: 1px solid #888;
   width: 70%;
-  height: 65%;
+  height: 40%;
+  outline-color: black;
+  outline-style: solid;
+  outline-width: thin;
+  /* height: 65%; */
+}
+
+.item-container {
+  transform: translateY(-40px);
+}
+
+.edit-buttons {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  transform: translateY(-50px);
+}
+
+.edit-buttons button {
+  width: 90px;
+  margin: 0 auto;
 }
 
 .close {
@@ -459,13 +479,6 @@ ul {
 /* .edit-buttons {
   /* float: left; */
 
-/* width: 75px; */
-
-.edit-buttons button {
-  width: 90px;
-  margin: 0 auto;
-}
-
 .text_box {
   border: 3px solid #896b60;
   border-radius: 5px;
@@ -492,6 +505,6 @@ ul {
   color: #896b60;
 }
 
-.item-info h2 {
+/* .item-info h2 {
   transform: translateY(-30px);
-}
+} */

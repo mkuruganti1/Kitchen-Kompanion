@@ -47,12 +47,6 @@
 
           <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date">
       
-          <!-- <select class="input_box" id="tags" name="tags">
-            <option value="default">Select tag</option>
-            <option value="giant">Giant</option>
-            <option value="tj">Trader Joe's</option>
-          </select> -->
-      
           <button type="button" class="add-item-submit-button" onclick="addItemToFridge()">Submit</button>
         </div>
       </form>
@@ -91,8 +85,10 @@
 
       <div id="modal">
         <div class="item-info">
-            <span class="material-icons md-32 close" id="close-modal">close</span>
-            <h2>Item Information</h2>
+          <span class="material-icons md-32 close" id="close-modal">close</span>
+          <div class ="item-container">
+            
+            <!-- <h2>Item Information</h2> -->
             
             <p class="iteminfo" id="it-na" style.display="block">Item Name: </p>
             <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/>
@@ -107,10 +103,11 @@
             <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" />
             <br>
             <br>
-            <div class="edit-buttons">
-                <button id="edit" onclick="editItem()">Edit</button>
-                <button id="save" onclick="saveItem()">Save</button>
             </div>
+          <div class="edit-buttons">
+              <button id="edit" onclick="editItem()">Edit</button>
+              <button id="save" onclick="saveItem()">Save</button>
+          </div>
         </div>
       </div>
 
