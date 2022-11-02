@@ -173,6 +173,47 @@ function showItemInfo(e) {
   }
 }
 
-function filterItems() {
+function editItem() {
+  var editItems = document.getElementsByClassName("text_box");
+  var inputIDs = ["it-na-edit", "cat-edit", "qty-edit", "ed-edit"];
+  var inputItems = document.getElementsByClassName("iteminfo");
+  var arr = []
 
+  for (let i = 0; i < inputItems.length; i++) {
+    var val = String(inputItems[i].innerHTML).split(": ");
+    
+    if (val.length == 1) {
+      arr.push("");
+    } else {
+      arr.push(val[1]);
+    }
+
+    inputItems[i].style.display="none";
+  }
+
+  for (let i = 0; i < editItems.length; i++) {
+    if (arr[i].length) {
+      document.getElementById(inputIDs[i]).value = arr[i];
+    }
+
+    editItems[i].style.display="block";
+  }
+}
+
+function saveItem() {
+  document.getElementById("it-na").innerHTML = "Item Name: ";
+  document.getElementById("cat").innerHTML = "Category: ";
+  document.getElementById("qty").innerHTML = "Quantity: ";
+  document.getElementById("ed").innerHTML = "Expiration Date: "
+
+  // var inputIDs = ["it-na", "cat", "qty", "ed"];
+  var editItems = document.getElementsByClassName("text_box");
+  var inputItems = document.getElementsByClassName("iteminfo");
+  var inputIDs = ["it-na", "cat", "qty", "ed"];
+
+  for (let i = 0; i < inputItems.length; i++) {
+    document.getElementById(inputIDs[i]).innerHTML += editItems[i].value;
+    editItems[i].style.display = "none";
+    inputItems[i].style.display = "block";
+  }
 }
