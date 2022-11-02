@@ -59,6 +59,96 @@ input[type="checkbox"] {
   font-family: Arial;
 }
 
+.title {
+  position: relative;
+  top: 15px;
+  text-align: center;
+}
+
+table tr.checked {
+  text-decoration: line-through;
+  background-color: #ebebeb;
+}
+
+.addButton {
+    margin:0;
+    right: 30px;
+    position:absolute;
+    grid-area: add-item;
+}
+
+.form-popup {
+  display: none;
+}
+
+.formContents{
+  position:relative;
+  left:20px;
+}
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+  left:0px;
+}
+
+ul {
+  list-style: none;
+  left:0px;
+}
+
+.close-button{
+  background-color: #5e503f;
+  color: #fcf4f0;
+  border:none;
+  padding: 1px;
+  text-align:center;
+  display:inline-block;
+  justify-content: center;
+  left: 82%;
+  margin:15px;
+  position: absolute;
+}
+.close{
+    font-size: 35px;
+}
+.add-item-submit-button{
+  background-color: #5e503f;
+  color: #fcf4f0;
+  border:none;
+  padding: 5px;
+  text-align:center;
+  display:inline-block;
+  justify-content: center;
+  left: 30%;
+  margin:10px;
+  position: absolute;
+}
+/*
 #dairy ul {
     margin: 0;
     list-style: none;
@@ -121,14 +211,4 @@ text-align: left;
 height: 255px;
 overflow-y: auto;
 }
-
-.title {
-  position: relative;
-  top: 15px;
-  text-align: center;
-}
-
-table tr.checked {
-  text-decoration: line-through;
-  background-color: #ebebeb;
-}
+*/
