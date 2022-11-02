@@ -210,10 +210,27 @@ function saveItem() {
   var editItems = document.getElementsByClassName("text_box");
   var inputItems = document.getElementsByClassName("iteminfo");
   var inputIDs = ["it-na", "cat", "qty", "ed"];
+  var itemInfo = [];
 
   for (let i = 0; i < inputItems.length; i++) {
+    itemInfo.push(editItems[i].value);
     document.getElementById(inputIDs[i]).innerHTML += editItems[i].value;
     editItems[i].style.display = "none";
     inputItems[i].style.display = "block";
   }
+
+  var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
+
+  let item = itemInfo[0];
+  for (let i = 0; i < fridgeItems.length; i++) {
+    if (fridgeItems[i][0] == item) {
+      fridgeItems.splice(i, 1);
+    }
+  }
+  localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
+
+  fridgeItems.push([itemInfo[0], itemInfo[1], itemInfo[2], itemInfo[3]]);
+  localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
+
+  getFridgeItems();
 }
