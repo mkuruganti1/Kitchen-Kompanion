@@ -1,5 +1,5 @@
 h2 {
-  color: #583101;
+  color: #4a332d;
   font-size: 28px;
   font: bold;
   font-family: Arial;
@@ -157,7 +157,7 @@ input[type="checkbox"] {
 }
 
 .findrecipes button {
-  background-color: #5e503f;
+  background-color: #896b60;
   color: #fcf4f0;
   width: 150px;
   height: 30px;
@@ -171,7 +171,7 @@ button {
 }
 
 button:active {
-  background-color: #f6f0e9;
+  background-color: #f5f2ea;
   color: black;
 }
 
@@ -194,9 +194,9 @@ button:active {
 }
 
 .item-info {
-  background-color: #f6f0e9;
+  background-color: #f5f2ea;
   padding: 20px;
-  color: #583101;
+  color: #4a332d;
   font-size: 16px;
   font-weight: bold;
   font-family: Arial;
@@ -234,7 +234,7 @@ select {
 }
 
 .add-item-form-button button {
-  background-color: #5e503f;
+  background-color: #896b60;
   color: #fcf4f0;
   width: 150px;
   height: 30px;
@@ -263,7 +263,7 @@ select {
 .recipe h3 {
   padding-top: 40px;
   margin: 2px;
-  color: #583101;
+  color: #4a332d;
   font-size: 24px;
   font: Arial;
   /* padding-bottom: 0px; */
@@ -328,6 +328,7 @@ ul {
   /* Support for IE. */
   font-feature-settings: "liga";
   cursor: pointer;
+  color: #896b60;
 }
 
 .material-symbols-outlined {
