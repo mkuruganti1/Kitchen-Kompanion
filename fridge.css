@@ -355,6 +355,15 @@ select {
   outline-width: thin; */
 }
 
+.form-edit-buttons {
+  transform: translateY(30px);
+}
+
+.form-edit-buttons button {
+  width: 90px;
+  margin: 0 auto;
+}
+
 /* .form-popup .close {
   padding-right: 20px;
 } */

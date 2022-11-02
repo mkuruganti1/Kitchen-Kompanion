@@ -163,10 +163,10 @@ function showItemInfo(e) {
 
   // When the user clicks on the button, open the form
   var inputItems = document.getElementsByClassName("iteminfo");
-  var editItems = document.getElementsByClassName("text_box");
+  // var editItems = document.getElementsByClassName("text_box");
   for (let i = 0; i < inputItems.length; i++) {
     inputItems[i].style.display = "block";
-    editItems[i].style.display = "none";
+    // editItems[i].style.display = "none";
   }
 
   modal.style.display = "block";
@@ -183,7 +183,21 @@ function showItemInfo(e) {
 }
 
 function editItem() {
-  var editItems = document.getElementsByClassName("text_box");
+  // Get the <span> element that closes the recipe page
+  var span = document.getElementById("close-edit-popup");
+
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+  var modal = document.getElementById("modal");
+
+  var editItem = document.getElementById("editpopup");
+  editItem.style.display = "block";
+  modal.style.display = "none";
+  fridge.style.display = "none";
+  
+
+  var editItems = document.getElementsByClassName("edit_input");
+  console.log(editItems);
   var inputIDs = ["it-na-edit", "cat-edit", "qty-edit", "ed-edit"];
   var inputItems = document.getElementsByClassName("iteminfo");
   var arr = []
@@ -197,15 +211,24 @@ function editItem() {
       arr.push(val[1]);
     }
 
-    inputItems[i].style.display="none";
+    // inputItems[i].style.display="none";
   }
+
+  // console.log(arr);
 
   for (let i = 0; i < editItems.length; i++) {
     if (arr[i].length) {
       document.getElementById(inputIDs[i]).value = arr[i];
     }
 
-    editItems[i].style.display="block";
+    // editItems[i].style.display="block";
+  }
+
+  span.onclick = function () {
+    editItem.style.display = "none";
+    modal.style.display = "block";
+    fridge.style.display = "block";
+  
   }
 }
 
@@ -216,21 +239,44 @@ function saveItem() {
   document.getElementById("ed").innerHTML = "Expiration Date: "
 
   // var inputIDs = ["it-na", "cat", "qty", "ed"];
-  var editItems = document.getElementsByClassName("text_box");
-  var inputItems = document.getElementsByClassName("iteminfo");
-  var inputIDs = ["it-na", "cat", "qty", "ed"];
-  var itemInfo = [];
+  // var editItems = document.getElementsByClassName("input_box");
+  // var inputItems = document.getElementsByClassName("iteminfo");
+  // var inputIDs = [, "cat", "qty", "ed"];
+  // var itemInfo = [];
 
-  for (let i = 0; i < inputItems.length; i++) {
-    itemInfo.push(editItems[i].value);
-    document.getElementById(inputIDs[i]).innerHTML += editItems[i].value;
-    editItems[i].style.display = "none";
-    inputItems[i].style.display = "block";
-  }
+  // var span = document.getElementById("close-edit-popup");
+
+  // Get the rest of the fridge content
+  var fridge = document.getElementById("fridgedisplay");
+  var modal = document.getElementById("modal");
+  var editItem = document.getElementById("editpopup");
+  // editItem.style.display = "block";
+  // modal.style.display = "none";
+  // fridge.style.display = "none";
+
+
+  var item_name = document.getElementById("it-na-edit").value;
+  var category = document.getElementById("cat-edit").options[
+      document.getElementById("cat-edit").selectedIndex
+    ].text;
+  var qty = document.getElementById("qty-edit").value;
+  var ed = document.getElementById("ed-edit").value;
+
+  document.getElementById("it-na").innerHTML += item_name;
+  document.getElementById("cat").innerHTML += category;
+  document.getElementById("qty").innerHTML += qty;
+  document.getElementById("ed").innerHTML += ed;
+
+  // for (let i = 0; i < inputItems.length; i++) {
+  //   itemInfo.push(editItems[i].value);
+  //   document.getElementById(inputIDs[i]).innerHTML += editItems[i].value;
+  //   // editItems[i].style.display = "none";
+  //   // inputItems[i].style.display = "block";
+  // }
 
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
 
-  let item = itemInfo[0];
+  let item = item_name;
   for (let i = 0; i < fridgeItems.length; i++) {
     if (fridgeItems[i][0] == item) {
       fridgeItems.splice(i, 1);
@@ -238,8 +284,12 @@ function saveItem() {
   }
   localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
-  fridgeItems.push([itemInfo[0], itemInfo[1], itemInfo[2], itemInfo[3]]);
+  fridgeItems.push([item_name, category, qty, ed]);
   localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
   getFridgeItems();
+
+  editItem.style.display = "none";
+  modal.style.display = "block";
+  fridge.style.display = "block";
 }

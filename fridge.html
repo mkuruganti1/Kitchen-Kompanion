@@ -91,16 +91,16 @@
             <!-- <h2>Item Information</h2> -->
             
             <p class="iteminfo" id="it-na" style.display="block">Item Name: </p>
-            <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/>
+            <!-- <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/> -->
             
             <p class="iteminfo" id="cat" style.display="block">Category: </p>
-            <input type="text" name="name" id="cat-edit" placeholder="Category" class="text_box" style.display="none" />
+            <!-- <input type="text" name="name" id="cat-edit" placeholder="Category" class="text_box" style.display="none" /> -->
             
             <p class="iteminfo" id="qty" style.display="block">Quantity: </p>
-            <input type="text" name="name" id="qty-edit" placeholder="Quantity" class="text_box" style.display="none" />
+            <!-- <input type="text" name="name" id="qty-edit" placeholder="Quantity" class="text_box" style.display="none" /> -->
             
             <p class="iteminfo" id="ed" style.display="block">Expiration Date: </p>
-            <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" />
+            <!-- <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" /> -->
             <br>
             <br>
             </div>
@@ -110,6 +110,44 @@
           </div>
         </div>
       </div>
+
+      <form class="form-popup" action="javascript:void(0);" id="editpopup">
+        <span id="close-edit-popup" class="material-icons md-32 close">close</span>
+      
+        <div class="form-title">
+          <h2>Edit Item</h2>
+        </div>
+      
+        <div class="formContents">
+          <br>
+          <input class="input_box edit_input" type="text" id="it-na-edit" name="name" placeholder="Name">
+      
+          <br>
+          <br>
+      
+          <select class="input_box edit_input" id="cat-edit" name="category">
+            <option value="default">Select category</option>
+            <option value="dairy">Dairy</option>
+            <option value="Produce">Produce</option>
+            <option value="protein">Protein</option>
+            <option value="other">Other</option>
+          </select>
+      
+          <br>
+          <br>
+      
+          <input class="input_box edit_input" type="text" id="qty-edit" name="quantity" placeholder="Quantity">
+          <br>
+          <br>
+      
+          <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date">
+      
+          <div class="edit-buttons form-edit-buttons">
+            <button id="edit" onclick="editItem()">Edit</button>
+            <button id="save" onclick="saveItem()">Save</button>
+          </div>
+        </div>
+      </form>
 
       <div id="fridgedisplay" style.display="block">
         <div class="topbanner">
