@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-  border: 2px solid #5e503f;
+  border: 2px solid #4A332D;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -41,6 +41,7 @@
 }
 .todo-item {
   padding: 0rem 0.5rem;
+  color:#4A332D;
 }
 
 .fall {
@@ -55,5 +56,20 @@
 
 .title {
   text-align: center;
-  margin-top: 50px;
+}
+
+.close {
+  margin-left: 270px;
+  margin-top: 10px;
+  color: #896B60;
+}
+
+#description{
+  color: #896B60;
+  font-size: 16px;
+  margin: 0px 30px;
+}
+
+strong{
+  color:#4A332D;
 }

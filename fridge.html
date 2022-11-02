@@ -27,6 +27,7 @@
         <br />
         <br />
         <br />
+        <h3>Add a New Item</h3>
         <label for="Item Name">Item Name:</label>
         <input type="text" id="itemName" name="Item Name" />
         <br />
@@ -83,10 +84,10 @@
       <div id="modal">
         <div class="item-info">
             <span class="close" id="close-modal">&times;</span>
-            <p>Item Name: </p>
-            <p>Category: </p>
-            <p>Quantity: </p>
-            <p>Expiration Date: </p>
+            <p id="it-na">Item Name: </p>
+            <p id="cat">Category: </p>
+            <p id="qty">Quantity: </p>
+            <p id="ed">Expiration Date: </p>
         </div>
       </div>
 
@@ -107,48 +108,27 @@
               </select>
             </div>
 
-                    <div class="additems">
-                        <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
-                        <span class="material-icons material-symbols-outlined" id="add-button" onclick="formPopup()">
-                            add_circle
-                        </span>
-                    </div>
+            <div class="additems">
+                <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
+                <span class="material-icons md-32 material-symbols-outlined" id="add-button" onclick="formPopup()">
+                    add_circle
+                </span>
+            </div>
 
-                    <div class="delitems">
-                        <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
-                        <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
-                            do_not_disturb_on
-                        </span> -->
-                        <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
-                            delete
-                        </span>
-                    </div>
-                </div>
+            <div class="delitems">
+                <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
+                <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                    do_not_disturb_on
+                </span> -->
+                <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                    delete
+                </span>
+            </div>
+        </div>
             
 
-                <div class="fridgeitems">
-                    <form id="fridge-items-form">
-                        <div class="items-in-fridge">
-                            <label id="fridgelabel"><input type="checkbox" name="item" value="2%milk" class="delete-checkbox">2% Milk</label>
-                            <span class="material-icons material-symbols-outlined" id="expand" onclick="showItemInfo()">
-                                open_in_new
-                            </span>
-                        </div>
-                        <div class="items-in-fridge">
-                            <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                            <span class="material-icons material-symbols-outlined" id="expand">
-                                open_in_new
-                            </span> 
-                        </div>
-                        <div class="items-in-fridge">
-                            <label><input type="checkbox" name="item" value="cheddarcheese" class="delete-checkbox">Cheddar Cheese</label>
-                            <span class="material-icons material-symbols-outlined" id="expand">
-                                open_in_new
-                            </span>
-                        </div>
-                        
-                        <!-- <label><input type="checkbox" name="item" value="carrots" class="delete-checkbox">Carrots</label>
-                        <label><input type="checkbox" name="item" value="tomatoes" class="delete-checkbox">Tomatoes</label> -->
+        <div class="fridgeitems">
+            <form id="fridge-items-form">       
             </form>
           </div>
 
@@ -158,14 +138,43 @@
           </div>
         </div>
       </div>
-      <div id="nav-placeholder"></div>
+      <div id="nav-placeholder">
+        <nav>
+          <ul>
+            <li>
+              <a class="tab" href="fridge.html"
+                ><span class="material-icons md-32">kitchen</span></a
+              >
+              <p>Fridge</p>
+            </li>
+            <li>
+              <a class="tab" href="submit_request.html"
+                ><span class="material-icons md-32">playlist_add</span></a
+              >
+              <p>Request</p>
+            </li>
+            <li>
+              <a class="tab" href="shopping.html"
+                ><span class="material-icons md-32">shopping_cart</span></a
+              >
+              <p>Shopping</p>
+            </li>
+            <li>
+              <a class="tab" href="profile.html"
+                ><span class="material-icons md-32">face</span></a
+              >
+              <p>Profile</p>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <script src="./fridge.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(function () {
         $("#nav-placeholder").load("nav.html");
       });
-    </script>
+    </script> -->
   </body>
 </html>

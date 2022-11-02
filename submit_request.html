@@ -14,6 +14,11 @@
   </head>
   <body>
     <div class="allcontent">
+      <div class="pending_container">
+        <span class="material-icons md-32 pending" onclick="load_requests()"
+          >pending_actions</span
+        >
+      </div>
       <div class="submit_page">
         <div id="welcome">
           <h2>New Request</h2>
@@ -38,18 +43,47 @@
           </button>
         </form>
       </div>
-      <div id="nav-placeholder"></div>
+      <div id="nav-placeholder">
+        <nav>
+          <ul>
+            <li>
+              <a class="tab" href="fridge.html"
+                ><span class="material-icons md-32">kitchen</span></a
+              >
+              <p>Fridge</p>
+            </li>
+            <li>
+              <a class="tab" href="submit_request.html"
+                ><span class="material-icons md-32">playlist_add</span></a
+              >
+              <p>Request</p>
+            </li>
+            <li>
+              <a class="tab" href="shopping.html"
+                ><span class="material-icons md-32">shopping_cart</span></a
+              >
+              <p>Shopping</p>
+            </li>
+            <li>
+              <a class="tab" href="profile.html"
+                ><span class="material-icons md-32">face</span></a
+              >
+              <p>Profile</p>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
     <script>
-      $(function () {
-        $("#nav-placeholder").load("nav.html");
-      });
-      let btn = document.querySelector("button");
-      btn.addEventListener("click", active);
-      function active() {
-        btn.classList.toggle("is_active");
-      }
+      // $(function () {
+      //   $("#nav-placeholder").load("nav.html");
+      // });
+      // let btn = document.querySelector("button");
+      // btn.addEventListener("click", active);
+      // function active() {
+      //   btn.classList.toggle("is_active");
+      // }
 
       function submitRequest(that) {
         var foods = JSON.parse(localStorage.getItem("foods") || "[]");
@@ -59,6 +93,10 @@
         localStorage.setItem("foods", JSON.stringify(foods));
         localStorage.setItem("reasons", JSON.stringify(reasons));
         return true;
+      }
+
+      function load_requests() {
+        window.location = "approve_request.html";
       }
     </script>
   </body>
