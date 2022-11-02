@@ -143,6 +143,7 @@ function displayRecipe() {
 }
 
 function showItemInfo(e) {
+
   var modal = document.getElementById("modal");
 
   // Get the <span> element that closes the form
@@ -161,7 +162,15 @@ function showItemInfo(e) {
   }
 
   // When the user clicks on the button, open the form
+  var inputItems = document.getElementsByClassName("iteminfo");
+  var editItems = document.getElementsByClassName("text_box");
+  for (let i = 0; i < inputItems.length; i++) {
+    inputItems[i].style.display = "block";
+    editItems[i].style.display = "none";
+  }
+
   modal.style.display = "block";
+  
 
   // When the user clicks on <span> (x), close the form
   span.onclick = function () {
