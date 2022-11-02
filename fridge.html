@@ -24,76 +24,96 @@
       >
         <span class="close" id="close-form">&times;</span>
         <!-- <span class="back" style="font-size: 50px;">&#8678;</span>  -->
+        <!-- <br />
         <br />
-        <br />
-        <br />
-        <h3>Add a New Item</h3>
-        <label for="Item Name">Item Name:</label>
-        <input type="text" id="itemName" name="Item Name" />
-        <br />
-        <br />
-        <label for="category">Category:</label>
-        <select id="category" name="category">
-          <option value="dairy">Dairy</option>
-          <option value="frozen">Frozen</option>
-          <option value="produce">Produce</option>
-          <option value="proteins">Proteins</option>
-        </select>
-        <br />
-        <br />
-        <label for="quantity">Quantity:</label>
-        <input type="text" id="quantity" name="quantity" />
-        <br />
-        <br />
-        <label for="expdate">Expiration Date:</label>
-        <input type="text" id="expdate" name="expdate" />
-        <br />
-        <br />
-        
-        <button class="submit" onclick="addItemToFridge()">Submit</button>
+        <br /> -->
+        <div class="formContent">
+            <h3>Add a New Item</h3>
+            <label for="Item Name">Item Name:</label>
+            <input type="text" id="itemName" name="Item Name" />
+            <br />
+            <br />
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="dairy">Dairy</option>
+                <option value="frozen">Frozen</option>
+                <option value="produce">Produce</option>
+                <option value="proteins">Proteins</option>
+            </select>
+            <br />
+            <br />
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity" />
+            <br />
+            <br />
+            <label for="expdate">Expiration Date:</label>
+            <input type="text" id="expdate" name="expdate" />
+            <br />
+            <br />
+            
+            <button class="submit" onclick="addItemToFridge()">Submit</button>
+        </div>
       </form>
+    
 
       <div class="recipe" id="viewrecipe" style.display="none">
         <span class="close" id="close-recipe">&times;</span>
-        <h3>Caprese Salad</h3>
-        <hr />
-        <p>Prep Time: 10 mins</p>
-        <p>Total Time: 10 mins</p>
-        <p>Serves 2 to 3</p>
-        <h4>Ingredients</h4>
-        <ul>
-          <li>1 to 2 tomatoes, sliced</li>
-          <li>1 ball of fresh mozzarella, sliced</li>
-          <li>Fresh basil leaves</li>
-          <li>Extra-virgin olive oil, for drizzling</li>
-          <li>Salt and black pepper, to taste</li>
-        </ul>
-        <h4>Instructions</h4>
-        <ol>
-          <li>
-            Arrange the sliced tomatoes, mozzarella, and basil leaves on a
-            plate.
-          </li>
-          <li>
-            Drizzle with olive oil, and sprinkle with salt and black paper to
-            taste.
-          </li>
-        </ol>
+        <div class="recipecontent">
+            <h2>Caprese Salad</h2>
+            <!-- <hr /> -->
+            <p>Prep Time: 10 mins</p>
+            <p>Total Time: 10 mins</p>
+            <p>Serves 2 to 3</p>
+            <br>
+            <p class="subheading">Ingredients<p>
+            <ul>
+            <li>1 to 2 tomatoes, sliced</li>
+            <li>1 ball of fresh mozzarella, sliced</li>
+            <li>Fresh basil leaves</li>
+            <li>Extra-virgin olive oil, for drizzling</li>
+            <li>Salt and black pepper, to taste</li>
+            </ul>
+            <p class="subheading">Instructions</p>
+            <ol>
+            <li>
+                Arrange the sliced tomatoes, mozzarella, and basil leaves on a
+                plate.
+            </li>
+            <li>
+                Drizzle with olive oil, and sprinkle with salt and black paper to
+                taste.
+            </li>
+            </ol>
+        </div>
       </div>
 
       <div id="modal">
         <div class="item-info">
             <span class="close" id="close-modal">&times;</span>
-            <p id="it-na">Item Name: </p>
-            <p id="cat">Category: </p>
-            <p id="qty">Quantity: </p>
-            <p id="ed">Expiration Date: </p>
+            
+            <p class="iteminfo" id="it-na" style.display="block">Item Name: </p>
+            <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/>
+            
+            <p class="iteminfo" id="cat" style.display="block">Category: </p>
+            <input type="text" name="name" id="cat-edit" placeholder="Category" class="text_box" style.display="none" />
+            
+            <p class="iteminfo" id="qty" style.display="block">Quantity: </p>
+            <input type="text" name="name" id="qty-edit" placeholder="Quantity" class="text_box" style.display="none" />
+            
+            <p class="iteminfo" id="ed" style.display="block">Expiration Date: </p>
+            <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" />
+            <br>
+            <br>
+            <div class="edit-buttons">
+                <button id="edit" onclick="editItem()">Edit</button>
+                <button id="save" onclick="saveItem()">Save</button>
+            </div>
         </div>
       </div>
 
       <div id="fridgedisplay" style.display="block">
         <div class="topbanner">
-          <h2>Wu Family Fridge</h2>
+          <h2>Fridge Contents</h2>
         </div>
 
         <div class="fridgecontents">
@@ -109,17 +129,12 @@
             </div>
 
             <div class="additems">
-                <!-- <img id="add-button" src=./assets/images/plus_sign_circle.png alt="Brown plus button to add item" onclick="modalPopup()">    -->
                 <span class="material-icons md-32 material-symbols-outlined" id="add-button" onclick="formPopup()">
                     add_circle
                 </span>
             </div>
 
             <div class="delitems">
-                <!-- <img src=./assets/images/trash-can-delete.png alt="Brown trash can to delete item" onclick="removeCheckedCheckboxes()"> -->
-                <!-- <span class="material-icons material-symbols-rounded" onclick="removeCheckedCheckboxes()">
-                    do_not_disturb_on
-                </span> -->
                 <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
                     delete
                 </span>
@@ -131,6 +146,7 @@
             <form id="fridge-items-form">       
             </form>
           </div>
+
 
           <div class="findrecipes">
             <!-- <a href="recipes.html"><button type="button">Find Recipe</button></a> -->

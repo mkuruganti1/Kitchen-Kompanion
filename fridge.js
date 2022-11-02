@@ -195,6 +195,62 @@ function showItemInfo(e) {
   }
 }
 
-function filterItems() {
+// function filterItems() {
+
+// }
+
+function editItem() {
+  var arrItems = [];
+  var itemInfo = document.getElementsByClassName("iteminfo");
+  for (let i = 0; i < itemInfo.length; i++) {
+    var val = String(itemInfo[i].innerHTML).split(": ");
+
+    if (val.length == 1) {
+      arrItems.push(" ");
+    } else {
+      arrItems.push(val[1]);
+    }
+
+    itemInfo[i].style.display="none";
+  }
+
+  var inputIDs = ["it-na-edit", "cat-edit", "qty-edit", "ed-edit"];
+  var editInfo = document.getElementsByClassName("text_box");
+  for (let i = 0; i < editInfo.length; i++) {
+    if (arrItems[i].trim().length) {
+      document.getElementById(inputIDs[i]).value = arrItems[i];
+    }
+
+    editInfo[i].style.display="block";
+  }
+}
+
+function saveItem() {
+  document.getElementById("it-na").innerHTML = "Item Name: ";
+  document.getElementById("cat").innerHTML = "Category: ";
+  document.getElementById("qty").innerHTML = "Quantity: ";
+  document.getElementById("ed").innerHTML = "Expiration Date: ";
+
+  var edits = [];
+  var inputIDs = ["it-na-edit", "cat-edit", "qty-edit", "ed-edit"];
+  var editInfo = document.getElementsByClassName("text_box");
+  for (let i = 0; i < inputIDs.length; i++) {
+    edits.push(document.getElementById(inputIDs[i]).value)
+  }
+
+  var itemInfo = document.getElementsByClassName("iteminfo");
+  for (let i = 0; i < itemInfo.length; i++) {
+    itemInfo[i].innerHTML += edits[i];
+    editInfo[i].style.display="none";
+    itemInfo[i].style.display="block";
+  }
+  // document.getElementById("it-na").innerHTML += edits[0];
+  // document.getElementById("cat").innerHTML += edits[1];
+  // document.getElementById("qty").innerHTML += edits[2];
+  // document.getElementById("ed").innerHTML += edits[3];
+
+
+
+  // console.log(edits);
 
 }
