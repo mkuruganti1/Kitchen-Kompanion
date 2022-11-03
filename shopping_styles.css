@@ -121,7 +121,7 @@ table tr.checked {
 }
 
 .input_box {
-  border: 3px solid #896B60;
+  border: 2px solid #896B60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
@@ -133,6 +133,12 @@ table tr.checked {
   padding: 0 6px;
   padding-left: 12px;
   color:#8e8e8e;
+}
+
+select:focus,
+input:focus {
+  border: 2px solid #896b60;
+  outline: none;
 }
 
 .add-item-submit-button{
