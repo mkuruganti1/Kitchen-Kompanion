@@ -187,7 +187,7 @@ function showItemInfo(e) {
 }
 
 function editItem() {
-  // Get the <span> element that closes the recipe page
+  // Get the <span> element that closes
   var span = document.getElementById("close-edit-popup");
 
   // Get the rest of the fridge content
@@ -227,6 +227,7 @@ function editItem() {
     // editItems[i].style.display="block";
   }
 
+  // close page
   span.onclick = function () {
     editItem.style.display = "none";
     modal.style.display = "block";
