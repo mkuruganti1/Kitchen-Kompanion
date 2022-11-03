@@ -30,81 +30,14 @@
   position:relative;
 }
 
-.tagLabels {
-  position:relative;
-}
 
-h1 {
-  color: #583101;
-  font-size: 15;
-  font: tag;
-  font-family: Arial;
-}
 
-h3 {
-  color: #000000;
-  font-size: 13;
-  font-style: normal;
-  font-family: Arial;
-  line-height: 80%;
-  transform:translate(5%, 50%);
-}
-
-input[type="checkbox"] {
-  background-color: #fff;
-  width: 22px;
-  height: 22px;
-  border-color: #583101;
-  transform: translateY(5px);
-  font-family: Arial;
-}
-
-.title {
+.list-title{
   position: relative;
-  top: 15px;
+  top: 25px;
   text-align: center;
 }
 
-table tr.checked {
-  text-decoration: line-through;
-  background-color: #ebebeb;
-}
-
-.addButton {
-    margin:0;
-    right: 30px;
-    position:absolute;
-    grid-area: add-item;
-}
-
-.form-popup {
-  display: none;
-}
-
-.formContents{
-  position:relative;
-  left:20px;
-}
-
-.multiselect {
-  width: 200px;
-}
-
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
-  width: 100%;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
 
 #checkboxes {
   display: none;
@@ -116,99 +49,115 @@ table tr.checked {
   left:0px;
 }
 
+.close {
+  margin-left: 270px;
+  margin-top: 10px;
+  color: #896B60;
+}
+
+
+input[type="checkbox"] {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  border-color: #583101;
+  transform: translateY(5px);
+  font-family: Arial;
+}
+
+.addButton {
+  margin:0;
+  right: 30px;
+  position:absolute;
+  grid-area: add-item;
+}
+
+
+/* ------------------------------------
+/  Table Styling
+/  ----------------------------------*/
+.list-table{
+  position: relative;
+  top: 20px;
+}
+
+table tr.checked {
+  text-decoration: line-through;
+  background-color: #ebebeb;
+}
+
+.table{
+  margin:10px;
+  text-align: left;
+}
+
+.giant-tbl{
+  position:relative;
+
+}
+
+.added-checkbox{
+  position:relative;
+}
+
+/* ------------------------------------
+/  Form Styling
+/  ----------------------------------*/
+.form-popup {
+  display: none;
+}
+
+.form-title {
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  left:30%;
+}
+
+.formContents{
+  position:relative;
+  left:20px;
+  top:30px;
+}
+
+.input_box {
+  border: 3px solid #896B60;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  display: block;
+  width: 83%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+  color:#8e8e8e;
+}
+
+.add-item-submit-button{
+  width: 130px;
+  height: 40px;
+  line-height: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 3px solid #896B60;
+  background: #896B60;
+  color: #F5F2EA;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 1.0s;
+  left: 20%;
+  position: relative;
+  top: 20px;
+}
+
 ul {
   list-style: none;
   left:0px;
 }
 
-.close-button{
-  background-color: #5e503f;
-  color: #fcf4f0;
-  border:none;
-  padding: 1px;
-  text-align:center;
-  display:inline-block;
-  justify-content: center;
-  left: 82%;
-  margin:15px;
-  position: absolute;
-}
-.close{
-    font-size: 35px;
-}
-.add-item-submit-button{
-  background-color: #5e503f;
-  color: #fcf4f0;
-  border:none;
-  padding: 5px;
-  text-align:center;
-  display:inline-block;
-  justify-content: center;
-  left: 30%;
-  margin:10px;
-  position: absolute;
-}
-/*
-#dairy ul {
-    margin: 0;
-    list-style: none;
-    padding-left: 10px;
-    font-family: Arial;
-}
 
-.dairy label {
-  width: 12em;
-  float: right;
-  font-size: 18px;
-}
 
-.dairy {
-  display: inline-block;
-  transform: translate(-15%, 0%);
-  text-align: left;
-  height: 255px;
-  overflow-y: auto;
-}
 
-#produce ul {
-  margin: 0;
-  list-style: none;
-  padding-left: 10px;
-  font-family: Arial;
-}
-
-.produce label {
-width: 12em;
-float: right;
-font-size: 18px;
-}
-
-.produce {
-display: inline-block;
-transform: translate(-15%, 0%);
-text-align: left;
-height: 255px;
-overflow-y: auto;
-}
-
-#frozen ul {
-  margin: 0;
-  list-style: none;
-  padding-left: 10px;
-  font-family: Arial;
-}
-
-.frozen label {
-width: 12em;
-float: right;
-font-size: 18px;
-}
-
-.frozen {
-display: inline-block;
-transform: translate(-15%, 0%);
-text-align: left;
-height: 255px;
-overflow-y: auto;
-}
-*/
