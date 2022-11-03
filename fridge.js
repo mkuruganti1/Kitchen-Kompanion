@@ -179,10 +179,10 @@ function showItemInfo(e) {
 
   // When the user clicks on <span> (x), close the form
   span.onclick = function () {
-    document.getElementById("it-na").innerHTML = "Item Name: ";
-    document.getElementById("cat").innerHTML = "Category: ";
-    document.getElementById("qty").innerHTML = "Quantity: ";
-    document.getElementById("ed").innerHTML = "Expiration Date: ";
+    document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
+    document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
+    document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
+    document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
     modal.style.display = "none";
   };
 }
