@@ -21,8 +21,9 @@ function formPopup() {
     }
   }
 
-  var firstTJ = true;
-  var firstGiant = true;
+var firstTJ = true;
+var firstGiant = true;
+
 function addItemToShoppingListTbl(){
   var title = document.getElementById("title").value;
   var category =
@@ -36,18 +37,24 @@ function addItemToShoppingListTbl(){
     ].text;
 
     var tableElement;
+    var tbodyElement;
     if (tags === "Giant") {
       tableElement = document.getElementById("giant-tbl");
+      tbodyElement = document.getElementById('giant-body'); 
+    }
+    else if (tags === "Trader Joe's") {
+      tableElement = document.getElementById("tj-tbl");
+      tbodyElement = document.getElementById('tj-body'); 
     }
     else {
-      tableElement = document.getElementById("tj-tbl");
+      tableElement = document.getElementById("giant-tbl");
+      tbodyElement = document.getElementById('giant-body'); 
     }
-    var trElement = document.createElement('tr');
     
-    var tbodyElement = document.getElementById('body');
+    var trElement = document.createElement('tr');
     var tdElement = document.createElement('td');
-    var thElement = document.createElement('th');
     var inputElement = document.createElement('input');
+    var tdElementTitle = document.createElement('th');
     var tdElementQuantity = document.createElement('td');
     
     /* Format Example 
@@ -66,10 +73,9 @@ function addItemToShoppingListTbl(){
     
     tdElement.className ="added-checkbox";
     inputElement.setAttribute("type","checkbox");
-    inputElement.setAttribute("className", "added-element");
      
-    thElement.setAttribute("data-label", "Item");
-    thElement.innerHTML = title;
+    tdElementTitle.setAttribute("data-label", "Item");
+    tdElementTitle.innerHTML = title;
 
     tdElementQuantity.setAttribute("data-label", "Quantity");
     tdElementQuantity.innerHTML = quantity;
@@ -78,7 +84,7 @@ function addItemToShoppingListTbl(){
     
   
     trElement.appendChild(tdElement);
-    trElement.appendChild(thElement);
+    trElement.appendChild(tdElementTitle);
     trElement.appendChild(tdElementQuantity);
 
     tbodyElement.appendChild(trElement);
@@ -87,8 +93,22 @@ function addItemToShoppingListTbl(){
     // Get the rest of the shopping list content
     var shoppingList = document.getElementById("shoppingList");
 
+    var showTable;
     form.style.display = "none";
     shoppingList.style.display = "block";
+
+    if (firstTJ && tags === "Trader Joe's" ){
+      showTable = document.getElementById("tj-div");
+      showTable.style.display="block";
+      firstTJ = false;
+    }
+    if (firstGiant && tags === "Giant"){
+      showTable = document.getElementById("giant-div");
+      showTable.style.display="block";
+      firstGiant = false;
+    }
+
+    
 
     document.getElementById("shoppingForm").reset();
 }

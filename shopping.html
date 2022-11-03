@@ -72,65 +72,90 @@
               add_circle
             </span>
           </div>
+
+          <div class="delButton">
+            <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+              delete
+          </span>
+          </div>
       
 
         <div class="list-table" role="grid" >
-          <table class= "giant-tbl" id="giant-tbl">
-            <thead>
-              <tr>
-                <td />
-                  <th scope="col">
-                    Item
-                  </th>
-                  <th scope="col">
-                    Quantity
-                  </th>
-              </tr>
-            </thead>
-            <tbody class="body">
-              <tr>
-                <td class="added-checkbox">
-                  <input type="checkbox" name="sugar" aria-labelledby="item-1-sugar" />
-                </td>
-                <th data-label="Item">
-                  <div id="item-1-sugar">Sugar</div>
-                </th>
-                <td data-label="Quantity">
-                  1 cup
-                </td>
-              </tr>
-              <tr>
-                <td class="added-checkbox">
-                  <input type="checkbox" name="butter" aria-labelledby="item-2-butter" />
-                </td>
-                <th data-label="Item">
-                  <div id="item-2-butter">Butter</div>
-                </th>
-                <td data-label="Quantity">
-                  ½ cup
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table id="tj-tbl" >
-            <thead>
-              <tr>
-                <td />
-                  <th scope="col">
-                    Item
-                  </th>
-                  <th scope="col">
-                    Quantity
-                  </th>
-              </tr>
-            </thead>
-            <tbody>
+          <div class = "giant" id="giant-div">
+            <div class="giant-tbl-title"> Giant </div>
+              <table class= "giant-tbl" id="giant-tbl" >
+                <col style="width:0px">
+                <col style="width:90px">
+                <col style="width:100px">
+                <thead>
+                  <tr>
+                    <!--
+                    <td />
+                    -->
+                      <th hidden>Item</th>
+                      <th hidden>Quantity</th>
+                    <!-- -->
+                  </tr>
+                </thead>
+                <tbody id="giant-body">
+                  <tr>
+                    <td class="added-checkbox">
+                      <input type="checkbox" name="sugar" aria-labelledby="item-1-sugar" />
+                    </td>
+                    <td data-label="Item" >
+                      Sugar
+                    </td>
+                    <td data-label="Quantity">
+                      1 cup
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="added-checkbox">
+                      <input type="checkbox" name="butter" aria-labelledby="item-2-butter" />
+                    </td>
+                    <td data-label="Item" >
+                      Butter
+                    </td>
+                    <td data-label="Quantity">
+                      ½ cup
+                    </td>
+                  </tr>
                 
-            </tbody>
-          </table>
-        </div>
+                </tbody>
+              </table>
+          </div>
           
+          <div class = "tj" id="tj-div">
+            <div class="tj-tbl-title"> Trader Joe's </div>
+              <table class="tj-tbl" id="tj-tbl">
+                <col style="width:0px">
+                <col style="width:90px">
+                <col style="width:100px">
+                <thead>
+                  <tr>
+                    <!--
+                    <td />
+                    -->
+                      <th hidden>Item</th>
+                      <th hidden>Quantity</th>
+                    <!-- -->
+                  </tr>
+                </thead>
+                <tbody id="tj-body">
+                  <td class="added-checkbox">
+                    <input type="checkbox" name="sugar" aria-labelledby="item-1-sugar"/>
+                  </td>
+                  <td data-label="Item" class="added-item">
+                    Milk
+                  </td>
+                  <td data-label="Quantity">
+                    1 cup
+                  </td>
+                </tbody>
+              </table>
+          </div>
+        </div>
+             
       
 
 

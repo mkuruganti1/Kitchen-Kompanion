@@ -66,11 +66,19 @@ input[type="checkbox"] {
 }
 
 .addButton {
-  margin:0;
-  right: 30px;
+  top: 16%;
+  right: 20%;
   position:absolute;
   grid-area: add-item;
 }
+
+.delButton {
+  top:16%;
+  right: 9%;
+  position:absolute;
+  grid-area: add-item;
+}
+
 
 
 /* ------------------------------------
@@ -78,7 +86,7 @@ input[type="checkbox"] {
 /  ----------------------------------*/
 .list-table{
   position: relative;
-  top: 20px;
+  top: 40px;
 }
 
 table tr.checked {
@@ -91,14 +99,67 @@ table tr.checked {
   text-align: left;
 }
 
-.giant-tbl{
-  position:relative;
 
-}
 
 .added-checkbox{
   position:relative;
 }
+
+.giant{
+  display:block;
+  position:relative;
+  top:10%;
+  padding:5px 0px;
+  /*display:none;
+  */
+}
+
+.giant-tbl-title{
+  display:block;
+  position:relative;
+  left:15px;
+  color: #4A332D;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.giant-tbl{
+  position:relative;
+  left:15px;
+}
+
+.tj{
+  display:block;
+  position:relative;
+  padding:5px 0px;
+  /*
+  display:none;
+  
+  color: #4A332D;
+  font-size: 16px;
+  left:15px;
+  */
+}
+
+.tj-tbl-title{
+  display:block;
+  position:relative;
+  left:15px;
+  color: #4A332D;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.tj-tbl{
+  position:relative;
+  left:15px;
+}
+
+/*
+.added-item{
+  font-weight: normal;
+}
+*/
 
 /* ------------------------------------
 /  Form Styling
@@ -161,3 +222,36 @@ ul {
 
 
 
+/*
+ * Icon Styling
+*/
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+  cursor: pointer;
+  color: #896b60;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
