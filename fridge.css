@@ -237,8 +237,9 @@ button {
 }
 
 .edit-buttons button {
-  width: 90px;
-  margin: 0 auto;
+  width: 132px;
+  /* margin: 0 auto; */
+  text-align: center;
 }
 
 .close {
@@ -246,6 +247,14 @@ button {
   margin-top: 10px;
   color: #896b60;
 }
+
+/* #edit {
+  display: block;
+}
+
+#save {
+  display: none;
+} */
 
 /* .close {
   color: #aaa;
