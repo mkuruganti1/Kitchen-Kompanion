@@ -127,7 +127,7 @@ select {
   height: 255px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-right: 35px;
+  margin-right: 25px;
   margin-left: 40px;
 }
 
@@ -399,12 +399,22 @@ select {
   transform: translateY(13px);
   overflow-y: auto;
   height: 87%;
-  width: 99%;
+  width: 100%;
+  scroll-padding-left: 3px;
+  padding-bottom: 30px;
   /* padding-top: 30px; */
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
 }
+
+/* .recipecontent p,
+ol,
+ul {
+  padding-right: 30px;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
 
 .recipe .close {
   color: #896b60;
@@ -442,6 +452,7 @@ ul {
   margin-bottom: 3px;
   font: Arial;
   margin-left: -5px;
+  padding-right: 30px;
 }
 
 .material-symbols-outlined {
