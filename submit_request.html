@@ -75,7 +75,6 @@
       </div>
     </div>
     <script>
-
       function submitRequest(that) {
         var foods = JSON.parse(localStorage.getItem("foods") || "[]");
         var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
@@ -89,6 +88,14 @@
       function load_requests() {
         window.location = "approve_request.html";
       }
+      var current = 0;
+      for (var i = 0; i < document.links.length; i++) {
+        if (document.links[i].href === document.URL) {
+          current = i;
+        }
+      }
+      document.links[current].childNodes[0].classList.add("current")
+      document.links[current].parentElement.className = "current";
     </script>
   </body>
 </html>

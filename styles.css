@@ -113,7 +113,12 @@ nav ul li p {
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  color: #896b60;
 }
 
 .material-icons.md-32 { font-size: 32px; }
 .material-icons.md-48 { font-size: 48px; }
+
+.current {
+	color: #4A332D;
+}
