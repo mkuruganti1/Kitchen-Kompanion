@@ -122,3 +122,11 @@ nav ul li p {
 .current {
 	color: #4A332D;
 }
+
+.keyboard{
+  width: 316px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+}

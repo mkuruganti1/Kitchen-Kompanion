@@ -114,6 +114,7 @@ button.is_active .success {
 .pending {
   position: relative;
   top: 4px;
+  color:#f5f2ea;
 }
 
 .pending_container {

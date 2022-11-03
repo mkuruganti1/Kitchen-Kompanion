@@ -1,0 +1,139 @@
+.submit_page {
+    width: inherit;
+    height: 51%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 25% 75%;
+    grid-template-areas:
+      "a a a"
+      ". s .";
+    position: absolute;
+    text-align: center;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    justify-items: center;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    padding: 0px;
+  }
+  
+  .form-container {
+    padding-top: 50%;
+  }
+  
+  #welcome {
+    margin-top: -27px;
+    grid-area: a;
+  }
+  
+  #form {
+    grid-area: s;
+  }
+  
+  .text_box {
+    border: 2px solid #896b60;
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 0px 12px;
+  }
+  
+  .text_area {
+    width: 100%;
+    height: 150px;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    border: 2px solid #896b60;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  textarea:focus,
+  input:focus {
+    border: 2px solid #896b60;
+    outline: none;
+  }
+  
+  button {
+    position: absolute;
+    left: 50%;
+    margin-top: 185px;
+    transform: translate(-50%, -50%);
+    width: 130px;
+    height: 40px;
+    line-height: 1;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: 3px solid #896b60;
+    background: #896b60;
+    color: #f5f2ea;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 1s;
+  }
+  
+  button .success {
+    opacity: 1;
+    visibility: hidden;
+  }
+  
+  .success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  button.is_active {
+    width: 40px;
+    height: 40px;
+  }
+  
+  button.is_active .unsuccess {
+    opacity: 1;
+    visibility: hidden;
+  }
+  
+  button.is_active .success {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .pending {
+    position: relative;
+    top: 4px;
+    color: #f5f2ea;
+  }
+  
+  .pending_container {
+    margin-left: 255px;
+    margin-top: 425px;
+    color: #f5f2ea;
+    font-size: 12px;
+    text-align: center;
+    background-color: #896b60;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .close {
+    margin-left: 270px;
+    margin-top: 10px;
+    z-index: 1;
+  }
+  
