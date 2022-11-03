@@ -193,8 +193,36 @@ table tr.checked {
   font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
+}
+
+.input_box_dropdown {
+  border: 2px solid #896B60;
+  border-radius: 5px;
+  height: 50px;
+  line-height: normal;
+  display: block;
+  width: 83%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+  padding-left: 12px;
+}
+
+
+select:invalid,
+select option[value=""]{
   color:#8e8e8e;
 }
+::placeholder {
+  color:#8e8e8e;
+}
+
+select,
+select option {
+  color: #000000;
+}
+
 
 select:focus,
 input:focus {
