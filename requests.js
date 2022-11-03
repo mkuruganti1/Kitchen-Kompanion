@@ -5,26 +5,6 @@ const todoList = document.querySelector(".todo-list");
 document.addEventListener("DOMContentLoaded", getTodos);
 todoList.addEventListener("click", deleteTodo);
 
-function addTodo(e) {
-  e.preventDefault();
-  const foodDiv = document.createElement("div");
-  foodDiv.classList.add("todo");
-  const newFood = document.createElement("li");
-  newFood.innerText = todoInput.value;
-  newFood.classList.add("todo-item");
-  foodDiv.appendChild(newFood);
-  todoInput.value = "";
-  const completedButton = document.createElement("button");
-  completedButton.innerHTML = `✔️`;
-  completedButton.classList.add("complete-btn");
-  foodDiv.appendChild(completedButton);
-  const trashButton = document.createElement("button");
-  trashButton.innerHTML = `✖️`;
-  trashButton.classList.add("trash-btn");
-  foodDiv.appendChild(trashButton);
-  todoList.appendChild(foodDiv);
-}
-
 function deleteTodo(e) {
   var foods = JSON.parse(localStorage.getItem("foods") || "[]");
   foods.shift(1);
@@ -51,9 +31,7 @@ function deleteTodo(e) {
 
 function getTodos() {
   var foods = JSON.parse(localStorage.getItem("foods") || "[]");
-  foods.push("Goldfish");
   var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
-  reasons.push("School snack");
   let i = 0;
 
   foods.forEach(function (food) {
@@ -64,14 +42,14 @@ function getTodos() {
     newFood.classList.add("todo-item");
     foodDiv.appendChild(newFood);
     const completedButton = document.createElement("button");
-    completedButton.innerHTML = `<span class="material-icons md-32">check_circle</span>`;
+    completedButton.innerHTML = `<span class="material-icons md-48">check_circle</span>`;
     completedButton.classList.add("complete-btn");
     foodDiv.appendChild(completedButton);
     const trashButton = document.createElement("button");
-    trashButton.innerHTML = `<span class="material-icons md-32">cancel</span>`;
+    trashButton.innerHTML = `<span class="material-icons md-48">cancel</span>`;
     trashButton.classList.add("trash-btn");
     foodDiv.appendChild(trashButton);
     todoList.appendChild(foodDiv);
-    i+=1;
+    i += 1;
   });
 }
