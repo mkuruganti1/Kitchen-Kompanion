@@ -13,7 +13,6 @@
   left: 50%;
   transform: translate(-50%, -15%);
   justify-items: center;
-  padding-top: 10px;
 }
 
 .form-container {
@@ -30,7 +29,7 @@
 }
 
 .text_box {
-  border: 2px solid #896B60;
+  border: 2px solid #896b60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
@@ -48,7 +47,7 @@
   height: 150px;
   padding: 6px 12px;
   box-sizing: border-box;
-  border: 2px solid #896B60;
+  border: 2px solid #896b60;
   border-radius: 4px;
   font-size: 16px;
   resize: none;
@@ -57,11 +56,11 @@
 
 textarea:focus,
 input:focus {
-  border: 2px solid #896B60;
+  border: 2px solid #896b60;
   outline: none;
 }
 
-button{
+button {
   position: absolute;
   top: 85%;
   left: 50%;
@@ -71,21 +70,21 @@ button{
   line-height: 1;
   font-size: 16px;
   letter-spacing: 1px;
-  border: 3px solid #896B60;
-  background:  #896B60;
-  color: #F5F2EA;
+  border: 3px solid #896b60;
+  background: #896b60;
+  color: #f5f2ea;
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 1.0s;
+  transition: all 1s;
 }
 
-button .success{
+button .success {
   opacity: 1;
   visibility: hidden;
 }
 
-.success{
+.success {
   position: absolute;
   top: 0;
   left: 0;
@@ -97,34 +96,33 @@ button .success{
   visibility: hidden;
 }
 
-button.is_active{
+button.is_active {
   width: 40px;
   height: 40px;
 }
 
-button.is_active .unsuccess{
+button.is_active .unsuccess {
   opacity: 1;
   visibility: hidden;
 }
 
-button.is_active .success{
+button.is_active .success {
   opacity: 1;
   visibility: visible;
 }
 
-.pending{
+.pending {
   position: relative;
   top: 4px;
-
 }
 
-.pending_container{
+.pending_container {
   margin-left: 255px;
   margin-top: 425px;
-  color: #F5F2EA;
+  color: #f5f2ea;
   font-size: 12px;
   text-align: center;
-  background-color: #896B60;
+  background-color: #896b60;
   width: 40px;
   height: 40px;
   border-radius: 50%;

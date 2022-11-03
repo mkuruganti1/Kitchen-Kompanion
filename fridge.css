@@ -127,7 +127,7 @@ select {
   height: 255px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-right: 35px;
+  margin-right: 25px;
   margin-left: 40px;
 }
 
@@ -212,8 +212,6 @@ button {
   padding: 20px;
   color: #4a332d;
   font-size: 16px;
-  font-weight: bold;
-  font-family: Arial;
   border-radius: 30px;
   margin: 35% auto;
   border: 1px solid #888;
@@ -223,6 +221,12 @@ button {
   outline-style: solid;
   outline-width: thin;
   /* height: 65%; */
+}
+
+select:focus,
+input:focus {
+  border: 2px solid #896b60;
+  outline: none;
 }
 
 .item-container {
@@ -237,8 +241,9 @@ button {
 }
 
 .edit-buttons button {
-  width: 90px;
-  margin: 0 auto;
+  width: 132px;
+  /* margin: 0 auto; */
+  text-align: center;
 }
 
 .close {
@@ -246,6 +251,14 @@ button {
   margin-top: 10px;
   color: #896b60;
 }
+
+/* #edit {
+  display: block;
+}
+
+#save {
+  display: none;
+} */
 
 /* .close {
   color: #aaa;
@@ -308,7 +321,7 @@ select {
 }
 
 .input_box {
-  border: 3px solid #896b60;
+  border: 2px solid #896b60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
@@ -386,12 +399,22 @@ select {
   transform: translateY(13px);
   overflow-y: auto;
   height: 87%;
-  width: 99%;
+  width: 100%;
+  scroll-padding-left: 3px;
+  padding-bottom: 30px;
   /* padding-top: 30px; */
   /* outline-color: black;
   outline-style: solid;
   outline-width: thin; */
 }
+
+/* .recipecontent p,
+ol,
+ul {
+  padding-right: 30px;
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
 
 .recipe .close {
   color: #896b60;
@@ -429,33 +452,7 @@ ul {
   margin-bottom: 3px;
   font: Arial;
   margin-left: -5px;
-}
-
-.material-icons {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: "liga";
-  cursor: pointer;
-  color: #896b60;
+  padding-right: 30px;
 }
 
 .material-symbols-outlined {
@@ -514,6 +511,3 @@ ul {
   color: #896b60;
 }
 
-/* .item-info h2 {
-  transform: translateY(-30px);
-} */

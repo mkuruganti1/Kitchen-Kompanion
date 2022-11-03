@@ -90,23 +90,23 @@
             
             <!-- <h2>Item Information</h2> -->
             
-            <p class="iteminfo" id="it-na" style.display="block">Item Name: </p>
+            <p class="iteminfo" id="it-na" style.display="block"><strong>Item Name: </strong></p>
             <!-- <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/> -->
             
-            <p class="iteminfo" id="cat" style.display="block">Category: </p>
+            <p class="iteminfo" id="cat" style.display="block"><strong>Category: </strong></p>
             <!-- <input type="text" name="name" id="cat-edit" placeholder="Category" class="text_box" style.display="none" /> -->
             
-            <p class="iteminfo" id="qty" style.display="block">Quantity: </p>
+            <p class="iteminfo" id="qty" style.display="block"><strong>Quantity: </strong></p>
             <!-- <input type="text" name="name" id="qty-edit" placeholder="Quantity" class="text_box" style.display="none" /> -->
             
-            <p class="iteminfo" id="ed" style.display="block">Expiration Date: </p>
+            <p class="iteminfo" id="ed" style.display="block"><strong>Expiration Date: </strong> </p>
             <!-- <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" /> -->
             <br>
             <br>
             </div>
           <div class="edit-buttons">
               <button id="edit" onclick="editItem()">Edit</button>
-              <button id="save" onclick="saveItem()">Save</button>
+              <!-- <button id="save" onclick="saveItem()">Save</button> -->
           </div>
         </div>
       </div>
@@ -126,11 +126,11 @@
           <br>
       
           <select class="input_box edit_input" id="cat-edit" name="category">
-            <option value="default">Select category</option>
-            <option value="dairy">Dairy</option>
+            <option value="Default">Select category</option>
+            <option value="Dairy">Dairy</option>
             <option value="Produce">Produce</option>
-            <option value="protein">Protein</option>
-            <option value="other">Other</option>
+            <option value="Protein">Protein</option>
+            <option value="Other">Other</option>
           </select>
       
           <br>
@@ -143,7 +143,7 @@
           <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date">
       
           <div class="edit-buttons form-edit-buttons">
-            <button id="edit" onclick="editItem()">Edit</button>
+            <!-- <button id="edit" onclick="editItem()">Edit</button> -->
             <button id="save" onclick="saveItem()">Save</button>
           </div>
         </div>
@@ -226,11 +226,15 @@
       </div>
     </div>
     <script src="./fridge.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-      $(function () {
-        $("#nav-placeholder").load("nav.html");
-      });
-    </script> -->
+      var current = 0;
+      for (var i = 0; i < document.links.length; i++) {
+        if (document.links[i].href === document.URL) {
+          current = i;
+        }
+      }
+      document.links[current].childNodes[0].classList.add("current")
+      document.links[current].parentElement.className = "current";
+    </script>
   </body>
 </html>
