@@ -14,12 +14,16 @@
   </head>
   <body onload="document.getElementById('food').focus();">
     <div class="allcontent">
-      <span class="material-icons md-32 close" onclick="window.location.href='./submit_request.html'">close</span>
+      <span
+        class="material-icons md-32 close"
+        onclick="window.location.href='./submit_request.html'"
+        >close</span
+      >
       <div class="submit_page">
         <div id="welcome">
           <h2>New Request</h2>
         </div>
-        <form onsubmit="submitRequest(this)" id="form">
+        <form onsubmit="return submitRequest(this)" id="form">
           <input
             id="food"
             type="text"
@@ -50,12 +54,8 @@
         reasons.push(that.reason.value);
         localStorage.setItem("foods", JSON.stringify(foods));
         localStorage.setItem("reasons", JSON.stringify(reasons));
-        window.location = "fridge.html";
-        return true;
-      }
-
-      function load_requests() {
-        window.location = "approve_request.html";
+        window.location = "submit_request.html";
+        return false;
       }
     </script>
   </body>
