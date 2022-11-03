@@ -197,13 +197,14 @@ function editItem() {
   
 
   var editItems = document.getElementsByClassName("edit_input");
-  console.log(editItems);
+  // console.log(editItems);
   var inputIDs = ["it-na-edit", "cat-edit", "qty-edit", "ed-edit"];
   var inputItems = document.getElementsByClassName("iteminfo");
   var arr = []
 
   for (let i = 0; i < inputItems.length; i++) {
     var val = String(inputItems[i].innerHTML).split(": ");
+    console.log(val);
     
     if (val.length == 1) {
       arr.push("");
@@ -217,6 +218,7 @@ function editItem() {
   // console.log(arr);
 
   for (let i = 0; i < editItems.length; i++) {
+    console.log(arr[i]);
     if (arr[i].length) {
       document.getElementById(inputIDs[i]).value = arr[i];
     }
