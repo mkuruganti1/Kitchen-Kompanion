@@ -296,3 +296,4 @@ function saveItem() {
   modal.style.display = "block";
   fridge.style.display = "block";
 }
+
