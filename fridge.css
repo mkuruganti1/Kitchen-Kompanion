@@ -212,8 +212,6 @@ button {
   padding: 20px;
   color: #4a332d;
   font-size: 16px;
-  font-weight: bold;
-  font-family: Arial;
   border-radius: 30px;
   margin: 35% auto;
   border: 1px solid #888;
@@ -223,6 +221,12 @@ button {
   outline-style: solid;
   outline-width: thin;
   /* height: 65%; */
+}
+
+select:focus,
+input:focus {
+  border: 2px solid #896b60;
+  outline: none;
 }
 
 .item-container {
@@ -317,7 +321,7 @@ select {
 }
 
 .input_box {
-  border: 3px solid #896b60;
+  border: 2px solid #896b60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
