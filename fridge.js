@@ -155,6 +155,7 @@ function showItemInfo(e) {
   var span = document.getElementById("close-modal");
 
   var itemkey = e.className.split(" ")[3];
+  // console.log(itemkey);
   var vals = JSON.parse(localStorage.fridgeItems);
   for (let i = 0; i < vals.length; i++) {
     if (vals[i][0] == itemkey) {
@@ -206,7 +207,7 @@ function editItem() {
   var arr = [];
 
   for (let i = 0; i < inputItems.length; i++) {
-    var val = String(inputItems[i].innerHTML).split(": ");
+    var val = String(inputItems[i].innerHTML).split(": </strong>");
 
     if (val.length == 1) {
       arr.push("");
@@ -237,10 +238,10 @@ function editItem() {
 }
 
 function saveItem() {
-  document.getElementById("it-na").innerHTML = "Item Name: ";
-  document.getElementById("cat").innerHTML = "Category: ";
-  document.getElementById("qty").innerHTML = "Quantity: ";
-  document.getElementById("ed").innerHTML = "Expiration Date: ";
+  document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
+  document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
+  document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
+  document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
 
   // var inputIDs = ["it-na", "cat", "qty", "ed"];
   // var editItems = document.getElementsByClassName("input_box");
