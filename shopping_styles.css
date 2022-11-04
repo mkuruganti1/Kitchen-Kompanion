@@ -107,6 +107,10 @@ button {
 .list-table{
   position: relative;
   top: 40px;
+  width: 316px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 table tr.checked {
@@ -134,9 +138,9 @@ td{
     display:block;
     */
   position:relative;
-  top:10%;
+  top:0%;
   padding:5px 0px;
-  display:none;
+  display:none; 
 }
 
 .giant-tbl-title{
@@ -160,7 +164,6 @@ td{
   position:relative;
   padding:5px 0px;
   display:none;
-  
 }
 
 .tj-tbl-title{
