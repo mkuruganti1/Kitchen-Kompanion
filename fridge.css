@@ -351,6 +351,7 @@ select {
   left: 20%;
   position: relative;
   top: 20px;
+  /* display: none; */
 }
 
 /* ul {

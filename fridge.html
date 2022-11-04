@@ -25,13 +25,13 @@
       
         <div class="formContents">
           <br>
-          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+          <input class="input_box" type="text" id="title" name="title" placeholder="Name (required)" required>
       
           <br>
           <br>
       
-          <select class="input_box" id="category" name="category">
-            <option value="default">Select category</option>
+          <select class="input_box" id="category" name="category" required>
+            <option value="default">Select category (required)</option>
             <option value="dairy">Dairy</option>
             <option value="produce">Produce</option>
             <option value="protein">Protein</option>
@@ -41,13 +41,15 @@
           <br>
           <br>
       
-          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity (required)" required>
           <br>
           <br>
 
-          <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date">
+          <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date (optional)">
       
-          <button type="button" class="add-item-submit-button" onclick="addItemToFridge()">Submit</button>
+          <button type="button" class="add-item-submit-button" id="add-submit" onclick="addItemToFridge()">Submit</button>
+          <!-- <input type="submit" class="add-item-submit-button"> -->
+
         </div>
       </form>
     
@@ -120,13 +122,13 @@
       
         <div class="formContents">
           <br>
-          <input class="input_box edit_input" type="text" id="it-na-edit" name="name" placeholder="Name">
+          <input class="input_box edit_input" type="text" id="it-na-edit" name="name" placeholder="Name (required)">
       
           <br>
           <br>
       
           <select required class="input_box edit_input" id="cat-edit" name="category">
-            <option value="" selected disabled hidden>Select category</option>
+            <option value="" selected disabled hidden>Select category (required)</option>
             <option value="Dairy">Dairy</option>
             <option value="Produce">Produce</option>
             <option value="Protein">Protein</option>
@@ -136,11 +138,11 @@
           <br>
           <br>
       
-          <input class="input_box edit_input" type="text" id="qty-edit" name="quantity" placeholder="Quantity">
+          <input class="input_box edit_input" type="text" id="qty-edit" name="quantity" placeholder="Quantity (required)">
           <br>
           <br>
       
-          <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date">
+          <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date (optional)">
       
           <div class="edit-buttons form-edit-buttons">
             <!-- <button id="edit" onclick="editItem()">Edit</button> -->
