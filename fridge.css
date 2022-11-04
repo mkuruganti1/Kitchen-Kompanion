@@ -511,3 +511,16 @@ ul {
   color: #896b60;
 }
 
+select:invalid,
+select option[value=""] {
+  color: #8e8e8e;
+}
+
+::placeholder {
+  color: #8e8e8e;
+}
+
+select,
+select option {
+  color: #000000;
+}

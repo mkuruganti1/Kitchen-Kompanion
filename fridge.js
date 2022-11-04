@@ -27,20 +27,32 @@ function addItemToFridge() {
   var quantity = document.getElementById("quantity").value;
   var expirationdate = document.getElementById("expdate").value;
 
-  //save new item to localStorage
-  var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
-  fridgeItems.push([item, category, quantity, expirationdate]);
-  localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
+  // doesn't add item to fridge if everything is empty
+  if(!item && category === "Select category" && !quantity && !expirationdate) {
+    // Get the form
+    var form = document.getElementById("myForm");
+    // Get the rest of the fridge content
+    var fridge = document.getElementById("fridgedisplay");
 
-  getFridgeItems();
+    form.style.display = "none";
+    fridge.style.display = "block";
+  
+  } else {
+    //save new item to localStorage
+    var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
+    fridgeItems.push([item, category, quantity, expirationdate]);
+    localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
-  // Get the form
-  var form = document.getElementById("myForm");
-  // Get the rest of the fridge content
-  var fridge = document.getElementById("fridgedisplay");
+    getFridgeItems();
 
-  form.style.display = "none";
-  fridge.style.display = "block";
+    // Get the form
+    var form = document.getElementById("myForm");
+    // Get the rest of the fridge content
+    var fridge = document.getElementById("fridgedisplay");
+
+    form.style.display = "none";
+    fridge.style.display = "block";
+  }
 
   document.getElementById("myForm").reset();
 }
