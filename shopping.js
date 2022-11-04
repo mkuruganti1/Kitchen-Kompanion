@@ -1,5 +1,10 @@
-/*document.addEventListener("DOMContentLoaded", getShoppingListItems);
-*/
+var firstGiant = true;
+var giantCount = 1;
+
+var firstTJ = true;
+var tjCount = 1;
+
+
 function formPopup() {
     // Get the form
     var form = document.getElementById("shoppingForm");
@@ -21,8 +26,6 @@ function formPopup() {
     }
   }
 
-var firstTJ = true;
-var firstGiant = true;
 
 function addItemToShoppingListTbl(){
   var title = document.getElementById("title").value;
@@ -54,7 +57,7 @@ function addItemToShoppingListTbl(){
     var trElement = document.createElement('tr');
     var tdElement = document.createElement('td');
     var inputElement = document.createElement('input');
-    var tdElementTitle = document.createElement('th');
+    var tdElementTitle = document.createElement('td');
     var tdElementQuantity = document.createElement('td');
     
     /* Format Example 
@@ -73,7 +76,21 @@ function addItemToShoppingListTbl(){
     
     tdElement.className ="added-checkbox";
     inputElement.setAttribute("type","checkbox");
-     
+    
+    var id = "box";
+
+    if (tags === "Giant"){
+      id = id + giantCount;
+      giantCount += 1;
+    }
+    else {
+      id = id + tjCount;
+      tjCount += 1;
+    }
+
+    inputElement.setAttribute("id", id);
+    inputElement.setAttribute("onclick", 'checkoff(\'' + id + '\')');
+
     tdElementTitle.setAttribute("data-label", "Item");
     tdElementTitle.innerHTML = title;
 
@@ -102,13 +119,66 @@ function addItemToShoppingListTbl(){
       showTable.style.display="block";
       firstTJ = false;
     }
+
     if (firstGiant && tags === "Giant"){
       showTable = document.getElementById("giant-div");
       showTable.style.display="block";
       firstGiant = false;
     }
 
-    
-
     document.getElementById("shoppingForm").reset();
+}
+
+function checkoff(boxNum){
+  var checkbox = document.getElementById(boxNum);
+  checkbox.closest('tr').className = checkbox.checked ? 'checked' : '';
+}
+
+function removeCheckedCheckboxes(){
+  var collection = document.getElementsByClassName("checked");
+  var id;
+  
+  for (let tr of collection){
+    id = tr.parentElement.id;
+
+    if (id === "giant-body"){
+      giantCount = giantCount - 1;
+    }
+
+    else {
+      tjCount = tjCount - 1;
+    }
+
+    tr.remove();
+  }
+
+  if (giantCount == 0){
+    document.getElementById("giant-div").style.display="none";
+  }
+  if (tjCount == 0){
+    document.getElementById("tj-div").style.display="none";
+  }
+        
+}
+
+function clearAll(){
+  var collection = document.getElementsByTagName("tr");
+  
+  for (var i = collection.length - 1; i >= 0; i--){
+    collection[i].remove();
+    
+  }
+  
+  var showTable;
+  firstGiant = true;
+  firstTJ = true;
+  giantCount = 1;
+  tjCount = 1;
+
+  showTable = document.getElementById("tj-div");
+  showTable.style.display="none";
+
+  showTable = document.getElementById("giant-div");
+  showTable.style.display="none";
+
 }
