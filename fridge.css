@@ -241,7 +241,7 @@ input:focus {
 }
 
 .edit-buttons button {
-  width: 132px;
+  width: 100px;
   /* margin: 0 auto; */
   text-align: center;
 }
@@ -311,12 +311,12 @@ select {
   position: absolute;
   top: 25px;
   text-align: center;
-  left: 30%;
+  margin-left: 100px;
 }
 
 .formContents {
   position: relative;
-  left: 20px;
+  left: 26.5px;
   top: 30px;
 }
 
