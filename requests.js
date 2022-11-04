@@ -42,11 +42,11 @@ function getTodos() {
     newFood.classList.add("todo-item");
     foodDiv.appendChild(newFood);
     const completedButton = document.createElement("button");
-    completedButton.innerHTML = `<span class="material-icons md-48">check_circle</span>`;
+    completedButton.innerHTML = `<span class="material-icons md-48 green">check_circle</span>`;
     completedButton.classList.add("complete-btn");
     foodDiv.appendChild(completedButton);
     const trashButton = document.createElement("button");
-    trashButton.innerHTML = `<span class="material-icons md-48">cancel</span>`;
+    trashButton.innerHTML = `<span class="material-icons md-48 red">cancel</span>`;
     trashButton.classList.add("trash-btn");
     foodDiv.appendChild(trashButton);
     todoList.appendChild(foodDiv);

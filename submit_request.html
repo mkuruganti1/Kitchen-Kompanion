@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="document.getElementById('reason').focus();">
     <div class="allcontent">
       <div class="pending_container">
         <span class="material-icons md-32 pending" onclick="load_requests()"
@@ -23,25 +23,24 @@
         <div id="welcome">
           <h2>New Request</h2>
         </div>
-        <form onsubmit="submitRequest(this)" id="form">
-          <input type="text" name="name" placeholder="Food" class="text_box" />
+        <div id="form">
+          <input id="food" type="text" name="name" placeholder="Food" class="text_box" onclick="window.location.href='./keyboard.html'" />
           <br />
           <textarea
+            id="reason"
             placeholder="Reason..."
             rows="4"
             cols="10"
             class="text_area"
             name="reason"
+            onclick="window.location.href='./keyboard.html'"
           ></textarea>
           <br />
           <br />
           <button>
             <span class="unsuccess">Submit</span>
-            <div class="success">
-              <span class="material-icons md-32">autorenew</span>
-            </div>
           </button>
-        </form>
+        </div>
       </div>
       <div id="nav-placeholder">
         <nav>
@@ -75,16 +74,6 @@
       </div>
     </div>
     <script>
-      function submitRequest(that) {
-        var foods = JSON.parse(localStorage.getItem("foods") || "[]");
-        var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
-        foods.push(that.name.value);
-        reasons.push(that.reason.value);
-        localStorage.setItem("foods", JSON.stringify(foods));
-        localStorage.setItem("reasons", JSON.stringify(reasons));
-        return true;
-      }
-
       function load_requests() {
         window.location = "approve_request.html";
       }
@@ -94,7 +83,7 @@
           current = i;
         }
       }
-      document.links[current].childNodes[0].classList.add("current")
+      document.links[current].childNodes[0].classList.add("current");
       document.links[current].parentElement.className = "current";
     </script>
   </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title></title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./keyboard.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="document.getElementById('food').focus();">
+    <div class="allcontent">
+      <span
+        class="material-icons md-32 close"
+        onclick="window.location.href='./submit_request.html'"
+        >close</span
+      >
+      <div class="submit_page">
+        <div id="welcome">
+          <h2>New Request</h2>
+        </div>
+        <form onsubmit="return submitRequest(this)" id="form">
+          <input
+            id="food"
+            type="text"
+            name="name"
+            placeholder="Food"
+            class="text_box"
+          />
+          <br />
+          <textarea
+            placeholder="Reason..."
+            rows="4"
+            cols="10"
+            class="text_area"
+            name="reason"
+          ></textarea>
+          <button>
+            <span class="unsuccess">Submit</span>
+          </button>
+        </form>
+      </div>
+      <img class="keyboard" src="assets/images/keyboard.png" />
+    </div>
+    <script>
+      function submitRequest(that) {
+        var foods = JSON.parse(localStorage.getItem("foods") || "[]");
+        var reasons = JSON.parse(localStorage.getItem("reasons") || "[]");
+        foods.push(that.name.value);
+        reasons.push(that.reason.value);
+        localStorage.setItem("foods", JSON.stringify(foods));
+        localStorage.setItem("reasons", JSON.stringify(reasons));
+        window.location = "submit_request.html";
+        return false;
+      }
+    </script>
+  </body>
+</html>
