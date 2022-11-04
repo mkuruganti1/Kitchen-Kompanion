@@ -65,26 +65,31 @@
         <div class="list-title">
           <h2>Shopping List</h2>
         </div>
-        
-          <div class="addButton" >
-            <span class="material-icons md-32" id="add-button" onclick="formPopup()">
-              add_circle
-            </span>
-          </div>
 
-          <div class="delButton">
-            <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
-              delete
-            </span>
-          </div>
-      
+        <div class="listContents">
+          <div class="grid-container">
+            <div class="dropdown-placeholder">
+              
+            </div>
+            <div class="addButton" >
+              <span class="material-icons md-32" id="add-button" onclick="formPopup()">
+                add_circle
+              </span>
+            </div>
 
-        <div class="list-table" role="grid" >
+            <div class="delButton">
+              <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                delete
+              </span>
+            </div>
+        </div>
+
+        <div class="list-items" >
           <div class = "giant" id="giant-div">
             <div class="giant-tbl-title"> Giant </div>
               <table class= "giant-tbl" id="giant-tbl" >
                 <col style="width:0px">
-                <col style="width:150px">
+                <col style="width:140px">
                 <thead>
                   <tr>
                       <th hidden>Item</th>
@@ -92,7 +97,7 @@
                   </tr>
                 </thead>
                 <tbody id="giant-body">
-                  
+                 
                 </tbody>
               </table>
           </div>
@@ -101,7 +106,7 @@
             <div class="tj-tbl-title"> Trader Joe's </div>
               <table class="tj-tbl" id="tj-tbl">
                 <col style="width:0px">
-                <col style="width:150px">
+                <col style="width:140px">
                 <thead>
                   <tr>
                       <th hidden>Item</th>
@@ -118,7 +123,7 @@
         <div class="clear">
           <button type="button" onclick="clearAll()">Clear All</button>
         </div>
-
+      </div>
 
       <div id="nav-placeholder">
         <nav>

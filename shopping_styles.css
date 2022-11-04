@@ -12,6 +12,7 @@
   display:block;
 }
 
+/*
 .tags {
   top: 10px;
   margin: auto;
@@ -19,8 +20,8 @@
   position: relative;
   padding: 20px;
 }
-
-.listcontents{
+*/
+/*.listcontents{
   width: 310px;
   height: 355px;
   margin: auto;
@@ -29,11 +30,16 @@
   overflow-x: hidden;
   position:relative;
 }
-
+*/
+.listContents{
+  position:relative;
+  font-size: 16px;
+}
 
 .list-title{
   position: relative;
-  top: 25px;
+  top: 0px;
+  padding-top: 25px;
   text-align: center;
 }
 
@@ -65,17 +71,44 @@ input[type="checkbox"] {
 }
 
 .addButton {
-  top: 16%;
+ /* top: 16%;
   right: 14%;
   position:absolute;
   grid-area: add-item;
+  */
+  grid-area:addButton;
 }
 
 .delButton {
-  top:16%;
+  /*top:16%;
   right: 4%;
   position:absolute;
   grid-area: add-item;
+  */
+  grid-area: delButton;
+}
+
+.dropdowns {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  padding-bottom: 20px;
+  grid-area: dropdown;
+  /* position: relative; */
+  display: block;
+  width: 15em;
+  height: 2em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: 0.25em;
+  /* padding-bottom: 10px; */
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 14% 40% 10% 10% 4% 10% 15%;
+  grid-template-areas: ". dropdown . addButton . delButton .";
 }
 
 button {
@@ -96,21 +129,23 @@ button {
 }
 
 .clear{
-  position: absolute;
-  bottom: 13%;
-  left: 28%;
+  padding-top: 20px;
+  text-align: center;
 }
 
 /* ------------------------------------
 /  Table Styling
 /  ----------------------------------*/
-.list-table{
+.list-items{
   position: relative;
-  top: 40px;
-  width: 316px;
-  height: 300px;
+  /*top: 40px;*/
+  /*width: 316px;*/
+  height: 268px;
   overflow-y: auto;
   overflow-x: hidden;
+  display: inline-block; 
+  margin-right: 25px;
+  margin-left: 40px;
 }
 
 table tr.checked {
@@ -135,18 +170,18 @@ td{
 
 .giant{
   /*for testing 
-    display:block;
+     display:block;
     */
   position:relative;
   top:0%;
-  padding:5px 0px;
-  display:none; 
+  /*padding:5px 0px;*/
+  display:none;
 }
 
 .giant-tbl-title{
   display:block;
   position:relative;
-  left:15px;
+  /*left:15px;*/
   color: #4A332D;
   font-size: 16px;
   font-weight: bold;
@@ -154,22 +189,22 @@ td{
 
 .giant-tbl{
   position:relative;
-  left:15px;
+  /*left:15px;*/
 }
 
 .tj{
   /* for testing 
-  display:block;
+    display:block;
   */
   position:relative;
-  padding:5px 0px;
-  display:none;
+  /*padding:5px 0px;*/
+  display:none; 
 }
 
 .tj-tbl-title{
   display:block;
   position:relative;
-  left:15px;
+  /*left:15px;*/
   color: #4A332D;
   font-size: 16px;
   font-weight: bold;
@@ -177,7 +212,7 @@ td{
 
 .tj-tbl{
   position:relative;
-  left:15px;
+  /*left:15px;*/
 }
 
 

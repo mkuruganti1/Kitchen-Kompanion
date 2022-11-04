@@ -1,8 +1,8 @@
 var firstGiant = true;
-var giantCount = 1;
+var giantCount = 0;
 
 var firstTJ = true;
-var tjCount = 1;
+var tjCount = 0;
 
 
 function formPopup() {
@@ -172,8 +172,8 @@ function clearAll(){
   var showTable;
   firstGiant = true;
   firstTJ = true;
-  giantCount = 1;
-  tjCount = 1;
+  giantCount = 0;
+  tjCount = 0;
 
   showTable = document.getElementById("tj-div");
   showTable.style.display="none";
