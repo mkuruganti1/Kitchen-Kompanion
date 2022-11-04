@@ -36,8 +36,8 @@
           <br>
           <br>
           
-          <select class="input_box" id="category" name="category" >
-              <option value="default">Select category</option>
+          <select required class="input_box_dropdown" id="category" name="category" >
+              <option value="" selected disabled hidden>Select category</option>
               <option value="dairy">Dairy</option>
               <option value="produce">Produce</option>
               <option value="protein">Protein</option>
@@ -51,13 +51,12 @@
           <br>
           <br>
           
-          <select class="input_box" id="tags" name="tags">
-            <option value="default">Select tag</option>
+          <select required class="input_box_dropdown" id="tags" name="tags">
+            <option value="" selected disabled hidden>Select tag</option>
             <option value="giant">Giant</option>
             <option value="tj">Trader Joe's</option>
           </select>
-          
-         <!--<button type="button" class="add-item-submit-button" onclick="addItemToShoppingList()">Submit</button>  --> 
+
          <button type="button" class="add-item-submit-button" onclick="addItemToShoppingListTbl()">Submit</button>  
         </div>   
       </form>
@@ -66,73 +65,65 @@
         <div class="list-title">
           <h2>Shopping List</h2>
         </div>
-        
-          <div class="addButton" >
-            <span class="material-icons md-32" id="add-button" onclick="formPopup()">
-              add_circle
-            </span>
-          </div>
-      
 
-        <div class="list-table" role="grid" >
-          <table class= "giant-tbl" id="giant-tbl">
-            <thead>
-              <tr>
-                <td />
-                  <th scope="col">
-                    Item
-                  </th>
-                  <th scope="col">
-                    Quantity
-                  </th>
-              </tr>
-            </thead>
-            <tbody class="body">
-              <tr>
-                <td class="added-checkbox">
-                  <input type="checkbox" name="sugar" aria-labelledby="item-1-sugar" />
-                </td>
-                <th data-label="Item">
-                  <div id="item-1-sugar">Sugar</div>
-                </th>
-                <td data-label="Quantity">
-                  1 cup
-                </td>
-              </tr>
-              <tr>
-                <td class="added-checkbox">
-                  <input type="checkbox" name="butter" aria-labelledby="item-2-butter" />
-                </td>
-                <th data-label="Item">
-                  <div id="item-2-butter">Butter</div>
-                </th>
-                <td data-label="Quantity">
-                  ½ cup
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="listContents">
+          <div class="grid-container">
+            <div class="dropdown-placeholder">
+              
+            </div>
+            <div class="addButton" >
+              <span class="material-icons md-32" id="add-button" onclick="formPopup()">
+                add_circle
+              </span>
+            </div>
 
-          <table id="tj-tbl" >
-            <thead>
-              <tr>
-                <td />
-                  <th scope="col">
-                    Item
-                  </th>
-                  <th scope="col">
-                    Quantity
-                  </th>
-              </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-          </table>
+            <div class="delButton">
+              <span class="material-icons md-32 material-symbols-rounded" onclick="removeCheckedCheckboxes()">
+                delete
+              </span>
+            </div>
         </div>
-          
-      
 
+        <div class="list-items" >
+          <div class = "giant" id="giant-div">
+            <div class="giant-tbl-title"> Giant </div>
+              <table class= "giant-tbl" id="giant-tbl" >
+                <col style="width:0px">
+                <col style="width:140px">
+                <thead>
+                  <tr>
+                      <th hidden>Item</th>
+                      <th hidden>Quantity</th>  
+                  </tr>
+                </thead>
+                <tbody id="giant-body">
+                 
+                </tbody>
+              </table>
+          </div>
+          
+          <div class = "tj" id="tj-div">
+            <div class="tj-tbl-title"> Trader Joe's </div>
+              <table class="tj-tbl" id="tj-tbl">
+                <col style="width:0px">
+                <col style="width:140px">
+                <thead>
+                  <tr>
+                      <th hidden>Item</th>
+                      <th hidden>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="tj-body">
+                  
+                </tbody>
+              </table>
+          </div>
+        </div>
+             
+        <div class="clear">
+          <button type="button" onclick="clearAll()">Clear All</button>
+        </div>
+      </div>
 
       <div id="nav-placeholder">
         <nav>
@@ -172,7 +163,7 @@
           current = i;
         }
       }
-      document.links[current].childNodes[0].classList.add("current")
+      document.links[current].childNodes[0].classList.add("current");
       document.links[current].parentElement.className = "current";
     </script>
   </body>

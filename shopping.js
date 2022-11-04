@@ -1,5 +1,10 @@
-/*document.addEventListener("DOMContentLoaded", getShoppingListItems);
-*/
+var firstGiant = true;
+var giantCount = 0;
+
+var firstTJ = true;
+var tjCount = 0;
+
+
 function formPopup() {
     // Get the form
     var form = document.getElementById("shoppingForm");
@@ -21,8 +26,7 @@ function formPopup() {
     }
   }
 
-  var firstTJ = true;
-  var firstGiant = true;
+
 function addItemToShoppingListTbl(){
   var title = document.getElementById("title").value;
   var category =
@@ -36,18 +40,24 @@ function addItemToShoppingListTbl(){
     ].text;
 
     var tableElement;
+    var tbodyElement;
     if (tags === "Giant") {
       tableElement = document.getElementById("giant-tbl");
+      tbodyElement = document.getElementById('giant-body'); 
+    }
+    else if (tags === "Trader Joe's") {
+      tableElement = document.getElementById("tj-tbl");
+      tbodyElement = document.getElementById('tj-body'); 
     }
     else {
-      tableElement = document.getElementById("tj-tbl");
+      tableElement = document.getElementById("giant-tbl");
+      tbodyElement = document.getElementById('giant-body'); 
     }
-    var trElement = document.createElement('tr');
     
-    var tbodyElement = document.getElementById('body');
+    var trElement = document.createElement('tr');
     var tdElement = document.createElement('td');
-    var thElement = document.createElement('th');
     var inputElement = document.createElement('input');
+    var tdElementTitle = document.createElement('td');
     var tdElementQuantity = document.createElement('td');
     
     /* Format Example 
@@ -66,10 +76,23 @@ function addItemToShoppingListTbl(){
     
     tdElement.className ="added-checkbox";
     inputElement.setAttribute("type","checkbox");
-    inputElement.setAttribute("className", "added-element");
-     
-    thElement.setAttribute("data-label", "Item");
-    thElement.innerHTML = title;
+    
+    var id = "box";
+
+    if (tags === "Giant"){
+      id = id + giantCount;
+      giantCount += 1;
+    }
+    else {
+      id = id + tjCount;
+      tjCount += 1;
+    }
+
+    inputElement.setAttribute("id", id);
+    inputElement.setAttribute("onclick", 'checkoff(\'' + id + '\')');
+
+    tdElementTitle.setAttribute("data-label", "Item");
+    tdElementTitle.innerHTML = title;
 
     tdElementQuantity.setAttribute("data-label", "Quantity");
     tdElementQuantity.innerHTML = quantity;
@@ -78,7 +101,7 @@ function addItemToShoppingListTbl(){
     
   
     trElement.appendChild(tdElement);
-    trElement.appendChild(thElement);
+    trElement.appendChild(tdElementTitle);
     trElement.appendChild(tdElementQuantity);
 
     tbodyElement.appendChild(trElement);
@@ -87,8 +110,75 @@ function addItemToShoppingListTbl(){
     // Get the rest of the shopping list content
     var shoppingList = document.getElementById("shoppingList");
 
+    var showTable;
     form.style.display = "none";
     shoppingList.style.display = "block";
 
+    if (firstTJ && tags === "Trader Joe's" ){
+      showTable = document.getElementById("tj-div");
+      showTable.style.display="block";
+      firstTJ = false;
+    }
+
+    if (firstGiant && tags === "Giant"){
+      showTable = document.getElementById("giant-div");
+      showTable.style.display="block";
+      firstGiant = false;
+    }
+
     document.getElementById("shoppingForm").reset();
+}
+
+function checkoff(boxNum){
+  var checkbox = document.getElementById(boxNum);
+  checkbox.closest('tr').className = checkbox.checked ? 'checked' : '';
+}
+
+function removeCheckedCheckboxes(){
+  var collection = document.getElementsByClassName("checked");
+  var id;
+  
+  for (let tr of collection){
+    id = tr.parentElement.id;
+
+    if (id === "giant-body"){
+      giantCount = giantCount - 1;
+    }
+
+    else {
+      tjCount = tjCount - 1;
+    }
+
+    tr.remove();
+  }
+
+  if (giantCount == 0){
+    document.getElementById("giant-div").style.display="none";
+  }
+  if (tjCount == 0){
+    document.getElementById("tj-div").style.display="none";
+  }
+        
+}
+
+function clearAll(){
+  var collection = document.getElementsByTagName("tr");
+  
+  for (var i = collection.length - 1; i >= 0; i--){
+    collection[i].remove();
+    
+  }
+  
+  var showTable;
+  firstGiant = true;
+  firstTJ = true;
+  giantCount = 0;
+  tjCount = 0;
+
+  showTable = document.getElementById("tj-div");
+  showTable.style.display="none";
+
+  showTable = document.getElementById("giant-div");
+  showTable.style.display="none";
+
 }
