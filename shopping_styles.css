@@ -1,4 +1,3 @@
-
 .allcontent {
   width: 316px;
   height: 550px;
@@ -9,7 +8,7 @@
   right: 0;
   border-radius: 30px;
   position: absolute;
-  display:block;
+  display: block;
 }
 
 /*
@@ -31,18 +30,17 @@
   position:relative;
 }
 */
-.listContents{
-  position:relative;
+.listContents {
+  position: relative;
   font-size: 16px;
 }
 
-.list-title{
+.list-title {
   position: relative;
   top: 0px;
   padding-top: 25px;
   text-align: center;
 }
-
 
 #checkboxes {
   display: none;
@@ -51,15 +49,14 @@
 
 #checkboxes label {
   display: block;
-  left:0px;
+  left: 0px;
 }
 
 .close {
   margin-left: 270px;
   margin-top: 10px;
-  color: #896B60;
+  color: #896b60;
 }
-
 
 input[type="checkbox"] {
   background-color: #fff;
@@ -71,12 +68,12 @@ input[type="checkbox"] {
 }
 
 .addButton {
- /* top: 16%;
+  /* top: 16%;
   right: 14%;
   position:absolute;
   grid-area: add-item;
   */
-  grid-area:addButton;
+  grid-area: addButton;
 }
 
 .delButton {
@@ -128,7 +125,7 @@ button {
   /* transition-duration: 0.4s; */
 }
 
-.clear{
+.clear {
   padding-top: 20px;
   text-align: center;
 }
@@ -136,14 +133,14 @@ button {
 /* ------------------------------------
 /  Table Styling
 /  ----------------------------------*/
-.list-items{
+.list-items {
   position: relative;
   /*top: 40px;*/
   /*width: 316px;*/
   height: 268px;
   overflow-y: auto;
   overflow-x: hidden;
-  display: inline-block; 
+  display: inline-block;
   margin-right: 25px;
   margin-left: 40px;
 }
@@ -152,69 +149,66 @@ table tr.checked {
   text-decoration: line-through;
 }
 
-.table{
-  margin:10px;
+.table {
+  margin: 10px;
   text-align: left;
 }
 
-td{
+td {
   font-size: 16px;
 }
 
-
-
-.added-checkbox{
-  position:relative;
+.added-checkbox {
+  position: relative;
   transform: translateY(-4px);
 }
 
-.giant{
+.giant {
   /*for testing 
      display:block;
     */
-  position:relative;
-  top:0%;
+  position: relative;
+  top: 0%;
   /*padding:5px 0px;*/
-  display:none;
+  display: none;
 }
 
-.giant-tbl-title{
-  display:block;
-  position:relative;
+.giant-tbl-title {
+  display: block;
+  position: relative;
   /*left:15px;*/
-  color: #4A332D;
+  color: #4a332d;
   font-size: 16px;
   font-weight: bold;
 }
 
-.giant-tbl{
-  position:relative;
+.giant-tbl {
+  position: relative;
   /*left:15px;*/
 }
 
-.tj{
+.tj {
   /* for testing 
     display:block;
   */
-  position:relative;
+  position: relative;
   /*padding:5px 0px;*/
-  display:none; 
+  display: none;
 }
 
-.tj-tbl-title{
-  display:block;
-  position:relative;
+.tj-tbl-title {
+  display: block;
+  position: relative;
   /*left:15px;*/
-  color: #4A332D;
+  color: #4a332d;
   font-size: 16px;
   font-weight: bold;
 }
 
-.tj-tbl{
-  position:relative;
+.tj-tbl {
+  position: relative;
   /*left:15px;*/
 }
-
 
 /* ------------------------------------
 /  Form Styling
@@ -227,17 +221,17 @@ td{
   position: absolute;
   top: 25px;
   text-align: center;
-  left:30%;
+  left: 30%;
 }
 
-.formContents{
-  position:relative;
-  left:20px;
-  top:30px;
+.formContents {
+  position: relative;
+  left: 26.5px;
+  top: 30px;
 }
 
 .input_box {
-  border: 2px solid #896B60;
+  border: 2px solid #896b60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
@@ -251,7 +245,7 @@ td{
 }
 
 .input_box_dropdown {
-  border: 2px solid #896B60;
+  border: 2px solid #896b60;
   border-radius: 5px;
   height: 50px;
   line-height: normal;
@@ -264,14 +258,13 @@ td{
   padding-left: 12px;
 }
 
-
 select:invalid,
-select option[value=""]{
-  color:#8e8e8e;
+select option[value=""] {
+  color: #8e8e8e;
 }
 
 ::placeholder {
-  color:#8e8e8e;
+  color: #8e8e8e;
 }
 
 select,
@@ -279,26 +272,25 @@ select option {
   color: #000000;
 }
 
-
 select:focus,
 input:focus {
   border: 2px solid #896b60;
   outline: none;
 }
 
-.add-item-submit-button{
+.add-item-submit-button {
   width: 130px;
   height: 40px;
   line-height: 1;
   font-size: 16px;
   letter-spacing: 1px;
-  border: 3px solid #896B60;
-  background: #896B60;
-  color: #F5F2EA;
+  border: 3px solid #896b60;
+  background: #896b60;
+  color: #f5f2ea;
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 1.0s;
+  transition: all 1s;
   left: 20%;
   position: relative;
   top: 20px;
@@ -306,7 +298,7 @@ input:focus {
 
 ul {
   list-style: none;
-  left:0px;
+  left: 0px;
 }
 
 .material-symbols-outlined {

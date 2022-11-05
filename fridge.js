@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", getFridgeItems);
 
-// var edit = "";
-
 function removeCheckedCheckboxes() {
   var checked = document.querySelectorAll(".delete-checkbox:checked");
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
