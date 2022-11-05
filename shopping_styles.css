@@ -161,11 +161,17 @@ td{
   font-size: 16px;
 }
 
+.item {
+  width: 30%;
+}
 
+.quantity {
+  width: 20%;
+}
 
 .added-checkbox{
   position:relative;
-  transform: translateY(-4px);
+  
 }
 
 .giant{
