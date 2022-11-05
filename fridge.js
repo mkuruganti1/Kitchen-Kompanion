@@ -26,9 +26,8 @@ function addItemToFridge() {
   var expirationdate = document.getElementById("expdate").value;
 
   // doesn't add item to fridge if everything is empty
-  console.log(item, item.length);
-  console.log(category, category.length);
-  console.log(quantity, quantity.length);
+  // 
+  
   if(!item || category == "Select category (required)" || !quantity) {
     // Get the form
     // var submit_btn = document.getElementById("add-submit");
@@ -129,6 +128,7 @@ function formPopup() {
   span.onclick = function () {
     form.style.display = "none";
     fridge.style.display = "block";
+    form.reset();
   };
 }
 

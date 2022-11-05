@@ -291,7 +291,7 @@ input:focus {
   cursor: pointer;
   overflow: hidden;
   transition: all 1s;
-  left: 20%;
+  left: 21%;
   position: relative;
   top: 20px;
 }
