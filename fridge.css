@@ -227,6 +227,7 @@ select:focus,
 input:focus {
   border: 2px solid #896b60;
   outline: none;
+  color: black;
 }
 
 .item-container {
@@ -241,7 +242,7 @@ input:focus {
 }
 
 .edit-buttons button {
-  width: 132px;
+  width: 100px;
   /* margin: 0 auto; */
   text-align: center;
 }
@@ -278,6 +279,7 @@ input {
   font: Arial;
   font-size: 16px;
   width: 76%;
+  color: #000000;
 }
 
 select {
@@ -311,12 +313,12 @@ select {
   position: absolute;
   top: 25px;
   text-align: center;
-  left: 30%;
+  margin-left: 100px;
 }
 
 .formContents {
   position: relative;
-  left: 20px;
+  left: 26.5px;
   top: 30px;
 }
 
@@ -332,7 +334,7 @@ select {
   font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
-  color: #8e8e8e;
+  color: black;
 }
 
 .add-item-submit-button {
@@ -348,9 +350,10 @@ select {
   cursor: pointer;
   overflow: hidden;
   transition: all 1s;
-  left: 20%;
+  left: 21%;
   position: relative;
   top: 20px;
+  /* display: none; */
 }
 
 /* ul {
@@ -511,3 +514,19 @@ ul {
   color: #896b60;
 }
 
+select:invalid,
+select option[value=""] {
+  color: #8e8e8e;
+}
+
+::placeholder {
+  color: #8e8e8e;
+}
+
+select option {
+  color: black;
+}
+
+#hidden-val {
+  display: none;
+}

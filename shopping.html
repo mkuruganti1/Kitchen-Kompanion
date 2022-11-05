@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
-    <title></title>
+    <title>Shopping List</title>
 
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./shopping_styles.css" />
+    <link rel="stylesheet" href="./styles.css" >
+    <link rel="stylesheet" href="./shopping_styles.css" >
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-    />
+    >
     <script src="./shopping.js"></script>
   </head>
   <body>
@@ -21,7 +21,6 @@
         class="form-popup"
         action="javascript:void(0);"
         id="shoppingForm"
-        style.display="none"
       >
         <span id="close-form" class="material-icons md-32 close">close</span>
         
@@ -31,13 +30,13 @@
         
         <div class="formContents">
           <br>
-          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+          <input class="input_box" type="text" id="title" name="title" placeholder="Name (required)">
           
           <br>
           <br>
           
           <select required class="input_box_dropdown" id="category" name="category" >
-              <option value="" selected disabled hidden>Select category</option>
+              <option value="" selected disabled hidden>Select category (required)</option>
               <option value="dairy">Dairy</option>
               <option value="produce">Produce</option>
               <option value="protein">Protein</option>
@@ -47,12 +46,12 @@
           <br>
           <br>
           
-          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity (required)">
           <br>
           <br>
           
           <select required class="input_box_dropdown" id="tags" name="tags">
-            <option value="" selected disabled hidden>Select tag</option>
+            <option value="" selected disabled hidden>Select tag (required)</option>
             <option value="giant">Giant</option>
             <option value="tj">Trader Joe's</option>
           </select>
@@ -61,7 +60,7 @@
         </div>   
       </form>
       
-      <div id="shoppingList" class="shoppingList" style.display="block">
+      <div id="shoppingList" class="shoppingList">
         <div class="list-title">
           <h2>Shopping List</h2>
         </div>
@@ -82,7 +81,7 @@
                 delete
               </span>
             </div>
-        </div>
+          </div>
 
         <div class="list-items" >
           <div class = "giant" id="giant-div">
@@ -106,13 +105,13 @@
               </table>
           </div>
           
-          <div class = "tj" id="tj-div">
-            <div class="tj-tbl-title"> Trader Joe's </div>
-              <table class="tj-tbl" id="tj-tbl">
-                <col style="width:0px">
-                <col style="width:140px">
-                <thead>
-                  <tr>
+            <div class = "tj" id="tj-div">
+              <div class="tj-tbl-title"> Trader Joe's </div>
+                <table class="tj-tbl" id="tj-tbl">
+                  <col style="width:0px">
+                  <col style="width:140px">
+                  <thead>
+                    <tr>
                       <th hidden>Item</th>
                       <th hidden>Quantity</th>
                   </tr>
@@ -126,8 +125,9 @@
           </div>
         </div>
              
-        <div class="clear">
+          <div class="clear">
           <button type="button" onclick="clearAll()">Clear All</button>
+        </div>
         </div>
       </div>
 
@@ -161,7 +161,8 @@
           </ul>
         </nav>
       </div>
-    </div>
+      </div>
+
     <script>
       var current = 0;
       for (var i = 0; i < document.links.length; i++) {

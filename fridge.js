@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", getFridgeItems);
 
-// var fridge_items = [[]];
-
 function removeCheckedCheckboxes() {
   var checked = document.querySelectorAll(".delete-checkbox:checked");
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
@@ -27,20 +25,43 @@ function addItemToFridge() {
   var quantity = document.getElementById("quantity").value;
   var expirationdate = document.getElementById("expdate").value;
 
-  //save new item to localStorage
-  var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
-  fridgeItems.push([item, category, quantity, expirationdate]);
-  localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
+  // doesn't add item to fridge if everything is empty
+  // 
+  
+  if(!item || category == "Select category (required)" || !quantity) {
+    // Get the form
+    // var submit_btn = document.getElementById("add-submit");
+    // // Get the rest of the fridge content
+    // var fridge = document.getElementById("fridgedisplay");
 
-  getFridgeItems();
+    // form.style.display = "none";
+    // fridge.style.display = "block";
+    // form.style.background = "#896b60;"
+    
 
-  // Get the form
-  var form = document.getElementById("myForm");
-  // Get the rest of the fridge content
-  var fridge = document.getElementById("fridgedisplay");
+    // alert(category);
+  
+  } else {
+    // if (category === "Select category (required)") {
+    //   category = "";
+    // }
+    // var submit_btn = document.getElementById("add-submit");
+    // submit_btn.style.display = "block";
+    //save new item to localStorage
+    var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
+    fridgeItems.push([item, category, quantity, expirationdate]);
+    localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
-  form.style.display = "none";
-  fridge.style.display = "block";
+    getFridgeItems();
+
+    // Get the form
+    var form = document.getElementById("myForm");
+    // Get the rest of the fridge content
+    var fridge = document.getElementById("fridgedisplay");
+
+    form.style.display = "none";
+    fridge.style.display = "block";
+  }
 
   document.getElementById("myForm").reset();
 }
@@ -63,7 +84,7 @@ function populateSingleFridgeItem(item) {
     input.setAttribute("value", item[0]);
     input.setAttribute("class", "delete-checkbox " + item[1]);
     // input.setAttribute("id", item[1]);
-
+    
     label.appendChild(input);
     label.append(item[0]);
 
@@ -76,13 +97,13 @@ function populateSingleFridgeItem(item) {
     span.setAttribute("id", Math.floor(Math.random() * 100));
     span.setAttribute("onclick", "showItemInfo(this)");
     span.append("open_in_new");
-
+    
     // create the new div that holds the label/input and span, and add label/input and span to new div
     var newdiv = document.createElement("div");
     newdiv.className = "items-in-fridge";
     newdiv.appendChild(label);
     newdiv.appendChild(span);
-
+    
     // add all new elements to the list of items in fridge
     var element = document.getElementById("fridge-items-form");
     element.appendChild(newdiv);
@@ -107,6 +128,7 @@ function formPopup() {
   span.onclick = function () {
     form.style.display = "none";
     fridge.style.display = "block";
+    form.reset();
   };
 }
 
@@ -179,15 +201,16 @@ function showItemInfo(e) {
 
   // When the user clicks on <span> (x), close the form
   span.onclick = function () {
-    document.getElementById("it-na").innerHTML = "Item Name: ";
-    document.getElementById("cat").innerHTML = "Category: ";
-    document.getElementById("qty").innerHTML = "Quantity: ";
-    document.getElementById("ed").innerHTML = "Expiration Date: ";
+    document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
+    document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
+    document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
+    document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
     modal.style.display = "none";
   };
 }
 
 function editItem() {
+  // edit = "";
   // Get the <span> element that closes
   var span = document.getElementById("close-edit-popup");
 
@@ -214,27 +237,33 @@ function editItem() {
     } else {
       arr.push(val[1]);
     }
-
-    // inputItems[i].style.display="none";
   }
 
-  // console.log(arr);
+  document.getElementById("hidden-val").innerHTML = arr[0];
 
   for (let i = 0; i < editItems.length; i++) {
-    console.log(arr[i]);
-    if (arr[i].length) {
+    console.log(arr[i].length, arr[i]);
+    if (arr[i].replaceAll(' ', '').length) {
+      // if (i == 2 && arr[i] === "Select Category") {
+      //   document.getElementById(inputIDs[i]).value = arr[i];
+      // }
       document.getElementById(inputIDs[i]).value = arr[i];
     }
-
-    // editItems[i].style.display="block";
   }
+
+  // edit = item;
+  // console.log(edit);
 
   // close page
   span.onclick = function () {
     editItem.style.display = "none";
     modal.style.display = "block";
     fridge.style.display = "block";
+    // edit = "";
   };
+  // return arr[0];
+
+  
 }
 
 function saveItem() {
@@ -243,50 +272,51 @@ function saveItem() {
   document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
   document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
 
-  // var inputIDs = ["it-na", "cat", "qty", "ed"];
-  // var editItems = document.getElementsByClassName("input_box");
-  // var inputItems = document.getElementsByClassName("iteminfo");
-  // var inputIDs = [, "cat", "qty", "ed"];
-  // var itemInfo = [];
-
-  // var span = document.getElementById("close-edit-popup");
-
   // Get the rest of the fridge content
   var fridge = document.getElementById("fridgedisplay");
   var modal = document.getElementById("modal");
   var editItem = document.getElementById("editpopup");
-  // editItem.style.display = "block";
-  // modal.style.display = "none";
-  // fridge.style.display = "none";
 
   var item_name = document.getElementById("it-na-edit").value;
   var category =
     document.getElementById("cat-edit").options[
       document.getElementById("cat-edit").selectedIndex
     ].text;
+  if (category === "Select category") {
+    alert(category);
+  }
+  
   var qty = document.getElementById("qty-edit").value;
   var ed = document.getElementById("ed-edit").value;
 
   document.getElementById("it-na").innerHTML += item_name;
-  document.getElementById("cat").innerHTML += category;
+  if (category === "Select category") {
+    document.getElementById("cat").innerHTML += ""; 
+  } else {
+    document.getElementById("cat").innerHTML += category;
+  }
   document.getElementById("qty").innerHTML += qty;
   document.getElementById("ed").innerHTML += ed;
 
-  // for (let i = 0; i < inputItems.length; i++) {
-  //   itemInfo.push(editItems[i].value);
-  //   document.getElementById(inputIDs[i]).innerHTML += editItems[i].value;
-  //   // editItems[i].style.display = "none";
-  //   // inputItems[i].style.display = "block";
-  // }
-
   var fridgeItems = JSON.parse(localStorage.getItem("fridgeItems") || "[]");
 
-  let item = item_name;
-  for (let i = 0; i < fridgeItems.length; i++) {
-    if (fridgeItems[i][0] == item) {
-      fridgeItems.splice(i, 1);
+  var edited = document.getElementById("hidden-val").innerHTML;
+  if (edited === item_name) {
+    for (let i = 0; i < fridgeItems.length; i++) {
+      if (fridgeItems[i][0] == item_name) {
+        fridgeItems.splice(i, 1);
+        // console.log("here");
+      }
+    }
+  } else {
+    for (let i = 0; i < fridgeItems.length; i++) {
+      if (fridgeItems[i][0] == edited) {
+        fridgeItems.splice(i, 1);
+        // console.log("here");
+      }
     }
   }
+  
   localStorage.setItem("fridgeItems", JSON.stringify(fridgeItems));
 
   fridgeItems.push([item_name, category, qty, ed]);
@@ -298,4 +328,3 @@ function saveItem() {
   modal.style.display = "block";
   fridge.style.display = "block";
 }
-

@@ -25,13 +25,13 @@
       
         <div class="formContents">
           <br>
-          <input class="input_box" type="text" id="title" name="title" placeholder="Title">
+          <input class="input_box" type="text" id="title" name="title" placeholder="Name (required)" required>
       
           <br>
           <br>
       
-          <select class="input_box" id="category" name="category">
-            <option value="default">Select category</option>
+          <select class="input_box" id="category" name="category" required>
+            <option value="">Select category (required)</option>
             <option value="dairy">Dairy</option>
             <option value="produce">Produce</option>
             <option value="protein">Protein</option>
@@ -41,13 +41,15 @@
           <br>
           <br>
       
-          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity">
+          <input class="input_box" type="text" id="quantity" name="quantity" placeholder="Quantity (required)" required>
           <br>
           <br>
 
-          <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date">
+          <input class="input_box" type="text" id="expdate" name="expdate" placeholder="Expiration Date (optional)">
       
-          <button type="button" class="add-item-submit-button" onclick="addItemToFridge()">Submit</button>
+          <button type="button" class="add-item-submit-button" id="add-submit" onclick="addItemToFridge()">Submit</button>
+
+
         </div>
       </form>
     
@@ -56,7 +58,6 @@
         <span class="material-icons md-32 close" id="close-recipe">close</span>
         <div class="recipecontent">
             <h2>Caprese Salad</h2>
-            <!-- <hr /> -->
             <p>Prep Time: 10 mins</p>
             <p>Total Time: 10 mins</p>
             <p>Serves 2 to 3</p>
@@ -91,22 +92,18 @@
             <!-- <h2>Item Information</h2> -->
             
             <p class="iteminfo" id="it-na" style.display="block"><strong>Item Name: </strong></p>
-            <!-- <input type="text" name="name" id="it-na-edit" placeholder="Item name" class="text_box" style.display="none"/> -->
             
             <p class="iteminfo" id="cat" style.display="block"><strong>Category: </strong></p>
-            <!-- <input type="text" name="name" id="cat-edit" placeholder="Category" class="text_box" style.display="none" /> -->
             
             <p class="iteminfo" id="qty" style.display="block"><strong>Quantity: </strong></p>
-            <!-- <input type="text" name="name" id="qty-edit" placeholder="Quantity" class="text_box" style.display="none" /> -->
             
             <p class="iteminfo" id="ed" style.display="block"><strong>Expiration Date: </strong> </p>
-            <!-- <input type="text" name="name"  id="ed-edit" placeholder="Expiration date" class="text_box" style.display="none" /> -->
             <br>
             <br>
+            <p id="hidden-val" style.display="none"></p>
             </div>
           <div class="edit-buttons">
               <button id="edit" onclick="editItem()">Edit</button>
-              <!-- <button id="save" onclick="saveItem()">Save</button> -->
           </div>
         </div>
       </div>
@@ -120,13 +117,13 @@
       
         <div class="formContents">
           <br>
-          <input class="input_box edit_input" type="text" id="it-na-edit" name="name" placeholder="Name">
+          <input class="input_box edit_input" type="text" id="it-na-edit" name="name" placeholder="Name (required)">
       
           <br>
           <br>
       
-          <select class="input_box edit_input" id="cat-edit" name="category">
-            <option value="Default">Select category</option>
+          <select required class="input_box edit_input" id="cat-edit" name="category">
+            <option value="" selected disabled hidden>Select category (required)</option>
             <option value="Dairy">Dairy</option>
             <option value="Produce">Produce</option>
             <option value="Protein">Protein</option>
@@ -136,16 +133,13 @@
           <br>
           <br>
       
-          <input class="input_box edit_input" type="text" id="qty-edit" name="quantity" placeholder="Quantity">
+          <input class="input_box edit_input" type="text" id="qty-edit" name="quantity" placeholder="Quantity (required)">
           <br>
           <br>
       
-          <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date">
+          <input class="input_box edit_input" type="text" id="ed-edit" name="expdate" placeholder="Expiration Date (optional)">
       
-          <div class="edit-buttons form-edit-buttons">
-            <!-- <button id="edit" onclick="editItem()">Edit</button> -->
-            <button id="save" onclick="saveItem()">Save</button>
-          </div>
+            <button type="button" class="add-item-submit-button" id="save" onclick="saveItem()">Save</button>
         </div>
       </form>
 
@@ -162,7 +156,7 @@
                 id="fridgecat"
                 onchange="getFridgeItems()"
               >
-                <option value="All">All</option>
+                <option value="All">All Items</option>
                 <option value="Dairy">Dairy</option>
                 <option value="Produce">Produce</option>
                 <option value="Protein">Protein</option>
@@ -189,7 +183,6 @@
 
 
           <div class="findrecipes">
-            <!-- <a href="recipes.html"><button type="button">Find Recipe</button></a> -->
             <button type="button" onclick="displayRecipe()">Find Recipe</button>
           </div>
         </div>
