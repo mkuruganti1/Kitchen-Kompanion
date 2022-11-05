@@ -525,3 +525,7 @@ select,
 select option {
   color: #000000;
 }
+
+#hidden-val {
+  display: none;
+}
