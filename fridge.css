@@ -227,6 +227,7 @@ select:focus,
 input:focus {
   border: 2px solid #896b60;
   outline: none;
+  color: black;
 }
 
 .item-container {
@@ -278,6 +279,7 @@ input {
   font: Arial;
   font-size: 16px;
   width: 76%;
+  color: #000000;
 }
 
 select {
@@ -521,7 +523,6 @@ select option[value=""] {
   color: #8e8e8e;
 }
 
-select,
 select option {
   color: #000000;
 }
