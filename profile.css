@@ -26,12 +26,79 @@ h4 {
   outline-width: thin; */
 }
 
-.subbanner {
-  position: relative;
-  top: 0;
-  overflow: auto;
-  transform: translate(13%, 30%);
-  text-align: center;
-  width: 80%;
-  text-indent: 10%
+.text_box {
+  border: 1px solid #896b60;
+  border-radius: 5px;
+  height: 24px;
+  line-height: normal;
+  display: block;
+  width: 60%;
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 13px;
+  padding: 0 6px;
+  padding-left: 12px;
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+
+.grid-container {
+  margin-top: 15%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 40% 5% 5% 5% 5% 20%;
+  grid-template-areas: ". store-label . add-store . delete-store .";
+}
+
+.storelabel {
+  grid-area: store-label;
+  color: #583101;
+}
+
+.addstore {
+  grid-area: add-store;
+}
+
+.delstore {
+  grid-area: delete-store;
+}
+
+.storelist {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  /* display: inline-block; */
+  /* transform: translate(-23%, 0%); */
+  /* padding-top: 20px; */
+  /* text-align: left; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-left: 20%;
+}
+
+.storelist label {
+  width: 12em;
+  float: left;
+  font-size: 17px;
+}
+
+.storelist label input {
+  margin-right: 15px;
+}
+
+input[type="checkbox"] {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  transform: translateY(5px);
+  border-color: #583101;
+}
+
+.store {
+  /* outline-color: black;
+  outline-style: solid;
+  outline-width: thin; */
+  width: 300px;
+  height: 30px;
 }

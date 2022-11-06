@@ -11,13 +11,52 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="./profile.js"></script>
   </head>
-  <body>
+  <body onload="setDefault()">
     <div class="allcontent">
-      <div id="fridgedisplay" style.display="block">
-        <div class="topbanner">
-          <h2>Hello, ${NAME}</h2>
-          <h3>Access Code: ${code}</h3>
+      <div class="topbanner">
+        <h2>Hello, User!</h2>
+        <p>Access Code: iLoveHCI</p>
+      </div>
+
+      <!-- things pertaining to tags -->
+      <div class="storesettings">
+        <div class="grid-container">
+          <div class="storelabel">
+            <h2>Stores</h2>
+          </div>
+          <div class="addstore">
+            <span
+              class="material-icons md-32 material-symbols-outlined"
+              id="add-button"
+              onclick="addStore()"
+            >
+              add_circle
+            </span>
+          </div>
+          <div class="delstore">
+            <span
+              class="material-icons material-symbols-rounded"
+              onclick="removeCheckedCheckboxes()"
+            >
+              delete
+            </span>
+          </div>
+        </div>
+
+        <form id="storeForm">
+          <input
+            type="text"
+            id="newStoreName"
+            name="name"
+            placeholder="New Store"
+            class="text_box"
+          />
+        </form>
+
+        <div class="storelist">
+          <form id="store-list-form"></form>
         </div>
       </div>
       <div id="nav-placeholder">
@@ -51,6 +90,7 @@
         </nav>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       var current = 0;
       for (var i = 0; i < document.links.length; i++) {
@@ -58,7 +98,7 @@
           current = i;
         }
       }
-      document.links[current].childNodes[0].classList.add("current")
+      document.links[current].childNodes[0].classList.add("current");
       document.links[current].parentElement.className = "current";
     </script>
   </body>
