@@ -2,30 +2,27 @@ document.addEventListener("DOMContentLoaded", getShoppingListItems);
 
 firstGiant = true;
 firstTJ = true;
-/*
-var giantCount = 0;
-var tjCount = 0;
-*/
+counter = 1;
 
 function formPopup() {
-  //localStorage.clear();  
+  
   // Get the form
-    var form = document.getElementById("shoppingForm");
+  var form = document.getElementById("shoppingForm");
+
+  // Get the <span> element that closes the form
+  var span = document.getElementById("close-form");
+
+  // Get the rest of the list content
+  var shoppingList = document.getElementById("shoppingList");
   
-    // Get the <span> element that closes the form
-    var span = document.getElementById("close-form");
+  // When the user clicks on the button, open the form
+  form.style.display = "block";
+  shoppingList.style.display = "none";
   
-    // Get the rest of the list content
-    var shoppingList = document.getElementById("shoppingList");
-    
-    // When the user clicks on the button, open the form
-    form.style.display = "block";
-    shoppingList.style.display = "none";
-    
-    // When the user clicks on <span> (x), close the form
-    span.onclick = function() {
-      form.style.display = "none";
-      shoppingList.style.display = "block";
+  // When the user clicks on <span> (x), close the form
+  span.onclick = function() {
+    form.style.display = "none";
+    shoppingList.style.display = "block";
     }
   }
 
@@ -51,7 +48,7 @@ function addItemToShoppingListTbl(){
 
     if (tags === "Giant"){
       listItems = JSON.parse(localStorage.getItem("giantItems") || "[]");
-      listItems.push([title, category, quantity, tags, (listItems.length + 1)]);
+      listItems.push([title, category, quantity, tags, counter]);
       localStorage.setItem("giantItems", JSON.stringify(listItems));
 
       counts = JSON.parse(localStorage.getItem("counts") || "[]");
@@ -69,7 +66,7 @@ function addItemToShoppingListTbl(){
 
     if (tags === "Trader Joe's"){
       listItems = JSON.parse(localStorage.getItem("tjItems") || "[]");
-      listItems.push([title, category, quantity, tags, (listItems.length + 1)]);
+      listItems.push([title, category, quantity, tags, counter]);
       localStorage.setItem("tjItems", JSON.stringify(listItems));
 
       counts = JSON.parse(localStorage.getItem("counts") || "[]");
@@ -88,7 +85,8 @@ function addItemToShoppingListTbl(){
 
     giantCount = counts[0][1];
     tjCount = counts[1][1];
-
+    counter += 1;
+    
     var form = document.getElementById("shoppingForm");
     // Get the rest of the shopping list content
     var shoppingList = document.getElementById("shoppingList");
@@ -100,6 +98,7 @@ function addItemToShoppingListTbl(){
     if (tjCount > 0 && tags === "Trader Joe's" ){
       showTable = document.getElementById("tj-div");
       showTable.style.display="block";
+      showTable.style.paddingTop="5px";
       firstTJ = false;
     }
 
@@ -108,7 +107,6 @@ function addItemToShoppingListTbl(){
       showTable.style.display="block";
       firstGiant = false;
     }
-
     document.getElementById("shoppingForm").reset();
 }
 
@@ -225,40 +223,50 @@ function removeCheckedCheckboxes(){
   var listItems;
   var itemName;
   var counts = JSON.parse(localStorage.getItem("counts") || "[]");
-  var matches;
-  
-  for (let tr of collection){
-    bodyId = tr.parentElement.parentElement.id;
+  var tr;
+  var i = collection.length;
+    
+  while (i > 0)  {
+    tr = collection[0]; 
+    
+    bodyId = tr.parentElement.parentElement.id; 
     itemName = tr.cells[1].childNodes[0].data;
   
 
-    if (bodyId === "giant-body"){
-      counts[0][1] = counts[0][1] - 1; 
+    if (bodyId.includes("giant")){
+      counts[0][1] = (counts[0][1] > 1) ? counts[0][1] - 1 : 0; 
       listItems = JSON.parse(localStorage.getItem("giantItems") || "[]");
-
-      for (var i = 0 ; i < listItems.length; i++){
-        if (itemName === listItems[i][0]){
-          listItems.splice(i,1);
+      
+      for (var j = 0 ; j < listItems.length; j++){
+        if (itemName === listItems[j][0]){
+          listItems.splice(j,1);
         }
       }
+
       localStorage.setItem("giantItems", JSON.stringify(listItems));
+      localStorage.setItem("counts", JSON.stringify(counts));
+      
     }
-    else {
-      counts[1][1] = counts[1][1] - 1;
+    
+    else {  
+      counts[1][1] = (counts[1][1] > 1) ? counts[1][1] - 1 : 0;
       listItems = JSON.parse(localStorage.getItem("tjItems") || "[]");
 
-      for (var i = 0 ; i < listItems.length; i++){
-        if (itemName === listItems[i][0]){
-          listItems.splice(i,1);
+      for (var j = 0 ; j < listItems.length; j++){
+        if (itemName === listItems[j][0]){
+          listItems.splice(j,1);
         }
       }
+      
       localStorage.setItem("tjItems", JSON.stringify(listItems));
-    }
-
-    tr.remove();
-  }
+      localStorage.setItem("counts", JSON.stringify(counts));
+      }
   
-  localStorage.setItem("counts", JSON.stringify(counts));
+      tr.remove();
+    
+     i--;
+    }
+  
   
   var giantCount = counts[0][1];
   var tjCount = counts[1][1];
@@ -282,12 +290,9 @@ function clearAll(){
   
   localStorage.setItem("tjItems", JSON.stringify([]));
   localStorage.setItem("giantItems", JSON.stringify([]));
-  
-  var counts = [];
-  counts.push(["Giant", 0]);
-  counts.push(["Trader Joe's", 0]);
-  localStorage.setItem("counts", JSON.stringify(counts));
+  localStorage.setItem("counts", JSON.stringify([]));
 
   document.getElementById("tj-div").style.display="none";
   document.getElementById("giant-div").style.display="none";
+
 }

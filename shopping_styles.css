@@ -159,18 +159,31 @@ td {
 }
 
 .item {
-  width: 30%;
+  font-size: 16px;
+  position:relative;
+  width:130px;
 }
 
 .quantity {
-  width: 20%;
+  font-size: 16px;
+  position:relative;
+  width:100px;
 }
+
 
 .added-checkbox{
   position:relative;
   
 }
 
+.giant-added{
+  position:relative;
+  width: 260px;
+}
+.tj-added{
+  position:relative;
+  width: 260px;
+}
 .giant {
   /*for testing 
      display:block;
