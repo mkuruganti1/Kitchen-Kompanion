@@ -210,7 +210,8 @@ button {
 .item-info {
   background-color: #f5f2ea;
   padding: 20px;
-  color: #4a332d;
+  /* color: #4a332d; */
+  color: black;
   font-size: 16px;
   border-radius: 30px;
   margin: 35% auto;

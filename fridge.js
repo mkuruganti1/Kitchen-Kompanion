@@ -201,10 +201,14 @@ function showItemInfo(e) {
 
   // When the user clicks on <span> (x), close the form
   span.onclick = function () {
-    document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
-    document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
-    document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
-    document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
+    // document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
+    // document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
+    // document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
+    // document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
+    document.getElementById("it-na").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Item Name: </span>";
+    document.getElementById("cat").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Category: </span>";
+    document.getElementById("qty").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Quantity: </span>";
+    document.getElementById("ed").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Expiration Date: </span>";
     modal.style.display = "none";
   };
 }
@@ -230,7 +234,8 @@ function editItem() {
   var arr = [];
 
   for (let i = 0; i < inputItems.length; i++) {
-    var val = String(inputItems[i].innerHTML).split(": </strong>");
+    // var val = String(inputItems[i].innerHTML).split(": </strong>");
+    var val = String(inputItems[i].innerHTML).split(": </span>");
 
     if (val.length == 1) {
       arr.push("");
@@ -267,10 +272,14 @@ function editItem() {
 }
 
 function saveItem() {
-  document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
-  document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
-  document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
-  document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
+  // document.getElementById("it-na").innerHTML = "<strong>Item Name: </strong>";
+  // document.getElementById("cat").innerHTML = "<strong>Category: </strong>";
+  // document.getElementById("qty").innerHTML = "<strong>Quantity: </strong>";
+  // document.getElementById("ed").innerHTML = "<strong>Expiration Date: </strong>";
+  document.getElementById("it-na").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Item Name: </span>";
+  document.getElementById("cat").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Category: </span>";
+  document.getElementById("qty").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Quantity: </span>";
+  document.getElementById("ed").innerHTML = "<span style='color: #4a332d; font-weight:bold'>Expiration Date: </span>";
 
   // Get the rest of the fridge content
   var fridge = document.getElementById("fridgedisplay");
