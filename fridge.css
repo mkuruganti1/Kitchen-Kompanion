@@ -246,6 +246,7 @@ input:focus {
   width: 100px;
   /* margin: 0 auto; */
   text-align: center;
+  transform: translateX(57px);
 }
 
 .close {
