@@ -5,49 +5,41 @@ h2 {
   font-family: Arial;
 }
 
-h4 {
-  color: #000000;
-  font-size: 13;
-  font-style: normal;
-  font-family: Arial;
-  line-height: 80%;
+p {
+  color: #4a332d;
+  font-size: 16;
 }
 
 .topbanner {
   position: relative;
   top: 0;
   overflow: auto;
-  transform: translate(13%, 30%);
   text-align: center;
-  width: 80%;
-
-  /* outline-color: black;
-  outline-style: solid;
-  outline-width: thin; */
+  width: 100%;
+  margin-top: 25px;
 }
 
 .text_box {
-  border: 1px solid #896b60;
+  border: 3px solid #896b60;
   border-radius: 5px;
-  height: 24px;
+  height: 50px;
   line-height: normal;
   display: block;
-  width: 60%;
+  width: 71%;
   box-sizing: border-box;
   user-select: auto;
-  font-size: 13px;
+  font-size: 16px;
   padding: 0 6px;
   padding-left: 12px;
-  margin-left: 20%;
-  margin-bottom: 10px;
+  color: #8e8e8e;
+  margin-left: 14%;
 }
 
 .grid-container {
-  margin-top: 15%;
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: 20% 40% 5% 5% 5% 5% 20%;
+  grid-template-columns: 14% 40% 10% 10% 4% 10% 15%;
   grid-template-areas: ". store-label . add-store . delete-store .";
 }
 
@@ -65,22 +57,16 @@ h4 {
 }
 
 .storelist {
-  /* outline-color: black;
-  outline-style: solid;
-  outline-width: thin; */
-  /* display: inline-block; */
-  /* transform: translate(-23%, 0%); */
-  /* padding-top: 20px; */
-  /* text-align: left; */
+  margin-top: 15px;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-left: 20%;
+  margin-left: 14%;
 }
 
 .storelist label {
   width: 12em;
   float: left;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .storelist label input {
@@ -91,7 +77,7 @@ input[type="checkbox"] {
   background-color: #fff;
   width: 20px;
   height: 20px;
-  transform: translateY(5px);
+  transform: translateY(3px);
   border-color: #583101;
 }
 
