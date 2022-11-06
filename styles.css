@@ -133,3 +133,8 @@ nav ul li p {
   bottom: 0;
   left: 0;
 }
+
+#fadeout {
+  opacity: 1;
+  transition: 2s;
+}
